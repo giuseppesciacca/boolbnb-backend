@@ -18,10 +18,11 @@ class ApartmentController extends Controller
      */
     public function index()
     {
-        $apartments = Auth::user()->apartments()->orderBy('id');
+        $apartments = Auth::user()->apartments()->orderBy('id')->paginate(5);
+
+
 
         return view('admin.apartments.index', compact('apartments'));
-       
     }
 
     /**

@@ -27,20 +27,20 @@
 
         <tbody>
 
-            @forelse ($apartments as $project)
+            @forelse ($apartments as $apartment)
             <tr>
-                <td scope="row">{{$project->id}}</td>
-                <td scope="row">{{$project->title}}</td>
+                <td scope="row">{{$apartment->id}}</td>
+                <td scope="row">{{$apartment->title}}</td>
                 <td class="text-center">
-                    <img class="img-fluid" style="height: 100px; width:160px; object-fit:cover;" src="" alt="{{$apartment->title}}" loading="lazy">
-                    <!--  src="{{asset('storage/'. $apartment->img_path)}}"-->
+                    <img class="img-fluid" style="height: 100px; width:160px; object-fit:cover;" src=" {{ $apartment->image }}" alt="{{$apartment->title}}" loading="lazy">
+
                 </td>
-                <td>{{$project->n_stanze}}</td>
-                <td>{{$project->n_bagni}}</td>
-                <td>{{$project->n_letti}}</td>
-                <td>{{$project->mq}}</td>
-                <td>{{$project->indirizzo}}</td>
-                <td>{{$project->Visibile}}</td>
+                <td>{{$apartment->rooms}}</td>
+                <td>{{$apartment->bathrooms}}</td>
+                <td>{{$apartment->beds}}</td>
+                <td>{{$apartment->square_meters}}</td>
+                <td>{{$apartment->address}}</td>
+                <td>{{$apartment->visibility ? 'true' : 'false'}}</td>
                 <td>
                     SHOW/EDIT/DELETE
                     <!--                     
