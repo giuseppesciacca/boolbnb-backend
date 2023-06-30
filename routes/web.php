@@ -1,7 +1,11 @@
 <?php
 
-use App\Http\Controllers\ApartmentController;
+use App\Http\Controllers\Admin\ApartmentController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\MessageController;
+use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\SponsorController;
+use App\Http\Controllers\Admin\ViewController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,6 +27,10 @@ Route::get('/', function () {
 Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('/apartments', ApartmentController::class)->parameters(['apartments' => 'apartment:slug']);
+    Route::resource('/views', ViewController::class);
+    Route::resource('/messages', MessageController::class);
+    Route::resource('/sponsors', SponsorController::class);
+    Route::resource('/services', ServiceController::class);
 });
 
 Route::middleware('auth')->group(function () {
