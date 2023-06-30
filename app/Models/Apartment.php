@@ -17,7 +17,7 @@ class Apartment extends Model
         'user_id',
         'title',
         'slug',
-        'iamge',
+        'image',
         'description',
         'rooms',
         'bathrooms',
