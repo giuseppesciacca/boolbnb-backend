@@ -21,6 +21,7 @@ class ApartmentController extends Controller
         $apartments = Auth::user()->apartments()->orderBy('id');
 
         return view('admin.apartments.index', compact('apartments'));
+       
     }
 
     /**
