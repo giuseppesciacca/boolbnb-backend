@@ -24,8 +24,8 @@ return new class extends Migration
             $table->tinyInteger('beds')->index();
             $table->smallInteger('square_meters')->index()->nullable();
             $table->string('address')->index();
-            $table->float('latitude');
-            $table->float('longitude');
+            $table->decimal('latitude', 15, 12, true);
+            $table->decimal('longitude', 15, 12, true);
             $table->boolean('visibility')->default(true);
             $table->timestamps();
         });

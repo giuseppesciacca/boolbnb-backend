@@ -10,7 +10,8 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $apartment = Apartment::orderByDesc("id")->get();
-        return view('admin.dashboard', compact('apartment'));
+
+        $apartments = Apartment::orderByDesc("id")->get();
+        return view('admin.dashboard', compact('apartments'));
     }
 }
