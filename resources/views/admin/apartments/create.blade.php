@@ -5,15 +5,15 @@
 <div class="bg-light py-3">
 
     <div class="container">
-
+    @include('admin.partials.validation_errors')
         <h5 class="text-uppercase text-muted my-4">Add a new Apartment</h5>
 
         <form action="{{route('admin.apartments.store')}}" method="post" enctype="multipart/form-data">
             @csrf
 
             <div class="mb-3">
-                <label for="title" class="form-label">Title (*)</label>
-                <input type="text" name="title" id="title" class="form-control @error('title') is-invalid @enderror" placeholder="Apartment title here " aria-describedby="nameHelper">
+                <label for="title" class="form-label">Title <!-- (*) --></label>
+                <input type="text" name="title" id="title" class="form-control @error('title') is-invalid @enderror" placeholder="Apartment title here " aria-describedby="nameHelper" required>
 
                 @error('title')
                 <div class="alert alert-danger" role="alert">
@@ -92,24 +92,28 @@
             </div>
 
             <div class="mb-3">
-                <label for="address" class="form-label">address (*)</label>
-                <input type="text" name="address" id="address" class="form-control @error('address') is-invalid @enderror" placeholder="Apartment address here " aria-describedby="nameHelper">
+                <label for="address" class="form-label">address <!-- (*) --></label>
+                <input type="text" name="address" id="address" class="form-control @error('address') is-invalid @enderror" placeholder="Apartment address here " aria-describedby="nameHelper" required>
                 <small>complete address here</small>
-
+                @error('address')
+                <div class="alert alert-danger" role="alert">
+                    <strong>Errore: </strong>{{$message}}
+                </div>
+                @enderror
             </div>
 
             <div class="mb-3">
-                <label for="visibility" class="form-label">visibility (*)</label>
+                <label for="visibility" class="form-label">visibility <!-- (*) --></label>
 
                 <input type="radio" name="true" id="visibility">
-                <input type="radio" name="false" id="visibility">
+                <input type="radio" name="false" id="visibility" checked>
 
             </div>
 
             <button type="submit" class="btn btn-primary w-100 my-4">Save</button>
 
             <p>
-                (*) -> required!
+                <!--  --><!-- (*) -> required! -->
             </p>
         </form>
 
