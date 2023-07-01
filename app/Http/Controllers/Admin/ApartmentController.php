@@ -96,7 +96,13 @@ class ApartmentController extends Controller
      */
     public function update(UpdateApartmentRequest $request, Apartment $apartment)
     {
-        //
+        $val_data = $request->validated();
+        $slug = apartment::genetareSlug($val_data['title']);
+        $val_data['slug'] = $slug;
+        $apartment->update($val_data);
+        /* dd($val_data); */
+
+        return to_route('admin.apartments.index')->with('message', 'apartment: ' . $apartment->title . ' Updated');
     }
 
     /**

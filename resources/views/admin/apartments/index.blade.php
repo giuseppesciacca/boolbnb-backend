@@ -19,6 +19,7 @@
                 <th scope="col">n_bagni</th>
                 <th scope="col">n_letti</th>
                 <th scope="col">mq</th>
+                <th scope="col">description</th>
                 <th scope="col">indirizzo</th>
                 <th scope="col">Visibile</th>
                 <th scope="col">Actions</th>
@@ -39,6 +40,7 @@
                 <td>{{$apartment->bathrooms}}</td>
                 <td>{{$apartment->beds}}</td>
                 <td>{{$apartment->square_meters}}</td>
+                <td>{{$apartment->description}}</td>
                 <td>{{$apartment->address}}</td>
                 <td>{{$apartment->visibility ? 'true' : 'false'}}</td>
                 <td>
