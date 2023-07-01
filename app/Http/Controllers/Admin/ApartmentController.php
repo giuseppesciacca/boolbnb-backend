@@ -44,6 +44,25 @@ class ApartmentController extends Controller
      */
     public function store(StoreApartmentRequest $request)
     {
+        //dd($request);
+        //Add validation
+        $val_data = $request->validated();
+        //generate slug
+        $slug = Apartment::generateSlug($val_data['title']);
+        //validata slug and user_id
+        $val_data['slug'] = $slug;
+        $val_data['user_id'] = Auth::id();
+        //to do checking  image and make storage link
+        
+        //generate static latitude and longitude
+        $latitude = 10.9876;
+        $longitude = 98.12134;
+        $val_data['latitude'] = $latitude;
+        $val_data['longitude'] = $longitude;
+
+        $newApartment = Apartment::create($val_data);
+
+        return to_route('admin.apartments.index')->with('message', 'Appartamento aggiunto');
     }
 
     /**
@@ -54,7 +73,7 @@ class ApartmentController extends Controller
      */
     public function show(Apartment $apartment)
     {
-        //
+        return view('admin.apartments.show', compact('apartment'));
     }
 
     /**

@@ -2,13 +2,13 @@
 
 @section('content')
 
-<h1 class="text-center">I MIEI APPARTMAMENTI - INDEX</h1>
+<h1 class="text-center my-3">I MIEI APPARTMAMENTI - INDEX</h1>
+@include('admin.partials.session_message')
 
 <div class="container-fluid bg-light py-3">
     <!-- <h5>Add new Project</h5> -->
     <a href="{{route('admin.apartments.create')}}"><i class="fa-solid fa-plus fa-2x"></i></a>
     <!-- INSERIRE BOTTONE PER AGGIUNGERE APARTMENTS -->
-
     <table class="table table-striped m-0 py-5">
         <thead>
             <tr>
@@ -43,8 +43,8 @@
                 <td>{{$apartment->visibility ? 'true' : 'false'}}</td>
                 <td>
                     SHOW/EDIT/DELETE
-                    <!--                     
                     <a href="{{route('admin.apartments.show', $apartment->slug)}}"><i class="fa-solid fa-eye"></i></a>
+                    <!--                     
                     <a href="{{route('admin.apartments.edit', $apartment->slug)}}"><i class="fa-solid fa-pencil"></i></a>
                     <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modalId-{{$apartment->id}}">
                         <i class="fa-solid fa-trash-can" style="color: #dc3545"></i>

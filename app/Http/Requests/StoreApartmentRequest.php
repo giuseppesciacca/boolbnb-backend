@@ -26,8 +26,8 @@ class StoreApartmentRequest extends FormRequest
         return [
             //scrivere regole di validazione
 
-            /*             'user_id' => 'exists:users,id',
-            'title' => 'required|unique:apartments',
+            'user_id' => 'exists:users,id',
+            'title' => 'required',
             'image' => 'nullable',
             'description' => 'nullable',
             'rooms' => 'required',
@@ -35,6 +35,6 @@ class StoreApartmentRequest extends FormRequest
             'beds' => 'required',
             'square_meters' => 'required',
             'address' => 'required',
-            'visibility' => 'nullable', */];
+            'visibility' => 'nullable'];
     }
 }
