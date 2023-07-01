@@ -84,7 +84,7 @@ class ApartmentController extends Controller
      */
     public function edit(Apartment $apartment)
     {
-        //
+        return view('admin.apartments.edit', compact('apartment'));
     }
 
     /**
@@ -107,6 +107,11 @@ class ApartmentController extends Controller
      */
     public function destroy(Apartment $apartment)
     {
-        //
+       
+        if ($apartment->image) {
+            Storage::delete($apartment->image);
+        }
+        $apartment->delete();
+        return to_route('admin.apartments.index')->with('message', 'apartment: ' . $apartment->title . ' Deleted');
     }
 }
