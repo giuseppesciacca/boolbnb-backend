@@ -15,7 +15,7 @@ class ApartmentSeeder extends Seeder
      */
     public function run()
     {
-        $apartments = config('data');
+        $apartments = config('data.apartments');
         foreach ($apartments as $apartment) {
             $newApartment = new Apartment();
             $newApartment->user_id = $apartment["user_id"];
@@ -32,7 +32,7 @@ class ApartmentSeeder extends Seeder
             $newApartment->longitude = $apartment["longitude"];
             $newApartment->visibility = $apartment["visibility"];
             $newApartment->save();
+            // before seeding the apartments insert in the db at least 3 users
         }
-//before seeding the apartments insert in the db at least 3 users
     }
 }

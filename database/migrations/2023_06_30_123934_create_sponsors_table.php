@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->boolean('sponsored')->default(false);
             $table->string('name');
-            $table->tinyInteger('duration');
+            $table->unsignedTinyInteger('duration');
             $table->decimal('price', 3, 2);
             $table->timestamps();
         });
