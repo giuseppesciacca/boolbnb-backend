@@ -35,6 +35,7 @@ class StoreApartmentRequest extends FormRequest
             'beds' => 'required',
             'square_meters' => 'required',
             'address' => 'required',
-            'visibility' => 'nullable'];
+            'visibility' => 'nullable'
+        ];
     }
 }

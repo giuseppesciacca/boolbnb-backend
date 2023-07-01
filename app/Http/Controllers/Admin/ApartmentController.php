@@ -84,7 +84,7 @@ class ApartmentController extends Controller
      */
     public function edit(Apartment $apartment)
     {
-        //
+        return view('admin.apartments.edit', compact('apartment'));
     }
 
     /**
@@ -96,7 +96,13 @@ class ApartmentController extends Controller
      */
     public function update(UpdateApartmentRequest $request, Apartment $apartment)
     {
-        //
+        $val_data = $request->validated();
+        $slug = apartment::genetareSlug($val_data['title']);
+        $val_data['slug'] = $slug;
+        $apartment->update($val_data);
+        /* dd($val_data); */
+
+        return to_route('admin.apartments.index')->with('message', 'apartment: ' . $apartment->title . ' Updated');
     }
 
     /**
@@ -107,6 +113,11 @@ class ApartmentController extends Controller
      */
     public function destroy(Apartment $apartment)
     {
-        //
+       
+        if ($apartment->image) {
+            Storage::delete($apartment->image);
+        }
+        $apartment->delete();
+        return to_route('admin.apartments.index')->with('message', 'apartment: ' . $apartment->title . ' Deleted');
     }
 }

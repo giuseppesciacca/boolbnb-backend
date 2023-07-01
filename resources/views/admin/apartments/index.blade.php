@@ -19,6 +19,7 @@
                 <th scope="col">n_bagni</th>
                 <th scope="col">n_letti</th>
                 <th scope="col">mq</th>
+                <th scope="col">description</th>
                 <th scope="col">indirizzo</th>
                 <th scope="col">Visibile</th>
                 <th scope="col">Actions</th>
@@ -39,20 +40,20 @@
                 <td>{{$apartment->bathrooms}}</td>
                 <td>{{$apartment->beds}}</td>
                 <td>{{$apartment->square_meters}}</td>
+                <td>{{$apartment->description}}</td>
                 <td>{{$apartment->address}}</td>
                 <td>{{$apartment->visibility ? 'true' : 'false'}}</td>
                 <td>
-                    SHOW/EDIT/DELETE
                     <a href="{{route('admin.apartments.show', $apartment->slug)}}"><i class="fa-solid fa-eye"></i></a>
-                    <!--                     
+                                        
                     <a href="{{route('admin.apartments.edit', $apartment->slug)}}"><i class="fa-solid fa-pencil"></i></a>
                     <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modalId-{{$apartment->id}}">
                         <i class="fa-solid fa-trash-can" style="color: #dc3545"></i>
-                    </button> -->
+                    </button> 
 
 
                     <!-- Modal -->
-                    <!--                     <div class="modal fade" id="modalId-{{$apartment->id}}" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+                        <div class="modal fade" id="modalId-{{$apartment->id}}" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
                         <div class="modal-dialog" role="dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -73,8 +74,11 @@
                                 </div>
                             </div>
                         </div>
-                    </div> -->
-
+                    </div> 
+                            <!-- Optional: Place to the bottom of scripts -->
+                            <script>
+                                const myModal = new bootstrap.Modal(document.getElementById('{{ $apartment->id }}'), options)
+                            </script>
                 </td>
             </tr>
 
