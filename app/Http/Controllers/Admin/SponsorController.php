@@ -57,7 +57,11 @@ class SponsorController extends Controller
 
         $apartment = Apartment::where('slug', '=', $apartment)->first();
 
-        return view('admin.sponsors.show', compact('apartment', 'sponsors'));
+        if (Auth::id() === $apartment->user_id) {
+
+            return view('admin.sponsors.show', compact('apartment', 'sponsors'));
+        }
+        abort(403);
     }
 
     /**
