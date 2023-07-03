@@ -21,6 +21,7 @@
                 <th scope="col">mq</th>
                 <th scope="col">description</th>
                 <th scope="col">indirizzo</th>
+                <th scope="col">servizi</th>
                 <th scope="col">Visibile</th>
                 <th scope="col">Actions</th>
             </tr>
@@ -33,7 +34,7 @@
                 <td scope="row">{{$apartment->id}}</td>
                 <td scope="row">{{$apartment->title}}</td>
                 <td class="text-center">
-                    <img class="img-fluid" style="height: 100px; width:160px; object-fit:cover;" src=" {{ $apartment->image }}" alt="{{$apartment->title}}" loading="lazy">
+                    <img class="img-fluid" style="height: 100px; width:160px; object-fit:cover;" src=" {{ asset('storage/' . $apartment->image) }}" alt="{{$apartment->title}}" >
 
                 </td>
                 <td>{{$apartment->rooms}}</td>
@@ -42,6 +43,12 @@
                 <td>{{$apartment->square_meters}}</td>
                 <td>{{$apartment->description}}</td>
                 <td>{{$apartment->address}}</td>
+                {{-- roba da levare l'ho messa giusto per vedere che funziona --}}
+                <td>
+                @foreach($apartment->services as $service)
+                    <div class="label label-info">{{ $service->name }} </div>
+                @endforeach
+                </td>
                 <td>{{$apartment->visibility ? 'true' : 'false'}}</td>
                 <td>
                     <a href="{{route('admin.apartments.show', $apartment->slug)}}"><i class="fa-solid fa-eye"></i></a>

@@ -55,7 +55,7 @@
                     <label for="rooms" class="form-label">rooms</label>
                     <input type="number" name="rooms" id="rooms"
                         class="form-control @error('rooms') is-invalid @enderror" placeholder="N. Apartment rooms here "
-                        aria-describedby="imageHelper">
+                        aria-describedby="imageHelper" min="1" max="50" step="1">
 
                     @error('rooms')
                         <div class="alert alert-danger" role="alert">
@@ -69,7 +69,7 @@
                     <label for="bathrooms" class="form-label">bathrooms</label>
                     <input type="number" name="bathrooms" id="bathrooms"
                         class="form-control @error('bathrooms') is-invalid @enderror" placeholder="N. bathrooms here "
-                        aria-describedby="imageHelper">
+                        aria-describedby="imageHelper" min="1" max="25" step="1">
 
                     @error('bathrooms')
                         <div class="alert alert-danger" role="alert">
@@ -82,7 +82,7 @@
                     <label for="beds" class="form-label">beds</label>
                     <input type="number" name="beds" id="beds"
                         class="form-control @error('beds') is-invalid @enderror" placeholder="N. beds here "
-                        aria-describedby="imageHelper">
+                        aria-describedby="imageHelper" min="1" max="25" step="1">
 
                     @error('beds')
                         <div class="alert alert-danger" role="alert">
@@ -95,7 +95,7 @@
                     <label for="square_meters" class="form-label">square_meters</label>
                     <input type="number" name="square_meters" id="square_meters"
                         class="form-control @error('square_meters') is-invalid @enderror"
-                        placeholder="N. square_meters here " aria-describedby="imageHelper">
+                        placeholder="N. square_meters here " aria-describedby="imageHelper" min="1" max="9999" step="1">
                     <small>MQ</small>
 
                     @error('square_meters')
@@ -118,6 +118,15 @@
                             <strong>Errore: </strong>{{ $message }}
                         </div>
                     @enderror
+                </div>
+
+                <div class="form-check d-flex row row-cols-4 mb-3 ps-2">
+                    @foreach($services as $service)
+                        <label class="form-check-label" for="{{ $service->name }}">
+                            <input name="services[]" class="form-check-input" type="checkbox" value="{{ $service->id }}" id="{{ $service->name }}" {{ in_array($service->id, old('services', [])) ? 'checked' : '' }}>
+                            {{ $service->name }}
+                        </label>
+                    @endforeach
                 </div>
 
                 <div>

@@ -6,8 +6,10 @@ use App\Models\Apartment;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreApartmentRequest;
 use App\Http\Requests\UpdateApartmentRequest;
+use App\Models\Service;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Symfony\Component\Console\Input\Input;
 
 class ApartmentController extends Controller
 {
@@ -19,7 +21,7 @@ class ApartmentController extends Controller
     public function index()
     {
         //$apartments = Auth::user()->apartments()->orderBy('id')->paginate(5);
-        $apartments = Apartment::where('user_id', Auth::user()->id)->orderByDesc('id')->paginate(5);
+        $apartments = Apartment::where('user_id', Auth::user()->id)->orderByDesc('id')->paginate(100);
 
 
         return view('admin.apartments.index', compact('apartments'));
@@ -32,8 +34,9 @@ class ApartmentController extends Controller
      */
     public function create()
     {
-        /* poi da passare i servizi */
-        return view('admin.apartments.create');
+        $services = Service::all();
+
+        return view('admin.apartments.create', compact('services'));
     }
 
     /**
@@ -44,24 +47,41 @@ class ApartmentController extends Controller
      */
     public function store(StoreApartmentRequest $request)
     {
-        //dd($request);
         //Add validation
         $val_data = $request->validated();
-        //generate slug
         $slug = Apartment::generateSlug($val_data['title']);
+
+        //create new apartment
+        
+        //generate slug
+        
         //validata slug and user_id
         $val_data['slug'] = $slug;
         $val_data['user_id'] = Auth::id();
-        //to do checking  image and make storage link
 
         //generate static latitude and longitude
         $latitude = 10.9876;
         $longitude = 98.12134;
         $val_data['latitude'] = $latitude;
         $val_data['longitude'] = $longitude;
+        
+        $new_apartment = Apartment::create($val_data);
 
-        $newApartment = Apartment::create($val_data);
+        if ($request['services']) {
+            $new_apartment->services()->sync($val_data['services']);
+        }
 
+        //add image
+        if ($request->hasFile('image')) {
+            $img_path = Storage::put('uploads', $request->image);
+            
+            $new_apartment->image = $img_path;
+            $new_apartment->save();
+        }
+        
+        
+        
+        
         return to_route('admin.apartments.index')->with('message', 'Appartamento aggiunto');
     }
 
@@ -89,8 +109,9 @@ class ApartmentController extends Controller
     public function edit(Apartment $apartment)
     {
         if (Auth::id() === $apartment->user_id) {
+            $services = Service::all();
 
-            return view('admin.apartments.edit', compact('apartment'));
+            return view('admin.apartments.edit', compact('apartment', 'services'));
         }
         abort(403);
     }
@@ -107,8 +128,23 @@ class ApartmentController extends Controller
         $val_data = $request->validated();
         $slug = Apartment::generateSlug($val_data['title']);
         $val_data['slug'] = $slug;
+
+        if ($request['services']) {
+            $apartment->services()->sync($val_data['services']);
+        }
+
+        //validate image
+        if ($request->hasFile('image')) {
+            if ($apartment['image']) {
+                Storage::delete($apartment->image);
+            }
+            $img_path = Storage::put('uploads', $request->image);
+            $val_data['image'] = $img_path;
+        }
+
+
         $apartment->update($val_data);
-        /* dd($val_data); */
+
 
         return to_route('admin.apartments.index')->with('message', 'apartment: ' . $apartment->title . ' Updated');
     }
