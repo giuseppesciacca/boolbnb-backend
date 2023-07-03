@@ -53,7 +53,7 @@ class ApartmentController extends Controller
         $val_data['slug'] = $slug;
         $val_data['user_id'] = Auth::id();
         //to do checking  image and make storage link
-        
+
         //generate static latitude and longitude
         $latitude = 10.9876;
         $longitude = 98.12134;
@@ -73,7 +73,11 @@ class ApartmentController extends Controller
      */
     public function show(Apartment $apartment)
     {
-        return view('admin.apartments.show', compact('apartment'));
+        if (Auth::id() === $apartment->user_id) {
+
+            return view('admin.apartments.show', compact('apartment'));
+        }
+        abort(403);
     }
 
     /**
@@ -87,7 +91,6 @@ class ApartmentController extends Controller
         if (Auth::id() === $apartment->user_id) {
 
             return view('admin.apartments.edit', compact('apartment'));
-  
         }
         abort(403);
     }
@@ -118,7 +121,7 @@ class ApartmentController extends Controller
      */
     public function destroy(Apartment $apartment)
     {
-       
+
         if ($apartment->image) {
             Storage::delete($apartment->image);
         }
