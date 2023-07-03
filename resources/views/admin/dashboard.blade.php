@@ -24,3 +24,8 @@
     </div>
 </div>
 @endsection
+
+<!-- Nella view della dashboard ci sarà un bottone a link di create new apartment e un bottone a link di index apartment 
+sotto pagina lista messaggi
+pagina sponsorizzazione
+pagina statistiche singolo appartamento-->

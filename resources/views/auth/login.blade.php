@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('script')
+@vite(['resources/js/login.js'])
+@endsection
+
 @section('content')
 <div class="container mt-4">
     <div class="row justify-content-center">
@@ -8,7 +12,7 @@
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                    <form id="custom-form" method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="mb-4 row">
@@ -16,6 +20,9 @@
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <span id="span-email" class="d-none bg-danger text-dark" role="alert">
+                                    <strong>L'email deve essere valida</strong>
+                                </span>
 
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
@@ -30,6 +37,9 @@
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                <span id="span-password" class="d-none bg-danger text-dark" role="alert">
+                                    <strong>La password inserita non è corretta</strong>
+                                </span>
 
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
