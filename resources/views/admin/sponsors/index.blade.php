@@ -18,9 +18,9 @@
         </li>
     </ul>
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
         @forelse ($sponsors as $sponsor)
-        <div class="col-1 col-md-2 col-lg-3">
+        <div class="col">
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title text-center">{{$sponsor->name}}</h4>
