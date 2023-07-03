@@ -33,7 +33,6 @@ class Apartment extends Model
         return Str::slug($title, '-');
     }
 
-    //👇 qui sotto tutte le relazioni
     public function user(): BelongsTo {
         return $this->belongsTo(User::class);
     }
