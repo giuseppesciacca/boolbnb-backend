@@ -40,7 +40,7 @@
         </div>
 
         @empty
-        Nessuno sponsor esistente
+        <p>Sponsor non disponibili</p>
         @endforelse
     </div>
 

@@ -50,18 +50,14 @@ class SponsorController extends Controller
      * @param  \App\Models\Apartment  $apartment
      * @return \Illuminate\Http\Response
      */
-    public function show(Sponsor $sponsor, Apartment $apartment)
+    public function show($apartment)
     {
-        //passo l'appartamento singolo attraverso lo show di apartment, e da lì lo mando allo show di sponsors
+        //passo l'appartamento singolo attraverso lo show di apartments, e da lì lo mando qui, allo show di sponsors
+        $sponsors = Sponsor::orderBy('id')->get();
 
-        //$single_apartment = Apartment::all();
-        // dd($apartment);
+        $apartment = Apartment::where('slug', '=', $apartment)->first();
 
-        $apartments = Apartment::where('id', '=', '$apartment->id')->get();
-
-        //dd($apartments);
-
-        return view('admin.sponsors.show', compact('apartments', 'sponsors'));
+        return view('admin.sponsors.show', compact('apartment', 'sponsors'));
     }
 
     /**
