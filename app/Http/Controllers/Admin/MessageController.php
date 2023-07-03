@@ -6,6 +6,9 @@ use App\Models\Message;
 use App\Http\Requests\StoreMessageRequest;
 use App\Http\Requests\UpdateMessageRequest;
 use App\Http\Controllers\Controller;
+use App\Models\Apartment;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class MessageController extends Controller
 {
@@ -16,7 +19,9 @@ class MessageController extends Controller
      */
     public function index()
     {
-    
+        $messages = Message::all();
+
+        return view('admin.messages.index', compact('messages'));
     }
 
     /**
@@ -43,12 +48,14 @@ class MessageController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Message  $message
+     * @param  \App\Models\Message $message
      * @return \Illuminate\Http\Response
      */
     public function show(Message $message)
     {
-        //
+        $apartment = Apartment::where('user_id', Auth::user()->id)->orderByDesc('id');
+    
+        return view('admin.messages.show', compact('apartment', 'message'));
     }
 
     /**
@@ -82,6 +89,7 @@ class MessageController extends Controller
      */
     public function destroy(Message $message)
     {
-        //
+        $message->delete();
+        return to_route('admin.messages.index')->with('message', 'message: ' . $message->title . ' Deleted');
     }
 }
