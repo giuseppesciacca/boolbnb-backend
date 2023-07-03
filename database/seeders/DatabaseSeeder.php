@@ -14,9 +14,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call([  
+        $this->call([
+            UserSeeder::class,
             ApartmentSeeder::class,
-            // before seeding the apartments insert in the db at least 3 users
             ServiceSeeder::class,
             SponsorSeeder::class,   
         ]); 
