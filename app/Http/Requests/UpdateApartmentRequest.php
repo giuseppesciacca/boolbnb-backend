@@ -28,14 +28,15 @@ class UpdateApartmentRequest extends FormRequest
 
             'user_id' => 'exists:users,id',
             'title' => 'required',
-            'image' => 'nullable',
+            'image' => 'nullable|max:2048',
             'description' => 'nullable',
-            'rooms' => 'required|numeric|min:1|max:120',
-            'bathrooms' => 'required|numeric|min:1|max:120',
-            'beds' => 'required|numeric|min:1|max:120',
-            'square_meters' => 'required|numeric|min:10|max:120',
+            'rooms' => 'required|numeric|min:1|max:50',
+            'bathrooms' => 'required|numeric|min:1|max:25',
+            'beds' => 'required|numeric|min:1|max:25',
+            'square_meters' => 'required|numeric|min:30|max:9999',
             'address' => 'required',
-            'visibility' => 'nullable'
+            'visibility' => 'nullable',
+            'services' => 'exists:services,id'
         ];
     }
 }
