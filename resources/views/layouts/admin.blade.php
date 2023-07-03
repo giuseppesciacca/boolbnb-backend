@@ -67,6 +67,12 @@
                             <li class="p-3 rounded-3 mb-3 {{ str_starts_with(Route::currentRouteName(), 'admin.apartments') ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
                                 <a class="text-light fw-bold text-decoration-none" href="{{ route('admin.apartments.index') }}">Apartments</a>
                             </li>
+                            <li class="p-3 rounded-3 mb-3 {{ str_starts_with(Route::currentRouteName(), 'admin.messages') ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
+                                <a class="text-light fw-bold text-decoration-none" href="{{ route('admin.messages.index') }}">Messages</a>
+                            </li>
+                            <li class="p-3 rounded-3 mb-3 {{ str_starts_with(Route::currentRouteName(), 'admin.sponsors') ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
+                                <a class="text-light fw-bold text-decoration-none" href="{{ route('admin.sponsors.index') }}">Sponsorship</a>
+                            </li>
                         </ul>
                     </div>
                     <div class="col-10">
