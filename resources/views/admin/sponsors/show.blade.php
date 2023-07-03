@@ -1,6 +1,9 @@
 @extends('layouts.admin')
 
 @section('content')
+<h1>sponsor show</h1>
+
+
 <div class="container">
     <div class="row row-cols-1 row-cols-md-2">
         <div class="col">
@@ -18,10 +21,38 @@
                     <li><strong>Letti:</strong> {{$apartment->beds}}</li>
                     <li><strong>Metri quadrati:</strong> {{$apartment->square_meters}}</li>
                     <li><strong>Indirizzo:</strong> {{$apartment->address}}</li>
-                    <li> <a name="sponsor" id="sponsor" class="btn btn-warning" href="{{route('admin.sponsors.show', $apartment->slug)}}" role="button">Sponsorizzami</a></li>
                 </ul>
             </div>
         </div>
     </div>
 </div>
+
+
+
+<div class="row justify-content-center row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 ">
+    @forelse ($sponsors as $sponsor)
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title text-center">{{$sponsor->name}}</h4>
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    Utilizza questo pacchetto per usufruire di <strong>{{$sponsor->duration}}</strong> ore di vantaggi!
+                </p>
+            </div>
+
+            <div class="card-footer">
+                <p class="card-text">Prezzo: <strong>{{$sponsor->price}}</strong> €</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    @empty
+    Sponsor non applicabili
+    @endforelse
+</div>
+
 @endsection

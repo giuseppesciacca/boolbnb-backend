@@ -6,6 +6,9 @@ use App\Models\Sponsor;
 use App\Http\Requests\StoreSponsorRequest;
 use App\Http\Requests\UpdateSponsorRequest;
 use App\Http\Controllers\Controller;
+use App\Models\Apartment;
+use Illuminate\Support\Facades\Auth;
+
 
 class SponsorController extends Controller
 {
@@ -44,12 +47,21 @@ class SponsorController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Sponsor  $sponsor
+     * @param  \App\Models\Apartment  $apartment
      * @return \Illuminate\Http\Response
      */
-    public function show(Sponsor $sponsor)
+    public function show(Sponsor $sponsor, Apartment $apartment)
     {
-        //
+        //passo l'appartamento singolo attraverso lo show di apartment, e da lì lo mando allo show di sponsors
+
+        //$single_apartment = Apartment::all();
+        // dd($apartment);
+
+        $apartments = Apartment::where('id', '=', '$apartment->id')->get();
+
+        //dd($apartments);
+
+        return view('admin.sponsors.show', compact('apartments', 'sponsors'));
     }
 
     /**

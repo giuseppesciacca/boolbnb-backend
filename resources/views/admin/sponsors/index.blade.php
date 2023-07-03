@@ -3,12 +3,12 @@
 @section('content')
 
 <div class="container">
-    <h1 class="text-center"> Vuoi sponsorizzare il tuo appartamento per potere avere un incremento di prenotazioni?</h1>
+    <h1 class="text-center">Sponsorizza il tuo appartamento per metterlo in risalto</h1>
 
-    <h4 class="text-center">In questa sezione puoi scegliere il tipo di sponsorizzazione che desideri</h4>
+    <h4 class="text-center">A cosa serve la sponsorizzazione?</h4>
 
-    <p> La sponsorizzazione permetterà al tuo appartamento di:</p>
-    <ul>
+    <p class="pt-4"> La sponsorizzazione permetterà al tuo appartamento di:</p>
+    <ul class="pb-5">
         <li>
             Farlo apparire in Homepage nella sezione “Appartamenti in Evidenza”;
         </li>
@@ -18,7 +18,7 @@
         </li>
     </ul>
 
-    <div class="row justify-content-center row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+    <div class="row justify-content-center row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 ">
         @forelse ($sponsors as $sponsor)
         <div class="col">
             <div class="card">
@@ -44,7 +44,11 @@
         @endforelse
     </div>
 
-    <p>
+    <p class="pt-3">
+        Per sponsorizzare un appartamento, vai su -> <strong>Appartamenti</strong> -> clicca sull'icona a forma di occhio per visualizzare l'appartamento che desideri sponsorizzare "<i class="fa-solid fa-eye"></i>" e clicca su -> <strong>Sponsorizzami</strong>. Da lì potrai scegliere uno dei tre tipi di sponsorizzazione sopra esposti.
+    </p>
+
+    <p class="py-3">
         Terminato il periodo di sponsorizzazione, l’appartamento tornerà ad essere
         visualizzato normalmente. Potrai acquistare nuovamente il pacchetto promozionale quando vorrai.
     </p>
