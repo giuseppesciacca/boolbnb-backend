@@ -84,7 +84,12 @@ class ApartmentController extends Controller
      */
     public function edit(Apartment $apartment)
     {
-        return view('admin.apartments.edit', compact('apartment'));
+        if (Auth::id() === $apartment->user_id) {
+
+            return view('admin.apartments.edit', compact('apartment'));
+  
+        }
+        abort(403);
     }
 
     /**
@@ -97,7 +102,7 @@ class ApartmentController extends Controller
     public function update(UpdateApartmentRequest $request, Apartment $apartment)
     {
         $val_data = $request->validated();
-        $slug = apartment::genetareSlug($val_data['title']);
+        $slug = Apartment::generateSlug($val_data['title']);
         $val_data['slug'] = $slug;
         $apartment->update($val_data);
         /* dd($val_data); */

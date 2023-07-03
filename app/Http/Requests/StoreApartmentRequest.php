@@ -30,10 +30,10 @@ class StoreApartmentRequest extends FormRequest
             'title' => 'required',
             'image' => 'nullable',
             'description' => 'nullable',
-            'rooms' => 'required',
-            'bathrooms' => 'required',
-            'beds' => 'required',
-            'square_meters' => 'required',
+            'rooms' => 'required|numeric|min:1|max:120',
+            'bathrooms' => 'required|numeric|min:1|max:120',
+            'beds' => 'required|numeric|min:1|max:120',
+            'square_meters' => 'required|numeric|min:10|max:120',
             'address' => 'required',
             'visibility' => 'nullable'
         ];

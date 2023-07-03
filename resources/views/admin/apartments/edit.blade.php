@@ -5,12 +5,12 @@
 <div class="bg-light py-3">
 
     <div class="container">
-    @include('admin.partials.validation_errors')
+        @include('admin.partials.validation_errors')
         <h5 class="text-uppercase text-muted my-4">Add a new Apartment</h5>
 
-        <form action="{{route('admin.apartments.store')}}" method="post" enctype="multipart/form-data">
+        <form action="{{route('admin.apartments.update', $apartment)}}" method="post" enctype="multipart/form-data">
             @csrf
-
+            @method('PUT')
             <div class="mb-3">
                 <label for="title" class="form-label">Title <!-- (*) --></label>
                 <input value="{{ old('name', $apartment->title) }} " type="text" name="title" id="title" class="form-control @error('title') is-invalid @enderror" placeholder="Apartment title here " aria-describedby="nameHelper" required>
@@ -92,7 +92,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="address" class="form-label">address <!-- (*) --></label>
+                <label for="address" class="form-label">address</label>
                 <input value="{{ old('address', $apartment->address) }} " type="text" name="address" id="address" class="form-control @error('address') is-invalid @enderror" placeholder="Apartment address here " aria-describedby="nameHelper" required>
                 <small>complete address here</small>
                 @error('address')
@@ -104,27 +104,13 @@
 
             <div>
                 <label>
-                    <input type="radio" name="check button" id="visibility" value="0">Visible</label>
+                    <input type="radio" name="visibility" id="visibility" value="1">Visible
+                </label>
                 <label>
-                    <input type="radio" name="check button" id="visibility" value="0">Not visible</label>
-            </div>{{-- controllare come passare valori diversi, nel db è sattato come tinyint non booleano(?) --}}
-            <script>
-                $(document).ready(function() {
-                    $(".checkRadioBtn1").click(function() {
-                        $("#radiobtn1").prop("checked", true);
-                    });
-                    $(".checkRadioBtn2").click(function() {
-                        $("#radiobtn2").prop("checked", false);
-                    });
-                });
-            </script>
-                        <button type="submit" class="btn btn-primary w-100 my-4">Save</button>
-
-                        <p>
-                            <!--  -->
-                            <!-- (*) -> required! -->
-                        </p>
-            
+                    <input type="radio" name="visibility" id="visibility" value="0">Not visible
+                </label>
+                <button type="submit" class="btn btn-primary w-100 my-4">Save</button>
+            </div>
         </form>
     </div>
 

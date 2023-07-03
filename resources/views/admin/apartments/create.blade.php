@@ -31,7 +31,6 @@
                     <input type="file" name="image" id="image"
                         class="form-control @error('image') is-invalid @enderror" placeholder="Apartment image here "
                         aria-describedby="imageHelper">
-
                     @error('image')
                         <div class="alert alert-danger" role="alert">
                             <strong>Errore: </strong>{{ $message }}
@@ -123,20 +122,10 @@
 
                 <div>
                     <label>
-                        <input type="radio" name="check button" id="visibility" value="0">Visible</label>
+                        <input type="radio" name="visibility" id="visibility" value="1">Visible</label>
                     <label>
-                        <input type="radio" name="check button" id="visibility" value="0">Not visible</label>
+                        <input type="radio" name="visibility" id="visibility" value="0">Not visible</label>
                 </div>{{-- controllare come passare valori diversi, nel db è sattato come tinyint non booleano(?) --}}
-                <script>
-                    $(document).ready(function() {
-                        $(".checkRadioBtn1").click(function() {
-                            $("#radiobtn1").prop("checked", true);
-                        });
-                        $(".checkRadioBtn2").click(function() {
-                            $("#radiobtn2").prop("checked", false);
-                        });
-                    });
-                </script>
                             <button type="submit" class="btn btn-primary w-100 my-4">Save</button>
 
                             <p>
