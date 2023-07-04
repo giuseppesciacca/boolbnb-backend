@@ -29,6 +29,11 @@ class Apartment extends Model
         'visibility',
     ];
 
+    //method of converting attributes to common data types.
+    protected $casts = [
+        'image' => 'array'
+    ];
+
     public static function generateSlug($title) {
         return Str::slug($title, '-');
     }

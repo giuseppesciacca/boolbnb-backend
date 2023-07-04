@@ -71,11 +71,18 @@ class ApartmentController extends Controller
             $new_apartment->services()->sync($val_data['services']);
         }
 
+        $images = [];
+
         //add image
         if ($request->hasFile('image')) {
-            $img_path = Storage::put('uploads', $request->image);
+
+            foreach ($val_data['image'] as $image) {
+                $img_path = Storage::put('uploads', $image);
+                array_push($images, $img_path);
+            }
             
-            $new_apartment->image = $img_path;
+            $new_apartment->image = $images;
+            //dd($new_apartment->image = $images);
             $new_apartment->save();
         }
         
