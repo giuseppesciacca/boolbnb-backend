@@ -19,6 +19,13 @@
 
                     {{ __('You are logged in!') }}
                 </div>
+                <div class="card-footer">
+                    <p>create apartment</p>
+                    <p>index apartment / auth</p>
+                    <p>lista messaggi single apartment</p>
+                    <p>lista sponsor / auth</p>
+                    <p>pagina statics sinle apartment</p>
+                </div>
             </div>
         </div>
     </div>

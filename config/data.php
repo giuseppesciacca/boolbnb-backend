@@ -395,4 +395,41 @@ return [
             "price" => 9.99,
         ],
     ],
+    "messages" => [
+        [
+            "name" => 'Luca',
+            "surname" => 'Boolbnb',
+            "email" => 'bool@bnb.com',
+            "message" => 'Congratulazioni per aver registrato il tuo primo Boolbnb!',
+            "apartment_id" => 1,
+        ],
+        [
+            "name" => 'Luca',
+            "surname" => 'Boolbnb',
+            "email" => 'bool@bnb.com',
+            "message" => 'Congratulazioni per aver registrato il tuo primo Boolbnb!',
+            "apartment_id" => 5,
+        ],
+        [
+            "name" => 'Domiziano',
+            "surname" => 'Boolbnb',
+            "email" => 'bool@bnb.com',
+            "message" => 'Congratulazioni per aver registrato il tuo primo Boolbnb!',
+            "apartment_id" => 9,
+        ],
+        [
+            "name" => 'Carmelo',
+            "surname" => 'Boolbnb',
+            "email" => 'bool@bnb.com',
+            "message" => 'Congratulazioni per aver registrato il tuo primo Boolbnb!',
+            "apartment_id" => 13,
+        ],
+        [
+            "name" => 'Giuseppe',
+            "surname" => 'Boolbnb',
+            "email" => 'bool@bnb.com',
+            "message" => 'Congratulazioni per aver registrato il tuo primo Boolbnb!',
+            "apartment_id" => 17,
+        ],
+    ],
 ];
