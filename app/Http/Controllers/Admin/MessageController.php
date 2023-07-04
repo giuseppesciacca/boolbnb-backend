@@ -7,6 +7,8 @@ use App\Http\Requests\StoreMessageRequest;
 use App\Http\Requests\UpdateMessageRequest;
 use App\Http\Controllers\Controller;
 use App\Models\Apartment;
+use Illuminate\Support\Facades\Auth;
+
 
 class MessageController extends Controller
 {
@@ -18,11 +20,10 @@ class MessageController extends Controller
     public function index()
     {
         $messages = Message::all();
-        /*   $apartment_message = Message::where('apartment_id', '=', '$apartment->id'); */
-          /* dd($messages); */
-          $apartments_message = Apartment::join('messages', 'apartment_id', '=', 'apartments.id')->get();
-          /* dd($apartment); */
-          return view('admin.messages.index', compact('messages','apartments_message'));
+
+        $apartments_message = Apartment::join('messages', 'apartment_id', '=', 'apartments.id')->get();
+
+        return view('admin.messages.index', compact('messages', 'apartments_message'));
     }
 
     /**
@@ -55,7 +56,7 @@ class MessageController extends Controller
     public function show(Message $message)
     {
         $apartment = Apartment::where('user_id', Auth::user()->id)->orderByDesc('id');
-    
+
         return view('admin.messages.show', compact('apartment', 'message'));
     }
 
