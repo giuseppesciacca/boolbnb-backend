@@ -32,7 +32,6 @@ class ApartmentSeeder extends Seeder
             $newApartment->longitude = $apartment["longitude"];
             $newApartment->visibility = $apartment["visibility"];
             $newApartment->save();
-            // before seeding the apartments insert in the db at least 3 users
         }
     }
 }

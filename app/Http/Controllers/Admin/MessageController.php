@@ -19,9 +19,13 @@ class MessageController extends Controller
      */
     public function index()
     {
-        $messages = Message::all();
+        $messages = Message::all();   
 
         $apartments_message = Apartment::join('messages', 'apartment_id', '=', 'apartments.id')->get();
+
+        //dd($messages);
+        //dd($apartments_message[0]->user_id);
+        //dd(Auth::user()->id);
 
         return view('admin.messages.index', compact('messages', 'apartments_message'));
     }

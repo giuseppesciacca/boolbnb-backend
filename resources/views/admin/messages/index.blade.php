@@ -15,7 +15,7 @@
                 <th scope="col">Cognome</th>
                 <th scope="col">Email</th>
                 <th scope="col">Corpo messaggio</th>
-                <th scope="col">Riceuto </th>
+                <th scope="col">Ricevuto</th>
                 <th scope="col">Actions</th>
             </tr>
         </thead>
@@ -31,7 +31,7 @@
                 <td scope="row">{{ $message->name }}</td>
                 <td>{{ $message->surname }}</td>
                 <td>{{ $message->email }}</td>
-                <td>{{ $message->messages }}</td>
+                <td>{{ $message->message }}</td>
                 <td>{{ $message->created_at }}</td>
                 <td>
                     <a href="{{ route('admin.messages.show', $message->id) }}"><i class="fa-solid fa-eye"></i></a>
