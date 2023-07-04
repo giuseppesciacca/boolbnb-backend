@@ -28,9 +28,9 @@
 
                 <div class="mb-3">
                     <label for="image" class="form-label">Image</label>
-                    <input type="file" name="image" id="image"
+                    <input type="file" name="image[]" id="image"
                         class="form-control @error('image') is-invalid @enderror" placeholder="Apartment image here "
-                        aria-describedby="imageHelper">
+                        aria-describedby="imageHelper" accept="image/*" multiple>
                     @error('image')
                         <div class="alert alert-danger" role="alert">
                             <strong>Errore: </strong>{{ $message }}

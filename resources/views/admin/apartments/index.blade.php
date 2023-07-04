@@ -34,8 +34,11 @@
                 <td scope="row">{{$apartment->id}}</td>
                 <td scope="row">{{$apartment->title}}</td>
                 <td class="text-center">
-                    <img class="img-fluid" style="height: 100px; width:160px; object-fit:cover;" src=" {{ asset('storage/' . $apartment->image) }}" alt="{{$apartment->title}}" >
-
+                @forelse($apartment->image as $image)
+                    <img class="img-fluid" style="height: 100px; width:160px; object-fit:cover;" src=" {{ asset('storage/' . $image) }}">
+                @empty
+                    <p>nessuna immagine</p>
+                @endforelse
                 </td>
                 <td>{{$apartment->rooms}}</td>
                 <td>{{$apartment->bathrooms}}</td>
