@@ -25,24 +25,22 @@
 
             @forelse ($messages as $index => $message)
             <tr>
-                <td>
-                    {{ $apartments_message[$index]->title }}
-                </td>
+                <td> {{ $message->title }} </td>
                 <td scope="row">{{ $message->name }}</td>
                 <td>{{ $message->surname }}</td>
                 <td>{{ $message->email }}</td>
                 <td>{{ $message->message }}</td>
                 <td>{{ $message->created_at }}</td>
-                <td>
-                    <a href="{{ route('admin.messages.show', $message->id) }}"><i class="fa-solid fa-eye"></i></a>
 
-                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modalId-{{ $message->id }}">
+                <td>
+                    <a href="{{ route('admin.messages.show', $message->alias_message_id, $message->user_id) }}"><i class="fa-solid fa-eye"></i></a>
+
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modalId-{{ $message->alias_message_id }}">
                         <i class="fa-solid fa-trash-can" style="color: #dc3545"></i>
                     </button>
 
-
                     <!-- Modal -->
-                    <div class="modal fade" id="modalId-{{ $message->id }}" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+                    <div class="modal fade" id="modalId-{{ $message->alias_message_id }}" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
                         <div class="modal-dialog" role="dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -55,7 +53,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <form action="{{ route('admin.messages.destroy', $message) }}" method="post">
+                                    <form action="{{ route('admin.messages.destroy', $message->alias_message_id) }}" method="post">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-danger" type="submit">Confirm</button>

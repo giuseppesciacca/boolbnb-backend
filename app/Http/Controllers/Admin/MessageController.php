@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateMessageRequest;
 use App\Http\Controllers\Controller;
 use App\Models\Apartment;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 
 class MessageController extends Controller
@@ -19,15 +20,21 @@ class MessageController extends Controller
      */
     public function index()
     {
-        $messages = Message::all();   
+        //JOINO la tabella messages CON apartaments sull'id dell'appartamento (apartment_id), DOVE user_id di apartments è uguale all'utente loggato
 
-        $apartments_message = Apartment::join('messages', 'apartment_id', '=', 'apartments.id')->get();
+        $messages = Message::join('apartments', 'apartment_id', '=', 'apartments.id')->where('apartments.user_id', '=', Auth::user('id')->id)->select('*', 'messages.id AS alias_message_id')->get();
+
+        /* SELECT *,
+         messages.id AS message_id
+        FROM `messages`
+        JOIN apartments ON apartment_id = apartments.id
+        WHERE apartments.user_id = 5; */
 
         //dd($messages);
-        //dd($apartments_message[0]->user_id);
-        //dd(Auth::user()->id);
 
-        return view('admin.messages.index', compact('messages', 'apartments_message'));
+        //dd(Auth::user('id'));
+
+        return view('admin.messages.index', compact('messages'));
     }
 
     /**
