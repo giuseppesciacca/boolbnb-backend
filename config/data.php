@@ -15,7 +15,7 @@ return [
             "address" => "Località Le Vigne 33",
             "latitude" => 42.89141188623318,
             "longitude" => 11.809547392644987,
-            "image" => "https://a0.muscache.com/im/pictures/prohost-api/Hosting-39771862/original/23793f38-85c9-47ea-96ef-50dd4f11466f.jpeg?im_w=1200",
+            "image" => ["uploads\/fattorialapalazzina.jpg", "uploads\/placeholder.png"],
             "visibility" => true,
         ],
         [
@@ -32,7 +32,7 @@ return [
             "address" => "Via Parodi 93",
             "latitude" => 42.21264578962415,
             "longitude" => 12.947923463818976,
-            "image" => "https://a0.muscache.com/im/pictures/4dd6ee68-59bc-419e-a19e-778f00a3ebe0.jpg?im_w=1200",
+            "image" => ["uploads\/turanoresort.jpg", "uploads\/placeholder.png"],
             "visibility" => true,
         ],
         [
@@ -48,7 +48,7 @@ return [
             "address" => "Località Belvedere 104",
             "latitude" => 42.660168207455975,
             "longitude" => 11.98118202490433,
-            "image" => "https://a0.muscache.com/im/pictures/miso/Hosting-45418154/original/3c7bf836-b080-4868-995e-50e5a8d69db3.jpeg?im_w=1440",
+            "image" => ["uploads\/agriturismobelvedere.jpg", "uploads\/placeholder.png"],
             "visibility" => true,
         ],
         [
@@ -67,7 +67,7 @@ return [
             "address" => "Strada di Siano 7",
             "latitude" => 42.56515249051238,
             "longitude" => 12.342549851095253,
-            "image" => "https://a0.muscache.com/im/pictures/762adcf0-578b-436d-9e8b-556c361503f3.jpg?im_w=1200",
+            "image" => ["uploads\/agriturismosanvalentino.jpg", "uploads\/placeholder.png"],
             "visibility" => true,
         ],
         [
@@ -82,7 +82,7 @@ return [
             "address" => "Via Labicana 121",
             "latitude" => 41.89050061784863,
             "longitude" => 12.495990605548805,
-            "image" => "https://a0.muscache.com/im/pictures/miso/Hosting-51684650/original/c8252eab-5eda-43b6-b02c-add2c5db6cf3.jpeg?im_w=1200",
+            "image" => ["uploads\/colosseoluxury.jpg", "uploads\/placeholder.png"],
             "visibility" => true,
         ],
         [
@@ -96,7 +96,7 @@ return [
             "address" => "Località Badia 1",
             "latitude" => 43.46236452258962,
             "longitude" => 11.144357847203532,
-            "image" => "https://a0.muscache.com/im/pictures/5dc109f3-16c7-4396-85e9-be91f76bdc86.jpg?im_w=1200",
+            "image" => ["uploads\/castellodibadia.jpg", "uploads\/placeholder.png"],
             "visibility" => true,
         ],
         [
@@ -113,7 +113,7 @@ return [
             "address" => "Via Porto 3",
             "latitude" => 45.91567211232653,
             "longitude" => 9.13127250413188,
-            "image" => "https://a0.muscache.com/im/pictures/f950a557-6211-4d29-88a0-9230d828cc30.jpg?im_w=1440",
+            "image" => ["uploads\/villalafilanda.jpg", "uploads\/placeholder.png"],
             "visibility" => true,
         ],
         [
@@ -130,7 +130,7 @@ return [
             "address" => "Contrada Sarmuci",
             "latitude" => 38.05138357669833,
             "longitude" => 12.812228080538704,
-            "image" => "https://a0.muscache.com/im/pictures/miso/Hosting-883986644711312475/original/df6f0493-3de5-4087-b539-08ff6a0e87a5.jpeg?im_w=1440",
+            "image" => ["uploads\/villaclaudia.jpg", "uploads\/placeholder.png"],
             "visibility" => true,
         ],
         [
@@ -148,7 +148,7 @@ return [
             "address" => "Via Roma 123",
             "latitude" => 46.21979065094765,
             "longitude" => 8.212583986569298,
-            "image" => "https://a0.muscache.com/im/pictures/03d1a59c-672d-4c10-80ec-3dce231fc643.jpg?im_w=1440",
+            "image" => ["uploads\/chaletlabarona.jpg", "uploads\/placeholder.png"],
             "visibility" => true,
         ],
         [
@@ -163,7 +163,7 @@ return [
             "address" => "Via Volterrana 103",
             "latitude" => 43.735452397573766,
             "longitude" => 11.213682876010525,
-            "image" => "https://a0.muscache.com/im/pictures/monet/Select-1621152/original/acfdd2d4-30a3-4c51-876b-09070ac3bc28?im_w=1440",
+            "image" => ["uploads\/casabarthel.jpg", "uploads\/placeholder.png"],
             "visibility" => true,
         ],
         [
@@ -178,7 +178,7 @@ return [
             "address" => "Via per Montepiatto 2",
             "latitude" => 45.85586461710952,
             "longitude" => 9.120057066349089,
-            "image" => "https://a0.muscache.com/im/pictures/40706270/81c0585d_original.jpg?im_w=1200",
+            "image" => ["uploads\/villatorno.jpg", "uploads\/placeholder.png"],
             "visibility" => true,
         ],
         [
@@ -193,7 +193,7 @@ return [
             "address" => "Via Torre Marroia V",
             "latitude" => 38.01697539918121,
             "longitude" => 13.588323714343336,
-            "image" => "https://a0.muscache.com/im/pictures/miso/Hosting-27545878/original/681ade9a-f39b-48e2-a39e-967273f2a38a.jpeg?im_w=1200",
+            "image" => ["uploads\/olivaus.jpg", "uploads\/placeholder.png"],
             "visibility" => true,
         ],
         [
@@ -207,7 +207,7 @@ return [
             "address" => "Via la Piana 13",
             "latitude" => 41.0561274035788,
             "longitude" => 8.951664135467695,
-            "image" => "https://a0.muscache.com/im/pictures/6b6800e1-da4e-4d55-a3c9-b3d46ce45027.jpg?im_w=1200",
+            "image" => ["uploads\/villaalbanella.jpg", "uploads\/placeholder.png"],
             "visibility" => true,
         ],
         [
@@ -222,7 +222,7 @@ return [
             "address" => "Via Castello 1",
             "latitude" => 44.51293202476255,
             "longitude" => 8.13699392916237,
-            "image" => "https://a0.muscache.com/im/pictures/35ce00dd-f914-40fa-aa0b-d058b7ce922b.jpg?im_w=1200",
+            "image" => ["uploads\/magicalfarmhouse.jpg", "uploads\/placeholder.png"],
             "visibility" => true,
         ],
         [
@@ -237,7 +237,7 @@ return [
             "address" => "Str. Vicinale Brionis 12",
             "latitude" => 40.527392041407836,
             "longitude" => 8.343505924938894,
-            "image" => "https://a0.muscache.com/im/pictures/35ce00dd-f914-40fa-aa0b-d058b7ce922b.jpg?im_w=1200",
+            "image" => ["uploads\/villabrionis.jpg", "uploads\/placeholder.png"],
             "visibility" => true,
         ],
         [
@@ -252,7 +252,7 @@ return [
             "address" => "Via Portatrici di Limoni 39",
             "latitude" => 40.653752375701636,
             "longitude" => 14.626970994517722,
-            "image" => "https://a0.muscache.com/im/pictures/miso/Hosting-646227597847119231/original/ec224492-abd0-4edc-a29d-a15ca53d9e4b.jpeg?im_w=1440",
+            "image" => ["uploads\/villaprimavera.jpg", "uploads\/placeholder.png"],
             "visibility" => true,
         ],
         [
@@ -267,7 +267,7 @@ return [
             "address" => "Via del Castello 1",
             "latitude" => 42.802324730887946,
             "longitude" => 10.734913503563064,
-            "image" => "https://a0.muscache.com/im/pictures/45d517c7-55c4-42a4-8ded-5aa2c882d291.jpg?im_w=1200",
+            "image" => ["uploads\/castellopuntaala.jpg", "uploads\/placeholder.png"],
             "visibility" => true,
         ],
         [
@@ -281,7 +281,7 @@ return [
             "address" => "Via per Cestaglia",
             "latitude" => 46.02667375402622,
             "longitude" => 9.295301468599769,
-            "image" => "https://a0.muscache.com/im/pictures/4520aeed-0652-41ea-94d9-de62d257b50f.jpg?im_w=1200",
+            "image" => ["uploads\/villasilvi.jpg", "uploads\/placeholder.png"],
             "visibility" => true,
         ],
         [
@@ -295,7 +295,7 @@ return [
             "address" => "Cima Bianca",
             "latitude" => 46.42052537996924,
             "longitude" => 10.411121726286272,
-            "image" => "https://a0.muscache.com/im/pictures/57f34b36-5157-4f4c-bf23-bb523238a68c.jpg?im_w=1200",
+            "image" => ["uploads\/chaletlevissima.jpg", "uploads\/placeholder.png"],
             "visibility" => true,
         ],
         [
@@ -309,7 +309,7 @@ return [
             "address" => "Via Guglielmo Marconi 130",
             "latitude" => 40.62907296513033,
             "longitude" => 14.488612010731204,
-            "image" => "https://a0.muscache.com/im/pictures/pro_photo_tool/Hosting-21660322-unapproved/original/3fd5d582-df80-43c0-970d-f9189e58fcc3.JPEG?im_w=1440",
+            "image" => ["uploads\/lacasadinunzia.jpg", "uploads\/placeholder.png"],
             "visibility" => true,
         ],
     ],
