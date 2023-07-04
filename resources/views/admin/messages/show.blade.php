@@ -11,7 +11,7 @@
                         <li><strong>nome</strong> {{$message->name}}</li>
                         <li><strong>cognome:</strong> {{$message->surname}}</li>
                         <li><strong>email:</strong> {{$message->email}}</li>
-                        <li><strong>message:</strong> {{$message->messages}}</li>
+                        <li><strong>message:</strong> {{$message->message}}</li>
                     </ul>
                 </div>
             </div>
