@@ -5,7 +5,11 @@
     <div class="row row-cols-1 row-cols-md-2">
         <div class="col">
             <div class="card text-left">
-                <img class="card-img-top" src="{{$apartment->image}}" alt="{{$apartment->title}}">
+                @forelse($apartment->image as $image)
+                <img class="img-fluid" style="height: 100px; width:160px; object-fit:cover;" src=" {{ asset('storage/' . $image) }}">
+                @empty
+                <p>nessuna immagine</p>
+                @endforelse
             </div>
         </div>
         <div class="col">

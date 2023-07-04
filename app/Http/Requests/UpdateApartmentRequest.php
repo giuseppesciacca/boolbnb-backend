@@ -28,7 +28,7 @@ class UpdateApartmentRequest extends FormRequest
 
             'user_id' => 'exists:users,id',
             'title' => 'required',
-            'image' => 'nullable|max:2048',
+            'image.*' => 'nullable|max:2048|mimes:jpg,jpeg,png,bmp',
             'description' => 'nullable',
             'rooms' => 'required|numeric|min:1|max:50',
             'bathrooms' => 'required|numeric|min:1|max:25',
