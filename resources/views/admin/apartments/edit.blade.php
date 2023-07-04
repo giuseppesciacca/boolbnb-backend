@@ -25,7 +25,7 @@
 
             <div class="mb-3">
                 <label for="image" class="form-label">Immagine</label>
-                <input type="file" name="image" id="image" class="form-control @error('image') is-invalid @enderror" placeholder="Apartment image here " aria-describedby="imageHelper">
+                <input type="file" name="image[]" id="image" class="form-control @error('image') is-invalid @enderror" placeholder="Apartment image here " aria-describedby="imageHelper" accept="image/*" multiple>
 
                 @error('image')
                 <div class="alert alert-danger" role="alert">
@@ -127,7 +127,7 @@
                 <label>
                     <input type="radio" name="visibility" id="visibility" value="0" {{ old('visibility', $apartment->visibility) === 0 ? 'checked' : '' }}>Non visibile
                 </label>
-                <button type="submit" class="btn btn-primary w-100 my-4">Save</button>
+                <button type="submit" class="btn btn-primary w-100 my-4">Salva</button>
             </div>
         </form>
     </div>

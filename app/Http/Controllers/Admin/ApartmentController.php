@@ -141,12 +141,19 @@ class ApartmentController extends Controller
         }
 
         //validate image
+        $images = [];
         if ($request->hasFile('image')) {
             if ($apartment['image']) {
+                foreach ($val_data['image'] as $image) {
                 Storage::delete($apartment->image);
+                }
             }
-            $img_path = Storage::put('uploads', $request->image);
-            $val_data['image'] = $img_path;
+
+            foreach ($val_data['image'] as $image) {
+                $img_path = Storage::put('uploads', $image);
+                array_push($images, $img_path);
+            }
+            $val_data['image'] = $images;
         }
 
 
