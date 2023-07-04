@@ -6,6 +6,7 @@ use App\Models\Message;
 use App\Http\Requests\StoreMessageRequest;
 use App\Http\Requests\UpdateMessageRequest;
 use App\Http\Controllers\Controller;
+use App\Models\Apartment;
 
 class MessageController extends Controller
 {
@@ -16,7 +17,12 @@ class MessageController extends Controller
      */
     public function index()
     {
-    
+        $messages = Message::all();
+        /*   $apartment_message = Message::where('apartment_id', '=', '$apartment->id'); */
+          /* dd($messages); */
+          $apartments_message = Apartment::join('messages', 'apartment_id', '=', 'apartments.id')->get();
+          /* dd($apartment); */
+          return view('admin.messages.index', compact('messages','apartments_message'));
     }
 
     /**
