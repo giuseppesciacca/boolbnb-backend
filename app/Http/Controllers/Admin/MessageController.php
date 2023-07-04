@@ -59,9 +59,13 @@ class MessageController extends Controller
      */
     public function show(Message $message)
     {
-        $apartment = Apartment::where('user_id', Auth::user()->id)->orderByDesc('id');
+        //$apartment = Apartment::select('title')->orderByDesc('id')->get();
+        //$apartment = Apartment::where('user_id', Auth::user()->id)->orderByDesc('id');
+        $apartment_title = Apartment::join('messages', 'apartment_id', '=', 'apartments.id')->get();
 
-        return view('admin.messages.show', compact('apartment', 'message'));
+        //dd($apartment_title[0]->title);
+
+        return view('admin.messages.show', compact('apartment_title', 'message'));
     }
 
     /**

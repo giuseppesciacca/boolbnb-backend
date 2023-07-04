@@ -65,10 +65,10 @@
                                 <a class="text-light fw-bold text-decoration-none" href="{{ route('admin.dashboard') }}">Dashboard</a>
                             </li>
                             <li class="p-3 rounded-3 mb-3 {{ str_starts_with(Route::currentRouteName(), 'admin.apartments') ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
-                                <a class="text-light fw-bold text-decoration-none" href="{{ route('admin.apartments.index') }}">Apartments</a>
+                                <a class="text-light fw-bold text-decoration-none" href="{{ route('admin.apartments.index') }}">Appartamenti</a>
                             </li>
                             <li class="p-3 rounded-3 mb-3 {{ str_starts_with(Route::currentRouteName(), 'admin.messages') ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
-                                <a class="text-light fw-bold text-decoration-none" href="{{ route('admin.messages.index') }}">Messages</a>
+                                <a class="text-light fw-bold text-decoration-none" href="{{ route('admin.messages.index') }}">Inbox</a>
                             </li>
                             <li class="p-3 rounded-3 mb-3 {{ str_starts_with(Route::currentRouteName(), 'admin.sponsors') ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
                                 <a class="text-light fw-bold text-decoration-none" href="{{ route('admin.sponsors.index') }}">Sponsorship</a>
