@@ -6,9 +6,6 @@ use App\Models\Message;
 use App\Http\Requests\StoreMessageRequest;
 use App\Http\Requests\UpdateMessageRequest;
 use App\Http\Controllers\Controller;
-use App\Models\Apartment;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
 
 class MessageController extends Controller
 {
@@ -19,9 +16,7 @@ class MessageController extends Controller
      */
     public function index()
     {
-        $messages = Message::all();
-
-        return view('admin.messages.index', compact('messages'));
+    
     }
 
     /**
