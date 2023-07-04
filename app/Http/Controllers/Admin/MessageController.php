@@ -30,10 +30,6 @@ class MessageController extends Controller
         JOIN apartments ON apartment_id = apartments.id
         WHERE apartments.user_id = 5; */
 
-        //dd($messages);
-
-        //dd(Auth::user('id'));
-
         return view('admin.messages.index', compact('messages'));
     }
 
@@ -66,13 +62,31 @@ class MessageController extends Controller
      */
     public function show(Message $message)
     {
-        //$apartment = Apartment::select('title')->orderByDesc('id')->get();
-        //$apartment = Apartment::where('user_id', Auth::user()->id)->orderByDesc('id');
-        $apartment_title = Apartment::join('messages', 'apartment_id', '=', 'apartments.id')->get();
+        //dd($message); //messaggio 7
+        //dd($message->apartment_id); 17 
 
-        //dd($apartment_title[0]->title);
+        //prendi l'utente che ha ricevuto questo messaggio per l'appartamento (17)?
+        //dobbiamo rispondere a questa domanda: l'utente autenticato è lo stesso di quello che ha ricevuto il messaggio?
+        //in altre parole, chi è l'utente per l'appartamento (17) che ha ricevuto il messaggio?
+        /* SELECT * 
+        FROM users 
+        JOIN apartments ON users.id = apartments.user_id 
+        JOIN messages ON messages.apartment_id = apartments.id
+        WHERE apartment_id= 17; */
 
-        return view('admin.messages.show', compact('apartment_title', 'message'));
+        $recipient = User::join('apartments', 'users.id', '=', 'apartments.user_id')->join('messages', 'apartment_id', '=', 'apartments.id')->where('apartment_id', '=', $message->apartment_id)->select('users.id as user_id')->first();
+
+        //dd($recipient->user_id); //5
+
+        if (Auth::id() === $recipient->user_id) {
+            //se l'utente loggato è lo stesso che ha ricevuto il messaggio allora:
+
+            //prendo l'appartamento specifico che ha ricevuto il messaggio, così gli posso passare alcuni dati come il titolo per esempio
+            $apartment = Apartment::where('apartments.id', '=', $message->apartment_id)->first();
+
+            return view('admin.messages.show', compact('message', 'apartment'));
+        }
+        abort(403);
     }
 
     /**
