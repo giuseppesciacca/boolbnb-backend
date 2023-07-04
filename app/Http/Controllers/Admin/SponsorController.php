@@ -6,6 +6,9 @@ use App\Models\Sponsor;
 use App\Http\Requests\StoreSponsorRequest;
 use App\Http\Requests\UpdateSponsorRequest;
 use App\Http\Controllers\Controller;
+use App\Models\Apartment;
+use Illuminate\Support\Facades\Auth;
+
 
 class SponsorController extends Controller
 {
@@ -16,7 +19,8 @@ class SponsorController extends Controller
      */
     public function index()
     {
-        //
+        $sponsors = Sponsor::orderBy('id')->get();
+        return view('admin.sponsors.index', compact('sponsors'));
     }
 
     /**
@@ -43,12 +47,21 @@ class SponsorController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Sponsor  $sponsor
+     * @param  \App\Models\Apartment  $apartment
      * @return \Illuminate\Http\Response
      */
-    public function show(Sponsor $sponsor)
+    public function show($apartment)
     {
-        //
+        //passo l'appartamento singolo attraverso lo show di apartments, e da lì lo mando qui, allo show di sponsors
+        $sponsors = Sponsor::orderBy('id')->get();
+
+        $apartment = Apartment::where('slug', '=', $apartment)->first();
+
+        if (Auth::id() === $apartment->user_id) {
+
+            return view('admin.sponsors.show', compact('apartment', 'sponsors'));
+        }
+        abort(403);
     }
 
     /**
