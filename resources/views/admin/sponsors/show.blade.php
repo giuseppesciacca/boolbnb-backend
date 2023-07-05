@@ -10,8 +10,13 @@
             <div class="col">
                 <div class="card text-left">
 
+                    @if ($apartment->image)
+
                     <img class="img-fluid" src=" {{ asset('storage/' . $apartment->image[0]) }}">
 
+                    @else
+                    <img class="img-fluid" src=" {{ asset('storage/' . 'uploads/placeholder.png') }}">
+                    @endif
                 </div>
             </div>
             <div class="col">

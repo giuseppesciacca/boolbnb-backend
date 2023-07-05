@@ -27,12 +27,16 @@
                 <label for="image" class="form-label pb-3">Immagine</label>
                 <br>
 
-                @forelse($apartment->image as $image)
+                @if ($apartment->image)
+                @foreach($apartment->image as $image)
                 <img class="img-fluid" style="height: 75px; width:75px; object-fit:cover;" src=" {{ asset('storage/' . $image) }}">
-                @empty
-                <p>nessuna immagine</p>
-                @endforelse
-                <input type="file" name="image[]" id="image" class="pt-3 form-control @error('image') is-invalid @enderror" placeholder="Apartment image here " aria-describedby="imageHelper" accept="image/*" multiple>
+                @endforeach
+
+                @else
+                <p>Nessuna immagine precedentemente caricata</p>
+                @endif
+
+                <input type="file" name="image[]" id="image" class="mt-3 form-control @error('image') is-invalid @enderror" placeholder="Apartment image here " aria-describedby="imageHelper" accept="image/*" multiple>
 
                 @error('image')
                 <div class="alert alert-danger" role="alert">
