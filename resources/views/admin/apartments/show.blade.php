@@ -5,11 +5,15 @@
     <div class="row row-cols-1 row-cols-md-2">
         <div class="col">
             <div class="card text-left">
-                @forelse($apartment->image as $image)
+                @if ($apartment->image)
+                @foreach($apartment->image as $image)
                 <img class="img-fluid" style="height: 100px; width:160px; object-fit:cover;" src=" {{ asset('storage/' . $image) }}">
-                @empty
-                <p>nessuna immagine</p>
-                @endforelse
+                @endforeach
+
+                @else
+                <img class="img-fluid" src=" {{ asset('storage/' . 'uploads/placeholder.png') }}">
+
+                @endif
             </div>
         </div>
         <div class="col">
