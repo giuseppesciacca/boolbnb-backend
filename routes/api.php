@@ -20,4 +20,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+//rotta api per tutti gli appartamenti, inclusi di sponsor e servizi
 Route::get('/apartments', [ApartmentController::class, 'index']);
+
+//rotta api per singolo appartamento, incluso di sponsor e servizi
+Route::get('/apartments/{apartment:slug}', [ApartmentController::class, 'show']);
