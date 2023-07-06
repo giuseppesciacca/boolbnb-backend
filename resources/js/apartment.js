@@ -44,8 +44,8 @@ const checkboxSpanElement = document.getElementById("span-multi-check-box");
 
 const admitFormats = [".jpg", ".jpeg", ".png", ".bmp"];
 
-const atLeastOneChecked = checkboxArray.some(function (checkbox) {
-    return checkbox.checked;
+const atLeastOneChecked = checkboxArray.some(function (checkboxElement) {
+    return checkboxElement.checked;
 });
 
 formElement.addEventListener("submit", (e) => {
@@ -62,7 +62,7 @@ formElement.addEventListener("submit", (e) => {
         e.preventDefault();
         titleSpanElement.classList.remove("d-none");
     }
-/*     for (let i = 0; i < admitFormats.length; i++) {
+    /*     for (let i = 0; i < admitFormats.length; i++) {
         const format = admitFormats[i];
         if (imageElement.includes(format)) {
             return;
@@ -75,6 +75,34 @@ formElement.addEventListener("submit", (e) => {
         e.preventDefault();
         SpanElement.classList.remove('d-none');
     } */
+
+    // Aggiungi un listener per l'evento change dell'input
+    imageElement.addEventListener("change", function () {
+        // Controlla se è stato selezionato un file
+        if (imageElement.files && imageElement.files.length > 0) {
+            // Ottieni il primo file selezionato
+            const file = imageElement.files[0];
+
+            // Ottieni il tipo del file
+            const fileType = file.type;
+
+            // Controlla il tipo del file
+            if (
+                fileType === "image/bmp" ||
+                fileType === "image/jpg" ||
+                fileType === "image/jpeg" ||
+                fileType === "image/png"
+            ) {
+                console.log("Il file è un'immagine JPEG o PNG.");
+            } else {
+                console.log("Il tipo di file non è supportato.");
+            }
+        } else {
+            // Nessun file selezionato
+            console.log("Nessun file selezionato!");
+        }
+    });
+
     if (
         (!isNaN(roomElement.value) && roomElement.value < 1) ||
         (!isNaN(roomElement.value) && roomElement.value > 50) ||
