@@ -30,7 +30,7 @@
 
         <div class="mb-3">
             <label for="image" class="form-label">Immagine</label>
-            <input type="file" name="image[]" id="image" class="form-control @error('image') is-invalid @enderror" placeholder="Apartment image here " aria-describedby="imageHelper" accept="image/*" multiple>
+            <input type="file" name="image[]" id="image" class="form-control @error('image') is-invalid @enderror" placeholder="Inserisci la foto dell'appartamento" aria-describedby="imageHelper" accept="image/*" multiple>
             <small>Puoi inserire più immagini dei seguenti formati: JPG, JPEG, PNG, BMP.</small>
 
             @error('image')
@@ -43,6 +43,7 @@
 
         <div class="mb-3">
             <label for="description" class="form-label">Descrizione</label>
+
             <textarea cols="30" rows="5" name="description" id="description" class="form-control @error('description') is-invalid @enderror" placeholder="Descrizione dell'appartamento" aria-describedby="nameHelper"></textarea>
 
             @error('description')
@@ -147,6 +148,8 @@
                 const inputAddress = document.querySelector('.tt-search-box-input');
                 inputAddress.setAttribute("id", "address") //aggiungo id="address"
                 inputAddress.setAttribute("name", "address") //aggiungo name="address"
+                inputAddress.setAttribute("placeholder", "Inserire indirizzo qui") //aggiungo placeholder
+                inputAddress.setAttribute("required", ""); //aggiungo required
             </script>
 
         </div>
