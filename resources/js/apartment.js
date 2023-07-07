@@ -44,10 +44,6 @@ const checkboxSpanElement = document.getElementById("span-multi-check-box");
 
 const admitFormats = [".jpg", ".jpeg", ".png", ".bmp"];
 
-const atLeastOneChecked = checkboxArray.some(function (checkboxElement) {
-    return checkboxElement.checked;
-});
-
 formElement.addEventListener("submit", (e) => {
     titleSpanElement.classList.add("d-none");
     imageSpanElement.classList.add("d-none");
@@ -58,6 +54,11 @@ formElement.addEventListener("submit", (e) => {
     sqmtSpanElement.classList.add("d-none");
     addressSpanElement.classList.add("d-none");
     checkboxSpanElement.classList.add("d-none");
+
+    const atLeastOneChecked = checkboxArray.some(function (checkboxElement) {
+        return checkboxElement.checked;
+    });
+
     if (!isNaN(titleElement.value)) {
         e.preventDefault();
         titleSpanElement.classList.remove("d-none");
@@ -77,7 +78,7 @@ formElement.addEventListener("submit", (e) => {
     } */
 
     // Aggiungi un listener per l'evento change dell'input
-    imageElement.addEventListener("change", function () {
+    /* imageElement.addEventListener("change", function () {
         // Controlla se è stato selezionato un file
         if (imageElement.files && imageElement.files.length > 0) {
             // Ottieni il primo file selezionato
@@ -101,7 +102,7 @@ formElement.addEventListener("submit", (e) => {
             // Nessun file selezionato
             console.log("Nessun file selezionato!");
         }
-    });
+    }); */
 
     if (
         (!isNaN(roomElement.value) && roomElement.value < 1) ||
