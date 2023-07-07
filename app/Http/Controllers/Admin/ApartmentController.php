@@ -218,7 +218,7 @@ class ApartmentController extends Controller
         $apartment->update($val_data);
 
 
-        return to_route('admin.apartments.index')->with('message', 'apartment: ' . $apartment->title . ' Updated');
+        return to_route('admin.apartments.index')->with('message', 'Appartamento: ' . $apartment->title . ' modificato');
     }
 
     /**
@@ -234,6 +234,6 @@ class ApartmentController extends Controller
             Storage::delete($apartment->image);
         }
         $apartment->delete();
-        return to_route('admin.apartments.index')->with('message', 'apartment: ' . $apartment->title . ' Deleted');
+        return to_route('admin.apartments.index')->with('message', 'Appartamento: ' . $apartment->title . ' eliminato');
     }
 }

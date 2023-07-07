@@ -181,7 +181,7 @@
             <div class="form-check row row-cols-4 d-flex">
                 @foreach($services as $service)
                 <label class="form-check-label" for="{{ $service->name }}">
-                    <input name="services[]" class="form-check-input" type="checkbox" value="{{ $service->id }}" id="{{ $service->name }}" {{ in_array($service->id, old('services', [])) ? 'checked' : '' }}>
+                    <input name="services[]" class="form-check-input multi-check-box" type="checkbox" value="{{ $service->id }}" id="{{ $service->name }}" {{ in_array($service->id, old('services', [])) ? 'checked' : '' }}>
                     {{ $service->name }}
                 </label>
                 @endforeach
