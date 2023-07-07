@@ -8,6 +8,13 @@
                 <h1 class="text-center"></h1>
                 <ul class="list-unstyled">
                     <li class="py-2"><strong>Messaggio per l' appartamento:</strong> {{$apartment->title}}</li>
+                    <li>
+                        @if ($apartment->image)
+                        <img class="img-fluid" style="height: 100px" src=" {{ asset('storage/' . $apartment->image[0]) }}">
+                        @else
+                        <img class="img-fluid" src=" {{ asset('storage/' . 'uploads/placeholder.png') }}">
+                        @endif
+                    </li>
                     <li><strong>Messaggio numero:</strong> {{$message->id}}</li>
                     <li><strong>Da:</strong> {{$message->name}} {{$message->surname}}</li>
                     <li><strong>e-mail:</strong> {{$message->email}}</li>

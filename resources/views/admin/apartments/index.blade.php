@@ -2,24 +2,21 @@
 
 @section('content')
 
-<h1 class="text-center my-3">I MIEI APPARTMAMENTI - INDEX</h1>
+<h1 class="text-center my-3">I MIEI APPARTMAMENTI</h1>
 @include('admin.partials.session_message')
 
 <div class="container-fluid bg-light py-3">
-    <!-- <h5>Add new Project</h5> -->
+
     <a href="{{route('admin.apartments.create')}}"><i class="fa-solid fa-plus fa-2x"></i></a>
-    <!-- INSERIRE BOTTONE PER AGGIUNGERE APARTMENTS -->
     <table class="table table-striped m-0 py-5">
         <thead>
             <tr>
-                <th scope="col">#ID</th>
                 <th scope="col">Title</th>
                 <th scope="col">Preview image</th>
                 <th scope="col">n_stanze</th>
                 <th scope="col">n_bagni</th>
                 <th scope="col">n_letti</th>
                 <th scope="col">mq</th>
-                <th scope="col">description</th>
                 <th scope="col">indirizzo</th>
                 <th scope="col">servizi</th>
                 <th scope="col">Visibile</th>
@@ -31,16 +28,18 @@
 
             @forelse ($apartments as $apartment)
             <tr>
-                <td scope="row">{{$apartment->id}}</td>
                 <td scope="row">{{$apartment->title}}</td>
                 <td class="text-center">
-                    <img class="img-fluid" style="height: 100px; width:160px; object-fit:cover;" src=" {{ asset('storage/' . $apartment->image[0]) }}">
+                    @if ($apartment->image)
+                    <img class="img-fluid" style="height: 100px; width:160px; object-fit:cover;" src=" {{ asset('storage/' . $apartment->image[0]) }}" alt="{{$apartment->slug}}">
+                    @else
+                    <img class="img-fluid" src=" {{ asset('storage/' . 'uploads/placeholder.png') }}">
+                    @endif
                 </td>
                 <td>{{$apartment->rooms}}</td>
                 <td>{{$apartment->bathrooms}}</td>
                 <td>{{$apartment->beds}}</td>
                 <td>{{$apartment->square_meters}}</td>
-                <td>{{$apartment->description}}</td>
                 <td>{{$apartment->address}}</td>
                 {{-- roba da levare l'ho messa giusto per vedere che funziona --}}
                 <td>
@@ -63,33 +62,29 @@
                         <div class="modal-dialog" role="dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="modalTitleId">Delete "{{$apartment->title}}" apartment?</h1>
+                                    <h1 class="modal-title fs-5" id="modalTitleId">Cancella appartamento "{{$apartment->title}}"?</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    Are you sure to delete this apartment?
+                                    Sei sicuro di eliminare questo appartamento?
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
                                     <form action="{{route('admin.apartments.destroy', $apartment)}}" method="post">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn btn-danger" type="submit">Confirm</button>
+                                        <button class="btn btn-danger" type="submit">Conferma</button>
                                     </form>
 
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Optional: Place to the bottom of scripts -->
-                    <script>
-                        const myModal = new bootstrap.Modal(document.getElementById('{{ $apartment->id }}'), options)
-                    </script>
                 </td>
             </tr>
 
             @empty
-            <p>No apartments yet</p>
+            <p>Nessun appartamento caricato</p>
         </tbody>
         @endforelse
 
