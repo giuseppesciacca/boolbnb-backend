@@ -11,7 +11,7 @@
 
     <h5 class="text-uppercase text-muted pb-3">Aggiungi un nuovo appartamento</h5>
 
-    <form action="{{ route('admin.apartments.store') }}" method="post" enctype="multipart/form-data">
+    <form id="custom-form" action="{{ route('admin.apartments.store') }}" method="post" enctype="multipart/form-data">
         @csrf
 
         <div class="mb-3">

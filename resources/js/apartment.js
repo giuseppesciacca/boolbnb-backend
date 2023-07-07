@@ -44,8 +44,6 @@ const checkboxSpanElement = document.getElementById("span-multi-check-box");
 
 let admitCheckbox = false;
 
-//console.log(imageElement, "we");
-
 formElement.addEventListener("submit", (e) => {
     titleSpanElement.classList.add("d-none");
     imageSpanElement.classList.add("d-none");
@@ -116,7 +114,6 @@ formElement.addEventListener("submit", (e) => {
 
 // Aggiungi un listener per l'evento change dell'input
 imageElement.addEventListener("change", function () {
-    console.log(imageElement, "we");
     // Controlla se è stato selezionato un file
     if (imageElement.files && imageElement.files.length > 0) {
         // Ottieni il primo file selezionato
