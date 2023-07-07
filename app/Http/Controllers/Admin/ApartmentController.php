@@ -108,9 +108,6 @@ class ApartmentController extends Controller
             $new_apartment->save();
         }
 
-
-
-
         return to_route('admin.apartments.index')->with('message', 'Appartamento aggiunto');
     }
 
@@ -181,6 +178,41 @@ class ApartmentController extends Controller
             }
             $val_data['image'] = $images;
         }
+
+        /* ***** call api GET to tomtom -> convert address in latitude longitude */
+        $base_url = 'https://api.tomtom.com/search/2/geocode/';
+        $address = $val_data['address'];   //via fardella 120 Trapani
+        $address_trasformed = str_replace(' ', '%20', $address); //via%20fardella%20120%20trapani
+        $after_address = '.json?storeResult=false&view=Unified&key=';
+        $key_tomtom = 'vPuUkOEvt9S93r8E98XRbrHJJG1Mz6Tr';
+
+        $final_query = $base_url . $address_trasformed . $after_address . $key_tomtom;
+        //es: https://api.tomtom.com/search/2/geocode/via%20fardella%20120%20trapani.json?storeResult=false&view=Unified&key=vPuUkOEvt9S93r8E98XRbrHJJG1Mz6Tr
+
+        $options = [
+            'http' => [
+                'method' => 'GET',
+                'header' => 'Content-Type: application/json',
+            ],
+        ];
+
+        $context = stream_context_create($options);
+        $response = file_get_contents($final_query, false, $context);
+
+        if ($response !== false) {
+            //converto la risposta json in array
+            $response_converted = json_decode($response);
+
+            //dd($response_converted);
+            //dd($response_converted->results[0]->position);
+        } else {
+            echo 'Errore nella chiamata GET';
+        }
+
+        /* ******** */
+
+        $val_data['latitude'] = $response_converted->results[0]->position->lat;
+        $val_data['longitude'] = $response_converted->results[0]->position->lon;
 
 
         $apartment->update($val_data);
