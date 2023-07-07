@@ -136,6 +136,10 @@ class ApartmentController extends Controller
         if ($request['services']) {
             $apartment->services()->sync($val_data['services']);
         }
+        if ($request['services'] === null) {
+            $apartment->services()->detach();
+        }
+        //dd($request['services']);
 
         //validate image
         $images = [];
