@@ -42,7 +42,9 @@ const addressSpanElement = document.getElementById("span-address");
 
 const checkboxSpanElement = document.getElementById("span-multi-check-box");
 
-const admitFormats = [".jpg", ".jpeg", ".png", ".bmp"];
+let admitCheckbox = false;
+
+console.log(imageElement, "we");
 
 formElement.addEventListener("submit", (e) => {
     titleSpanElement.classList.add("d-none");
@@ -63,46 +65,14 @@ formElement.addEventListener("submit", (e) => {
         e.preventDefault();
         titleSpanElement.classList.remove("d-none");
     }
-    /*     for (let i = 0; i < admitFormats.length; i++) {
-        const format = admitFormats[i];
-        if (imageElement.includes(format)) {
-            return;
-        } else if(!imageElement.value.includes(format)){
-            e.preventDefault();
-            imageSpanElement.classList.remove("d-none");
-        }
-    } */
+    if(admitCheckbox === false){
+        e.preventDefault();
+        imageSpanElement.classList.remove("d-none");
+    }
     /*     if(descriptionSpanElement.value){
         e.preventDefault();
         SpanElement.classList.remove('d-none');
     } */
-
-    // Aggiungi un listener per l'evento change dell'input
-    /* imageElement.addEventListener("change", function () {
-        // Controlla se è stato selezionato un file
-        if (imageElement.files && imageElement.files.length > 0) {
-            // Ottieni il primo file selezionato
-            const file = imageElement.files[0];
-
-            // Ottieni il tipo del file
-            const fileType = file.type;
-
-            // Controlla il tipo del file
-            if (
-                fileType === "image/bmp" ||
-                fileType === "image/jpg" ||
-                fileType === "image/jpeg" ||
-                fileType === "image/png"
-            ) {
-                console.log("Il file è un'immagine JPEG o PNG.");
-            } else {
-                console.log("Il tipo di file non è supportato.");
-            }
-        } else {
-            // Nessun file selezionato
-            console.log("Nessun file selezionato!");
-        }
-    }); */
 
     if (
         (!isNaN(roomElement.value) && roomElement.value < 1) ||
@@ -143,3 +113,31 @@ formElement.addEventListener("submit", (e) => {
     }
     // if (for the address)
 });
+
+// Aggiungi un listener per l'evento change dell'input
+imageElement.addEventListener("change", function () {
+    console.log(imageElement, "we");
+    // Controlla se è stato selezionato un file
+    if (imageElement.files && imageElement.files.length > 0) {
+        // Ottieni il primo file selezionato
+        const file = imageElement.files[0];
+
+        // Ottieni il tipo del file
+        const fileType = file.type;
+
+        // Controlla il tipo del file
+        if (
+            fileType === "image/bmp" ||
+            fileType === "image/jpg" ||
+            fileType === "image/jpeg" ||
+            fileType === "image/png"
+        ) {
+            console.log("Il file è un'immagine JPEG o PNG o JPG o BMP.");
+            return admitCheckbox = true
+        } else {
+            console.log("Il tipo di file non è supportato.");
+        }
+    }
+});
+
+
