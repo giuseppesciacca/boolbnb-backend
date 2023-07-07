@@ -48,20 +48,45 @@ class ApartmentController extends Controller
         $val_data = $request->validated();
         $slug = Apartment::generateSlug($val_data['title']);
 
-        //create new apartment
-        
-        //generate slug
-        
         //validata slug and user_id
         $val_data['slug'] = $slug;
         $val_data['user_id'] = Auth::id();
 
-        //generate static latitude and longitude
-        $latitude = 10.9876;
-        $longitude = 98.12134;
-        $val_data['latitude'] = $latitude;
-        $val_data['longitude'] = $longitude;
-        
+        /* ***** call api GET to tomtom -> convert address in latitude longitude */
+        $base_url = 'https://api.tomtom.com/search/2/geocode/';
+        $address = $val_data['address'];   //via fardella 120 Trapani
+        $address_trasformed = str_replace(' ', '%20', $address); //via%20fardella%20120%20trapani
+        $after_address = '.json?storeResult=false&view=Unified&key=';
+        $key_tomtom = 'vPuUkOEvt9S93r8E98XRbrHJJG1Mz6Tr';
+
+        $final_query = $base_url . $address_trasformed . $after_address . $key_tomtom;
+        //es: https://api.tomtom.com/search/2/geocode/via%20fardella%20120%20trapani.json?storeResult=false&view=Unified&key=vPuUkOEvt9S93r8E98XRbrHJJG1Mz6Tr
+
+        $options = [
+            'http' => [
+                'method' => 'GET',
+                'header' => 'Content-Type: application/json',
+            ],
+        ];
+
+        $context = stream_context_create($options);
+        $response = file_get_contents($final_query, false, $context);
+
+        if ($response !== false) {
+            //converto la risposta json in array
+            $response_converted = json_decode($response);
+
+            //dd($response_converted);
+            //dd($response_converted->results[0]->position);
+        } else {
+            echo 'Errore nella chiamata GET';
+        }
+
+        /* ******** */
+
+        $val_data['latitude'] = $response_converted->results[0]->position->lat;
+        $val_data['longitude'] = $response_converted->results[0]->position->lon;
+
         $new_apartment = Apartment::create($val_data);
 
         if ($request['services']) {
@@ -77,15 +102,15 @@ class ApartmentController extends Controller
                 $img_path = Storage::put('uploads', $image);
                 array_push($images, $img_path);
             }
-            
+
             $new_apartment->image = $images;
             //dd($new_apartment->image = $images);
             $new_apartment->save();
         }
-        
-        
-        
-        
+
+
+
+
         return to_route('admin.apartments.index')->with('message', 'Appartamento aggiunto');
     }
 
@@ -146,7 +171,7 @@ class ApartmentController extends Controller
         if ($request->hasFile('image')) {
             if ($apartment['image']) {
                 foreach ($val_data['image'] as $image) {
-                Storage::delete($apartment->image);
+                    Storage::delete($apartment->image);
                 }
             }
 

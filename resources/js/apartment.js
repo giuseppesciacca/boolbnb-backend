@@ -44,7 +44,7 @@ const checkboxSpanElement = document.getElementById("span-multi-check-box");
 
 let admitCheckbox = false;
 
-console.log(imageElement, "we");
+//console.log(imageElement, "we");
 
 formElement.addEventListener("submit", (e) => {
     titleSpanElement.classList.add("d-none");
@@ -65,7 +65,7 @@ formElement.addEventListener("submit", (e) => {
         e.preventDefault();
         titleSpanElement.classList.remove("d-none");
     }
-    if(admitCheckbox === false){
+    if (admitCheckbox === false) {
         e.preventDefault();
         imageSpanElement.classList.remove("d-none");
     }
