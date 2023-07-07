@@ -18,6 +18,9 @@
             <label for="title" class="form-label">Titolo (*)</label>
             <input type="text" name="title" id="title" class="form-control @error('title') is-invalid @enderror" placeholder="Titolo dell'appartamento" aria-describedby="nameHelper" required>
             <small>Massimo 255 caratteri</small>
+            <span id="span-title" class="d-none bg-danger text-dark" role="alert">
+                <strong>Il titolo non è valido</strong>
+            </span>
 
             @error('title')
             <div class="alert alert-danger" role="alert">
@@ -32,6 +35,9 @@
             <label for="image" class="form-label">Immagine</label>
             <input type="file" name="image[]" id="image" class="form-control @error('image') is-invalid @enderror" placeholder="Inserisci la foto dell'appartamento" aria-describedby="imageHelper" accept="image/*" multiple>
             <small>Puoi inserire più immagini dei seguenti formati: JPG, JPEG, PNG, BMP.</small>
+            <span id="span-image" class="d-none bg-danger text-dark" role="alert">
+                <strong>Il file caricato non è valido</strong>
+            </span>
 
             @error('image')
             <div class="alert alert-danger" role="alert">
@@ -45,6 +51,9 @@
             <label for="description" class="form-label">Descrizione</label>
 
             <textarea cols="30" rows="5" name="description" id="description" class="form-control @error('description') is-invalid @enderror" placeholder="Descrizione dell'appartamento" aria-describedby="nameHelper"></textarea>
+            <span id="span-description" class="d-none bg-danger text-dark" role="alert">
+                <strong>La descrizione inserita non è valida</strong>
+            </span>
 
             @error('description')
             <div class="alert alert-danger" role="alert">
@@ -57,6 +66,9 @@
         <div class="mb-3">
             <label for="rooms" class="form-label">Numero stanze (*)</label>
             <input type="number" name="rooms" id="rooms" class="form-control @error('rooms') is-invalid @enderror" placeholder="Inserire numero stanze" aria-describedby="imageHelper" min="1" max="50" step="1">
+            <span id="span-rooms" class="d-none bg-danger text-dark" role="alert">
+                <strong>Il numero delle camere non è valido</strong>
+            </span>
 
             @error('rooms')
             <div class="alert alert-danger" role="alert">
@@ -69,6 +81,9 @@
         <div class="mb-3">
             <label for="bathrooms" class="form-label">Numero bagni (*)</label>
             <input type="number" name="bathrooms" id="bathrooms" class="form-control @error('bathrooms') is-invalid @enderror" placeholder="Inserire numero bagni" aria-describedby="imageHelper" min="1" max="25" step="1">
+            <span id="span-bathrooms" class="d-none bg-danger text-dark" role="alert">
+                <strong>Il numero dei bagni non è valido</strong>
+            </span>
 
             @error('bathrooms')
             <div class="alert alert-danger" role="alert">
@@ -81,6 +96,9 @@
         <div class="mb-3">
             <label for="beds" class="form-label">Numero posti letto (*)</label>
             <input type="number" name="beds" id="beds" class="form-control @error('beds') is-invalid @enderror" placeholder="Numero posti letto" aria-describedby="imageHelper" min="1" max="25" step="1">
+            <span id="span-beds" class="d-none bg-danger text-dark" role="alert">
+                <strong>Il numero dei letti non è valido</strong>
+            </span>
 
             @error('beds')
             <div class="alert alert-danger" role="alert">
@@ -94,6 +112,9 @@
             <label for="square_meters" class="form-label">Metri quadri dell'appartamento (*)</label>
             <input type="number" name="square_meters" id="square_meters" class="form-control @error('square_meters') is-invalid @enderror" placeholder="Metri quadri dell'appartamento" aria-describedby="imageHelper" min="1" max="9999" step="1">
             <small>Minimo 30 mq</small>
+            <span id="span-square_meters" class="d-none bg-danger text-dark" role="alert">
+                <strong>Il numero dei metri quadrati non è valido</strong>
+            </span>
 
             @error('square_meters')
             <div class="alert alert-danger" role="alert">
