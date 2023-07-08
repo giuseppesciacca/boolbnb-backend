@@ -24,8 +24,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //rotta api per tutti gli appartamenti, inclusi di sponsor e servizi
 Route::get('/apartments', [ApartmentController::class, 'index']);
 
-//rotta per tutti i servizi
-Route::get('/services', [ServiceController::class, 'index']);
-
 //rotta api per singolo appartamento, incluso di sponsor e servizi
 Route::get('/apartments/{apartment:slug}', [ApartmentController::class, 'show']);
+
+//rotta per tutti i servizi
+Route::get('/services', [ServiceController::class, 'index']);
