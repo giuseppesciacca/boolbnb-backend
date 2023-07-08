@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
+
 <div class="container">
     <div class="row row-cols-1 row-cols-md-2">
         <div class="col">
@@ -30,6 +31,8 @@
                 </ul>
             </div>
         </div>
+        
     </div>
+    <a class="btn btn-primary my-3" href="{{ route('admin.apartments.index') }}" role="button">Return</a>
 </div>
 @endsection

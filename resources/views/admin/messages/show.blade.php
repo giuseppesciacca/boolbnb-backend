@@ -23,5 +23,6 @@
             </div>
         </div>
     </div>
+    <a class="btn btn-primary my-3" href="{{ route('admin.apartments.index') }}" role="button">Return</a>
 </div>
 @endsection
