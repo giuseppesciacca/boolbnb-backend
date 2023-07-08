@@ -203,8 +203,9 @@
             <small>Di default è settato su "visibile"</small>
         </div>
         <!-- /visibile -->
-
+        
         <button type="submit" class="btn btn-primary w-100 my-4">Aggiungi</button>
+        <a class="btn btn-primary my-3" href="{{ route('admin.apartments.index') }}" role="button">Return</a>
 
         <p>Dove presente "(*)" indica che il campo è obbligatorio.</p>
     </form>
