@@ -251,6 +251,7 @@
         <!-- /visibile -->
 
         <button type="submit" class="btn btn-primary w-100 my-4">Salva modifiche</button>
+        <a class="btn btn-primary my-3" href="{{ route('admin.apartments.index') }}" role="button">Return</a>
     </form>
 </div>
 
