@@ -18,7 +18,7 @@ class MessageController extends Controller
             'name' => 'required',
             'email' => 'required|email',
             'surname' => 'nullable',
-            'messages' => 'required',
+            'message' => 'required',
         ]);
         // controlla che la validazione vada a buon fine
         if ($validator->fails()) {
