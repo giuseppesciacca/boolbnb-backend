@@ -11,10 +11,11 @@ class ApartmentController extends Controller
     public function index()
     {
         $apartments = Apartment::with('services', 'sponsors')->orderBy('title')->paginate(8);
-
+        $all_apartments = Apartment::with('services', 'sponsors')->get();
         return response()->json([
             'success' => true,
-            'results' => $apartments
+            'results' => $apartments,
+            'all_apartments' => $all_apartments
         ]);
     }
 
