@@ -22,10 +22,6 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/mailable', function(){
-    $message = Message::all();
-    return new NewMessage($message);
-});
 
 Route::get('/', function () {
     return view('auth.login'); //prima pagina backend è il login, non welcome

@@ -32,6 +32,7 @@ class NewMessage extends Mailable
     {
         return new Envelope(
             from:'bool@bnb.com',
+            replyTo:$this->message->email,
             subject: 'New Message',
         );
     }
