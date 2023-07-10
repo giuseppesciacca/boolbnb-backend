@@ -21,7 +21,8 @@ class MessageController extends Controller
             'email' => 'required|email',
             'surname' => 'nullable',
             'message' => 'nullable',
-            'apartment_id' => 'nullable'        ]);
+            'id' => 'exists:apartment,id'     
+           ]);
         // controlla che la validazione vada a buon fine
         if ($validator->fails()) {
             return response()->json([
