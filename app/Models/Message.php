@@ -14,7 +14,7 @@ class Message extends Model
         'name',
         'surname',
         'email',
-        'messages',
+        'message',
         'apartment_id'
     ];
 
