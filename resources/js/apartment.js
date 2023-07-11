@@ -4,7 +4,7 @@ const formElement = document.getElementById("custom-form");
 
 const titleElement = document.getElementById("title");
 
-const imageElement = document.getElementById("image");
+/* const imageElement = document.getElementById("image"); */
 
 const descriptionElement = document.getElementById("description");
 
@@ -26,7 +26,7 @@ const checkboxArray = Array.from(checkboxElement);
 
 const titleSpanElement = document.getElementById("span-title");
 
-const imageSpanElement = document.getElementById("span-image");
+/* const imageSpanElement = document.getElementById("span-image"); */
 
 const descriptionSpanElement = document.getElementById("span-description");
 
@@ -113,7 +113,7 @@ formElement.addEventListener("submit", (e) => {
 });
 
 // Aggiungi un listener per l'evento change dell'input
-imageElement.addEventListener("change", function () {
+/* imageElement.addEventListener("change", function () {
     // Controlla se è stato selezionato un file
     if (imageElement.files && imageElement.files.length > 0) {
         // Ottieni il primo file selezionato
@@ -135,6 +135,6 @@ imageElement.addEventListener("change", function () {
             console.log("Il tipo di file non è supportato.");
         }
     }
-});
+}); */
 
 
