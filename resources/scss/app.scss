@@ -1,3 +1,13 @@
-@import '~bootstrap/scss/bootstrap'
+@use './partials/appHeader.scss';
+@use './root.scss' as *;
 
-// import i file *.scss use/import
+@import '~bootstrap/scss/bootstrap';
+
+body{
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    //background-image: url(/src/assets/logo.png);
+/*     .container{
+        background-color: $ourbnb-white;
+    } */
+}

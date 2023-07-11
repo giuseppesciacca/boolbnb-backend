@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comforter&family=Manrope:wght@400;600&family=Noto+Sans:wght@400;600;700;800&family=Outfit:wght@400;700&family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Grape+Nuts&family=Lato:wght@100;400&family=Manrope:wght@300;600&family=Odibee+Sans&display=swap" rel="stylesheet">
     <!-- TOMTOM -->
     <link rel="stylesheet" type="text/css" href="https://api.tomtom.com/maps-sdk-for-web/cdn/plugins/SearchBox/3.1.3-public-preview.0/SearchBox.css" />
     <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/plugins/SearchBox/3.1.3-public-preview.0/SearchBox-web.js"></script>
@@ -29,25 +29,28 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url('/') }}">
-                                <img src="{{asset('logo.png')}}" alt="Boolbnb" height="50px">
+                            <a class="nav-link" href="http://localhost:5174/">
+                                <img class="animated-img" src="{{asset('logo.png')}}" alt="Boolbnb" height="50px">
                             </a>
                         </li>
                     </ul>
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav gap-5">
                         <li class="nav-item">
-                            <a href="http://localhost:5174/" class="nav-link">Home Page</a>
+                            <a class="animated-span" href="http://localhost:5174/apartments" class="nav-link">{{ __('Appartamenti') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="animated-span" href="http://localhost:5174/about" class="nav-link">{{ __('Chi siamo') }}</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }}
+                                <span class="animated-span"><i class="fa-solid fa-circle-user fa-lg"></i> {{ Auth::user()->name }}</span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('admin.dashboard') }}">{{__('Dashboard')}}</a>
+                                <a class="dropdown-item animated-span letter-span" href="{{ route('admin.dashboard') }}">{{__('Dashboard')}}</a>
                                 <!-- <a class="dropdown-item" href="{{ url('profile') }}">{{__('Profile')}}</a> -->
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                <a class="dropdown-item animated-span letter-span" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
