@@ -84,8 +84,13 @@ class ApartmentController extends Controller
 
         /* ******** */
 
-        $val_data['latitude'] = $response_converted->results[0]->position->lat;
-        $val_data['longitude'] = $response_converted->results[0]->position->lon;
+        if ($response_converted->results) {
+            $val_data['latitude'] = $response_converted->results[0]->position->lat;
+            $val_data['longitude'] = $response_converted->results[0]->position->lon;
+        } else {
+            return redirect()->back()->withErrors('L\'indirizzo inserito non è corretto.');
+        }
+
 
         $new_apartment = Apartment::create($val_data);
 
@@ -211,9 +216,12 @@ class ApartmentController extends Controller
 
         /* ******** */
 
-        $val_data['latitude'] = $response_converted->results[0]->position->lat;
-        $val_data['longitude'] = $response_converted->results[0]->position->lon;
-
+        if ($response_converted->results) {
+            $val_data['latitude'] = $response_converted->results[0]->position->lat;
+            $val_data['longitude'] = $response_converted->results[0]->position->lon;
+        } else {
+            return redirect()->back()->withErrors('L\'indirizzo inserito non è corretto.');
+        }
 
         $apartment->update($val_data);
 

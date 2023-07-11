@@ -193,7 +193,7 @@
             <label for="visibility" class="form-label">Rendi visibile l'appartmento?</label>
             <br>
 
-            <input class="form-check-input" type="radio" name="visibility" id="visibility" value="1">
+            <input class="form-check-input" type="radio" name="visibility" id="visibility" value="1" checked>
             <label class="form-check-label" for="visibility">Si, rendilo visibile</label>
 
             <input class="form-check-input" type="radio" name="visibility" id="visibility" value="0">
@@ -203,7 +203,7 @@
             <small>Di default è settato su "visibile"</small>
         </div>
         <!-- /visibile -->
-        
+
         <button type="submit" class="btn btn-primary w-100 my-4">Aggiungi</button>
         <a class="btn btn-primary my-3" href="{{ route('admin.apartments.index') }}" role="button">Return</a>
 
