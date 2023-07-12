@@ -58,10 +58,7 @@
                         <p class="card-text">Prezzo: <strong>{{$sponsor->price}}</strong> €</p>
                     </div>
 
-                    <form id="custom-form" action="{{ route('admin.sponsors.store', $sponsor) }}" method="post" enctype="multipart/form-data">
-                        @csrf
-                        <button type="submit" class="btn btn-primary">Scegli</button>
-                    </form>
+                    <a name="" id="" class="btn btn-primary" href="{{route('admin.payments.create', ['apartment' => $apartment, 'sponsor' => $sponsor])}}" role=" button">Scegli</a>
 
                 </div>
             </div>
