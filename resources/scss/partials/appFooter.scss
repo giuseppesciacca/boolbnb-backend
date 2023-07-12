@@ -1,0 +1,59 @@
+@use "../root.scss" as *;
+
+footer{
+    background-color: $ourbnb-black;
+    ul{
+        color: $ourbnb-white;
+        font-size: 11px;
+        li{
+            span{
+                color: $ourbnb-white !important;
+            }
+            color: $ourbnb-white !important;
+            a{
+                color: $ourbnb-red;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.animated-li {
+    background-image: linear-gradient(to right,
+            $ourbnb-red,
+            $ourbnb-dark-red 50%,
+            $ourbnb-black 50%);
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 5px 0;
+    position: relative;
+    -webkit-background-clip: text;
+    //-webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.animated-li:before {
+    content: '';
+    background: $ourbnb-red;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+.animated-li:hover {
+    background-position: 0;
+}
+
+.animated-li:hover::before {
+    width: 100%;
+}
+
+.animated-li:active{
+    transition: all 0.1s ease-in-out;
+    transform: scale(0.8);
+}

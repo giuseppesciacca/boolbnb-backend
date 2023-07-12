@@ -29,21 +29,21 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="http://localhost:5174/">
+                            <a class="nav-link d-flex justify-content-center" href="http://localhost:5174/">
                                 <img class="animated-img" src="{{asset('logo.png')}}" alt="Boolbnb" height="50px">
                             </a>
                         </li>
                     </ul>
-                    <ul class="navbar-nav gap-5">
-                        <li class="nav-item">
+                    <ul class="navbar-nav gap-md-5">
+                        <li class="nav-item d-flex justify-content-center">
                             <a class="animated-span" href="http://localhost:5174/apartments" class="nav-link">{{ __('Appartamenti') }}</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item d-flex justify-content-center">
                             <a class="animated-span" href="http://localhost:5174/about" class="nav-link">{{ __('Chi siamo') }}</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav">
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown d-flex justify-content-center">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 <span class="animated-span"><i class="fa-solid fa-circle-user fa-lg"></i> {{ Auth::user()->name }}</span>
                             </a>
@@ -89,6 +89,7 @@
                 <hr>
             </div>
         </main>
+        @include('admin.partials.app_footer')
     </div>
     @yield('script')
 </body>

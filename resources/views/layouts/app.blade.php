@@ -97,6 +97,7 @@
         <main class="">
             @yield('content')
         </main>
+        @include('admin.partials.app_footer')
     </div>
     @yield('script')
 </body>
