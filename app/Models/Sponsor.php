@@ -17,7 +17,8 @@ class Sponsor extends Model
         'price',
     ];
 
-    public function apartments(): BelongsToMany {
-        return $this->belongsToMany(Apartment::class);
+    public function apartments(): BelongsToMany
+    {
+        return $this->belongsToMany(Apartment::class)->wherePivot('expire_date');
     }
 }
