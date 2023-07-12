@@ -1,7 +1,6 @@
 @extends('layouts.admin')
 
 @section('content')
-
 <section id="apartment">
     <div class="container">
         <h1 class="pb-3">Sponsorizza il tuo appartamento</h1>
@@ -56,6 +55,7 @@
 
                     <div class="card-footer">
                         <p class="card-text">Prezzo: <strong>{{$sponsor->price}}</strong> €</p>
+                        <button class="btn btn-warning"><a href="{{ route('admin.sponsors.edit', $sponsor) }}">Paga</a></button>
                     </div>
 
                 </div>
