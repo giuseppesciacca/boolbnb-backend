@@ -19,10 +19,7 @@
 
         <h3>Vuoi davvero applicare lo sponsor {{$sponsor->name}} per l'appartamento "{{$apartment->title}}"?</h3>
 
-        <!--  <input type="hidden" name="apartment_id" value="{{$apartment->id}}">
-        <input type="hidden" name="sponsor_id" value="{{$sponsor->id}}"> -->
-
-        <button type="submit" class="btn btn-primary">Si, Applica</button>
+        <button type="submit" class="btn btn-warning">Si, Applica</button>
     </form>
 </div>
 @endsection

@@ -53,7 +53,7 @@ class ApartmentSponsorController extends Controller
         $val_data['apartment_id'] = $request->apartment;
         $val_data['sponsor_id'] = $request->sponsor;
 
-        $val_data['start_date'] = Carbon::now()->timezone('Europe/Rome');;
+        $val_data['start_date'] = Carbon::now()->timezone('Europe/Rome');
 
         if ($request->sponsor == 1) {
             $expireDate = Carbon::now()->timezone('Europe/Rome')->addHours(24);
