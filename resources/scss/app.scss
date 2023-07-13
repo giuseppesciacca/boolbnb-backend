@@ -1,5 +1,6 @@
 @use './partials/appHeader.scss';
 @use './partials/appFooter.scss';
+@use './partials/main-login-signup.scss';
 @use './root.scss' as *;
 
 @import '~bootstrap/scss/bootstrap';
@@ -50,3 +51,4 @@ body{
     background-color: $ourbnb-red;
     color: white;
   }
+

@@ -1,6 +1,8 @@
 @use "../root.scss" as *;
 
 footer{
+    position:sticky;
+    z-index:1;
     background-color: $ourbnb-black;
     ul{
         color: $ourbnb-white;
