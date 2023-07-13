@@ -55,13 +55,28 @@ class ApartmentSponsorController extends Controller
 
         $val_data['start_date'] = Carbon::now()->timezone('Europe/Rome');
 
-        if ($request->sponsor == 1) {
-            $expireDate = Carbon::now()->timezone('Europe/Rome')->addHours(24);
-        } elseif ($request->sponsor == 2) {
-            $expireDate = Carbon::now()->timezone('Europe/Rome')->addHours(72);
+        /* $apartment_has_already_sponsor = ApartmentSponsor::join('apartments', 'apartment_id', '=', 'id')->where('apartments.id', '=', $request->apartment)->get();
+
+        dd($apartment_has_already_sponsor);
+ */
+        if ('ciao') {
+            if ($request->sponsor == 1) {
+                $expireDate = Carbon::now()->timezone('Europe/Rome')->addHours(24);
+            } elseif ($request->sponsor == 2) {
+                $expireDate = Carbon::now()->timezone('Europe/Rome')->addHours(72);
+            } else {
+                $expireDate = Carbon::now()->timezone('Europe/Rome')->addHours(144);
+            }
         } else {
-            $expireDate = Carbon::now()->timezone('Europe/Rome')->addHours(144);
+            if ($request->sponsor == 1) {
+                $expireDate = Carbon::now()->timezone('Europe/Rome')->addHours(24);
+            } elseif ($request->sponsor == 2) {
+                $expireDate = Carbon::now()->timezone('Europe/Rome')->addHours(72);
+            } else {
+                $expireDate = Carbon::now()->timezone('Europe/Rome')->addHours(144);
+            }
         }
+
 
         $val_data['expire_date'] = $expireDate;
 

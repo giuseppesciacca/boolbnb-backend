@@ -18,7 +18,6 @@ class SponsorSeeder extends Seeder
         $sponsors = config('data.sponsors');
         foreach ($sponsors as $sponsor) {
             $newSponsor = new Sponsor();
-            $newSponsor->sponsored = $sponsor["sponsored"];
             $newSponsor->name = $sponsor["name"];
             $newSponsor->duration = $sponsor["duration"];
             $newSponsor->price = $sponsor["price"];

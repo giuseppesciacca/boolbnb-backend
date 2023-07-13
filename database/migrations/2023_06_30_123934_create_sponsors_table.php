@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('sponsors', function (Blueprint $table) {
             $table->id();
-            $table->boolean('sponsored')->default(false);
             $table->string('name');
             $table->unsignedTinyInteger('duration');
             $table->decimal('price', 3, 2);
