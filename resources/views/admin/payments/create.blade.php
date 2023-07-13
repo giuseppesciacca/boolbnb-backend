@@ -22,9 +22,7 @@
         <h3>Vuoi davvero applicare lo sponsor {{$sponsor->name}} per l'appartamento "{{$apartment->title}}"?</h3>
 
         <div id="dropin-container"></div>
-        <button id="submit-button" type="submit" class="button button--small button--green">Purchase</button>
-
-        <!-- <button type="submit" class="btn btn-warning">Si, Applica</button> -->
+        <button id="submit-button" type="submit" class="button button--small button--green">Acquista</button>
     </form>
 </div>
 @endsection
