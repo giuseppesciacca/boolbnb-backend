@@ -13,7 +13,7 @@ class ApartmentController extends Controller
     {
         $apartments = Apartment::with('services', 'sponsors')->orderBy('title')->paginate(50);
         $all_apartments = Apartment::with('services', 'sponsors')->get();
-        $apartmentsSponsored = Apartment::join('apartment_sponsor', 'id', '=', 'apartment_id')->with('services', 'sponsors')->orderBy('title')->paginate(50)->where('expire_date', '>', Carbon::now()->timezone('Europe/Rome'));
+        $apartmentsSponsored = Apartment::join('apartment_sponsor', 'id', '=', 'apartment_id')->with('services', 'sponsors')->where('expire_date', '>', Carbon::now()->timezone('Europe/Rome'))->where('start_date', '<', Carbon::now()->timezone('Europe/Rome'))->orderBy('title')->paginate(50);
 
         return response()->json([
             'success' => true,
