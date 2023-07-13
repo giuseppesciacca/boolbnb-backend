@@ -18,8 +18,8 @@ return new class extends Migration
             $table->unsignedBigInteger('apartment_id');
             $table->unsignedBigInteger('sponsor_id');
 
-            $table->date('start_date');
-            $table->date('expire_date');
+            $table->dateTime('start_date');
+            $table->dateTime('expire_date');
 
             $table->timestamps();
 
