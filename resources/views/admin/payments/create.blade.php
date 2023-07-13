@@ -2,6 +2,8 @@
 
 @section('script')
 @vite(['resources/js/apartment.js'])
+@vite(['resources/js/payment.js'])
+
 @endsection
 
 @section('content')
@@ -19,7 +21,10 @@
 
         <h3>Vuoi davvero applicare lo sponsor {{$sponsor->name}} per l'appartamento "{{$apartment->title}}"?</h3>
 
-        <button type="submit" class="btn btn-warning">Si, Applica</button>
+        <div id="dropin-container"></div>
+        <button id="submit-button" type="submit" class="button button--small button--green">Purchase</button>
+
+        <!-- <button type="submit" class="btn btn-warning">Si, Applica</button> -->
     </form>
 </div>
 @endsection
