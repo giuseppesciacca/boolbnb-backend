@@ -18,11 +18,14 @@ return new class extends Migration
             $table->unsignedBigInteger('apartment_id');
             $table->unsignedBigInteger('sponsor_id');
 
+            $table->dateTime('start_date');
+            $table->dateTime('expire_date');
+
+            $table->timestamps();
+
             //foreign
             $table->foreign('apartment_id')->references('id')->on('apartments')->cascadeOnDelete();
             $table->foreign('sponsor_id')->references('id')->on('sponsors')->cascadeOnDelete();
-
-
         });
     }
 
