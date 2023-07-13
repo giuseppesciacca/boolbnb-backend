@@ -34,7 +34,7 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     Route::resource('/apartments', ApartmentController::class)->parameters(['apartments' => 'apartment:slug']);
     Route::resource('/views', ViewController::class);
     Route::resource('/messages', MessageController::class);
-    Route::resource('/sponsors', SponsorController::class);
+    Route::resource('/sponsors', SponsorController::class)->parameters(['sponsor' => 'sponsor:id']);
     Route::resource('/services', ServiceController::class);
 
     //Route::get('/payments/create/{apartment}/{sponsor}', [ApartmentSponsorController::class, 'create'])->name('admin.payments.create');

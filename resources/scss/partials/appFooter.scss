@@ -28,6 +28,7 @@ footer{
     display: inline-block;
     padding: 5px 0;
     position: relative;
+    background-clip: text;
     -webkit-background-clip: text;
     //-webkit-text-fill-color: transparent;
     transition: all 0.3s ease-in-out;
@@ -47,6 +48,7 @@ footer{
 
 .animated-li:hover {
     background-position: 0;
+    cursor: pointer;
 }
 
 .animated-li:hover::before {
