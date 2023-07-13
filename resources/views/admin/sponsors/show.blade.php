@@ -58,6 +58,8 @@
                         <button class="btn btn-warning"><a href="{{ route('admin.sponsors.edit', $sponsor) }}">Paga</a></button>
                     </div>
 
+                    <a name="" id="" class="btn btn-warning" href="{{route('admin.payments.create', ['apartment' => $apartment, 'sponsor' => $sponsor])}}" role=" button">Seleziona e vai al pagamento</a>
+
                 </div>
             </div>
 

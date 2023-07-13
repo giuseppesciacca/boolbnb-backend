@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ApartmentController;
+use App\Http\Controllers\Admin\ApartmentSponsorController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\Admin\ServiceController;
@@ -35,6 +36,10 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     Route::resource('/messages', MessageController::class);
     Route::resource('/sponsors', SponsorController::class)->parameters(['sponsor' => 'sponsor:id']);
     Route::resource('/services', ServiceController::class);
+
+    //Route::get('/payments/create/{apartment}/{sponsor}', [ApartmentSponsorController::class, 'create'])->name('admin.payments.create');
+
+    Route::resource('/payments', ApartmentSponsorController::class)->parameters(['apartment' => 'apartment', 'sponsor' => 'sponsor']);
 });
 
 /* Route::middleware('auth')->group(function () {
