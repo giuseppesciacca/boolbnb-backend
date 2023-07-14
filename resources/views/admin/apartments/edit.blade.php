@@ -249,9 +249,11 @@
             <small>Di default è settato su "visibile"</small>
         </div>
         <!-- /visibile -->
+        <div class="d-flex justify-content-end align-items-center gap-3 flex-wrap">
+            <button class="btn-2 text-decoration-none" href="{{ route('admin.apartments.index') }}" role="button">Indietro</button>
+            <button type="submit" class="btn-1 btn-1-green text-decoration-none">Salva Modifiche</button>
+        </div>
 
-        <button type="submit" class="btn btn-primary w-100 my-4">Salva modifiche</button>
-        <a class="btn btn-primary my-3" href="{{ route('admin.apartments.index') }}" role="button">Return</a>
     </form>
 </div>
 
