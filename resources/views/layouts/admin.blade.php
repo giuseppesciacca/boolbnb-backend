@@ -69,7 +69,7 @@
         <main id="main-admin" class="py-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-2">
+                    <div class="col-12 col-lg-2">
                         <ul class="list-unstyled">
                             <li class="p-3 rounded-3 mb-3 {{ Route::currentRouteName() === 'admin.dashboard' ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
                                 <a class="text-light fw-bold text-decoration-none" href="{{ route('admin.dashboard') }}">Dashboard</a>
@@ -85,7 +85,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-10">
+                    <div class="col-12 col-lg-10">
                         @yield('content')
                     </div>
                 </div>
