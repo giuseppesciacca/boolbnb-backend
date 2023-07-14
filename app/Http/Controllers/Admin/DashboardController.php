@@ -13,6 +13,6 @@ class DashboardController extends Controller
     {
         $user =  Auth::user()->name;
         $apartments = Apartment::orderByDesc("id")->get();
-        return view('admin.dashboard', compact('apartments'));
+        return view('admin.dashboard', compact('apartments', 'user'));
     }
 }
