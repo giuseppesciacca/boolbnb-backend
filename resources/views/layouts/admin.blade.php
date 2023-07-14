@@ -82,7 +82,7 @@
                                 <a class="text-light fw-bold text-decoration-none" href="{{ route('admin.messages.index') }}">Inbox</a>
                             </li>
                             <li class="p-3 w-100 btn-1 rounded-3 mb-3 btn-1 btn-1-orange {{ str_starts_with(Route::currentRouteName(), 'admin.sponsors') ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
-                                <a class="text-light fw-bold text-decoration-none" href="{{ route('admin.sponsors.index') }}">Sponsorship</a>
+                                <a class=" text-light fw-bold text-decoration-none" href="{{ route('admin.sponsors.index') }}">Sponsorship</a>
                             </li>
                         </ul>
                     </div>
