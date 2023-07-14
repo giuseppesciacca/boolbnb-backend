@@ -71,19 +71,6 @@ body {
   font-size: 0.875rem;
 }
 
-.button--green {
-  outline: none;
-  background-color: #64d18a;
-  border-color: #64d18a;
-  color: white;
-  transition: all 200ms ease;
-}
-
-.button--green:hover {
-  background-color: #8bdda8;
-  color: white;
-}
-
 .submit-button--red {
   outline: none;
   background-color: $ourbnb-dark-red;
@@ -94,7 +81,7 @@ body {
 
 .submit-button--red:hover {
   background-color: $ourbnb-red;
-  color: white;
+  color: $ourbnb-white;
 }
 
 /* #endregion BRAINTREE */
