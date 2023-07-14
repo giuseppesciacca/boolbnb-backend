@@ -51,11 +51,11 @@
                                     Are you sure to delete this message?
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn-2" data-bs-dismiss="modal">Close</button>
                                     <form action="{{ route('admin.messages.destroy', $message->alias_message_id) }}" method="post">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn btn-danger" type="submit">Confirm</button>
+                                        <button class="btn-1" type="submit">Confirm</button>
                                     </form>
 
                                 </div>

@@ -58,6 +58,13 @@
                                     <h1 class="modal-title fs-5" id="modalTitleId">Cancella appartamento "{{$apartment->title}}"?</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
+                                <div class="card-img-top mt-3">
+                                    @if ($apartment->image)
+                                    <img class="img-fluid" style="height: 300px; width:360px; object-fit:cover;" src=" {{ asset('storage/' . $apartment->image[0]) }}" alt="{{$apartment->slug}}">
+                                    @else
+                                    <img class="img-fluid" src=" {{ asset('storage/' . 'uploads/placeholder.png') }}">
+                                    @endif
+                                </div>
                                 <div class="modal-body">
                                     Sei sicuro di eliminare questo appartamento?
                                 </div>
