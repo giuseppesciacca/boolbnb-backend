@@ -18,12 +18,22 @@
         </li>
     </ul>
 
-    <div class="row justify-content-center row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 ">
+    <div class="row sponsorship justify-content-center row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
         @forelse ($sponsors as $sponsor)
         <div class="col">
             <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title text-center">{{$sponsor->name}}</h4>
+                <div class="card-header             
+                @if ($sponsor->name == 'Basic')
+                bg_bronze
+                @endif
+                @if ($sponsor->name == 'Advanced')
+                bg_silver 
+                @endif
+                @if ($sponsor->name == 'Premium')
+                bg_gold 
+                @endif
+                ">
+                    <h4 class="card-title text-center text-light fw-bold">{{$sponsor->name}}</h4>
                 </div>
                 <div class="card-body">
                     <p class="card-text">
@@ -31,8 +41,18 @@
                     </p>
                 </div>
 
-                <div class="card-footer">
-                    <p class="card-text">Prezzo: <strong>{{$sponsor->price}}</strong> €</p>
+                <div class="card-footer
+                @if ($sponsor->name == 'Basic')
+                bg_bronze 
+                @endif
+                @if ($sponsor->name == 'Advanced')
+                bg_silver 
+                @endif
+                @if ($sponsor->name == 'Premium')
+                bg_gold 
+                @endif
+                ">
+                    <p class="card-text text-light">Prezzo: <strong>{{$sponsor->price}}</strong> €</p>
                 </div>
 
             </div>
@@ -44,11 +64,11 @@
         @endforelse
     </div>
 
-    <p class="pt-3">
+    <p class="sponsor pt-3">
         Per sponsorizzare un appartamento, vai su -> <strong>Appartamenti</strong> -> clicca sull'icona a forma di occhio per visualizzare l'appartamento che desideri sponsorizzare "<i class="fa-solid fa-eye"></i>" e clicca su -> <strong>Sponsorizzami</strong>. Da lì potrai scegliere uno dei tre tipi di sponsorizzazione sopra esposti.
     </p>
 
-    <p class="py-3">
+    <p class="sponsor py-3">
         Terminato il periodo di sponsorizzazione, l’appartamento tornerà ad essere
         visualizzato normalmente. Potrai acquistare nuovamente il pacchetto promozionale quando vorrai.
     </p>

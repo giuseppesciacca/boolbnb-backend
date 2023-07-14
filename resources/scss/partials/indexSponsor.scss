@@ -1,0 +1,34 @@
+@use '../root.scss' as *;
+
+.bg_bronze {
+    background-color: $ourbnb-bronze !important;
+}
+
+.bg_silver {
+    background-color: $ourbnb-silver !important;
+}
+
+.bg_gold {
+    background-color: $ourbnb-gold !important;
+}
+
+.cursor_none {
+    cursor:auto !important;
+}
+
+.sponsorship .card:before {
+    content: "";
+    position: absolute;
+    height: 46px;
+    width: 290px;
+    background: $ourbnb-white;
+    left: 0px;
+    top: -30px;
+    transform: rotate(0);
+    transition: all .3s;
+    opacity: 0.3;
+}
+
+.sponsorship .card:hover:before {
+    top: 165px;
+}
