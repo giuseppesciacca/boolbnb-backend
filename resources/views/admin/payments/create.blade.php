@@ -22,7 +22,8 @@
         <h3>Vuoi davvero applicare lo sponsor {{$sponsor->name}} per l'appartamento "{{$apartment->title}}"?</h3>
 
         <div id="dropin-container"></div>
-        <button id="submit-button" type="submit" class="submit-button button--small submit-button--red">Acquista</button>
+        <button id="submit-button" type="submit" class="submit-button button--small submit-button--red" disabled>Acquista</button>
+        <a id="cancel-button" class="submit-button button--small submit-button--red" href="{{ URL::previous() }}">Annulla</a>
     </form>
 </div>
 @endsection
