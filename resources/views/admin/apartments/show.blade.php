@@ -27,12 +27,16 @@
                     <li><strong>Letti:</strong> {{$apartment->beds}}</li>
                     <li><strong>Metri quadrati:</strong> {{$apartment->square_meters}}</li>
                     <li><strong>Indirizzo:</strong> {{$apartment->address}}</li>
-                    <li> <a name="sponsor" id="sponsor" class="btn btn-warning" href="{{route('admin.sponsors.show', $apartment->slug)}}" role="button">Sponsorizzami</a></li>
-                </ul>
+                    </ul>
+                    <div class="mt-4 d-flex justify-content-end align-items-center flex-wrap gap-3">
+                        <a class="btn-2 text-decoration-none" href="{{ route('admin.apartments.index') }}" role="button">Indietro</a>
+                        <a name="sponsor" id="sponsor" class="btn-1 btn-1-blue text-decoration-none" href="{{route('admin.sponsors.show', $apartment->slug)}}" role="button">Sponsorizza</a>
+                    </div>
+                
             </div>
         </div>
-        
+
     </div>
-    <a class="btn btn-primary my-3" href="{{ route('admin.apartments.index') }}" role="button">Return</a>
+
 </div>
 @endsection

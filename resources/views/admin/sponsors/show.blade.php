@@ -53,9 +53,9 @@
                         </p>
                     </div>
 
-                    <div class="card-footer">
-                        <p class="card-text">Prezzo: <strong>{{$sponsor->price}}</strong> €</p>
-                        <a name="" id="" class="btn btn-warning text-primary" href="{{route('admin.payments.create', ['apartment' => $apartment, 'sponsor' => $sponsor])}}" role=" button">Seleziona e vai al pagamento</a>
+                    <div class="card-footer d-flex justify-content-between align-content-center">
+                        <p class="card-text d-flex align-items-center justify-content-center mb-0 gap-2">Prezzo: <strong>€{{$sponsor->price}}</strong></p>
+                        <a class="btn-1 text-decoration-none" href="{{route('admin.payments.create', ['apartment' => $apartment, 'sponsor' => $sponsor])}}" role=" button">Scegli</a>
                     </div>
 
                 </div>
