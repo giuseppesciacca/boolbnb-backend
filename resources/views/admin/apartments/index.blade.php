@@ -11,16 +11,11 @@
     <table class="table table-striped m-0 py-5">
         <thead>
             <tr>
-                <th scope="col">Title</th>
-                <th scope="col">Preview image</th>
-                <th scope="col">n_stanze</th>
-                <th scope="col">n_bagni</th>
-                <th scope="col">Sponsorizzato</th>
-                <th scope="col">mq</th>
-                <th scope="col">indirizzo</th>
-                <th scope="col">servizi</th>
-                <th scope="col">Visibile</th>
-                <th scope="col">Actions</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Immagine</th>
+                <th scope="col">Sponsor</th>
+                <th scope="col">Indirizzo</th>
+                <th class="text-center" scope="col">Azioni</th>
             </tr>
         </thead>
 
@@ -28,39 +23,29 @@
 
             @forelse ($apartments as $apartment)
             <tr>
-                <td scope="row">{{$apartment->title}}</td>
-                <td class="text-center">
+                <td class="action-td align-middle" scope="row">{{$apartment->title}}</td>
+                <td class="action-td align-middle">
                     @if ($apartment->image)
                     <img class="img-fluid" style="height: 100px; width:160px; object-fit:cover;" src=" {{ asset('storage/' . $apartment->image[0]) }}" alt="{{$apartment->slug}}">
                     @else
                     <img class="img-fluid" src=" {{ asset('storage/' . 'uploads/placeholder.png') }}">
                     @endif
                 </td>
-                <td>{{$apartment->rooms}}</td>
-                <td>{{$apartment->bathrooms}}</td>
-                <td> @foreach($is_sponsored as $sponsored)
+                <td class="action-td text-center align-middle"> @foreach($is_sponsored as $sponsored)
                     @if($apartment->title == $sponsored->title)
                     si
                     @endif
                     @endforeach
                 </td>
-                <td>{{$apartment->beds}}</td>
-                <td>{{$apartment->square_meters}}</td>
-                <td>{{$apartment->address}}</td>
+                <td class="action-td align-middle">{{$apartment->address}}</td>
                 {{-- roba da levare l'ho messa giusto per vedere che funziona --}}
-                <td>
-                    @foreach($apartment->services as $service)
-                    <div class="label label-info">{{ $service->name }} </div>
-                    @endforeach
-                </td>
-                <td>{{$apartment->visibility ? 'true' : 'false'}}</td>
-                <td>
-                    <a href="{{route('admin.apartments.show', $apartment->slug)}}"><i class="fa-solid fa-eye"></i></a>
+                <td class="action-td text-center align-middle">
+                    <a class="btn-1 btn-1-blue" href="{{route('admin.apartments.show', $apartment->slug)}}"><i class="fa-solid fa-eye"></i></a>
 
-                    <a href="{{route('admin.apartments.edit', $apartment->slug)}}"><i class="fa-solid fa-pencil"></i></a>
-                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modalId-{{$apartment->id}}">
-                        <i class="fa-solid fa-trash-can" style="color: #dc3545"></i>
-                    </button>
+                    <a class="btn-1 btn-1-orange" href="{{route('admin.apartments.edit', $apartment->slug)}}"><i class="fa-solid fa-pencil"></i></a>
+                    <a type="button" class="btn-1" data-bs-toggle="modal" data-bs-target="#modalId-{{$apartment->id}}">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </a>
 
 
                     <!-- Modal -->
@@ -75,11 +60,11 @@
                                     Sei sicuro di eliminare questo appartamento?
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                                    <button type="button" class="btn-2" data-bs-dismiss="modal">Chiudi</button>
                                     <form action="{{route('admin.apartments.destroy', $apartment)}}" method="post">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn btn-danger" type="submit">Conferma</button>
+                                        <button class="btn-1" type="submit">Conferma</button>
                                     </form>
 
                                 </div>

@@ -116,7 +116,7 @@ class ApartmentController extends Controller
             $new_apartment->save();
         }
 
-        return to_route('admin.apartments.index')->with('message', 'Appartamento aggiunto');
+        return to_route('admin.apartments.index')->with('message', $new_apartment->title . ' aggiunto con successo.');
     }
 
     /**
@@ -229,7 +229,7 @@ class ApartmentController extends Controller
         $apartment->update($val_data);
 
 
-        return to_route('admin.apartments.index')->with('message', 'Appartamento: ' . $apartment->title . ' modificato');
+        return to_route('admin.apartments.index')->with('message', $apartment->title . ' modificato con successo.');
     }
 
     /**
@@ -245,6 +245,6 @@ class ApartmentController extends Controller
             Storage::delete($apartment->image);
         }
         $apartment->delete();
-        return to_route('admin.apartments.index')->with('message', 'Appartamento: ' . $apartment->title . ' eliminato');
+        return to_route('admin.apartments.index')->with('message', $apartment->title . ' eliminato con successo.');
     }
 }
