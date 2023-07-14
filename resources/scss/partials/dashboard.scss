@@ -4,6 +4,10 @@
 h1 {
     color:$ourbnb-red !important;
     font-weight: 600 !important;
+    animation:fadein;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    opacity:0;
 }
 
 h1 + p {
@@ -24,18 +28,40 @@ h1 + p {
         opacity: 1;
     }
 }
-.card-footer {
+.card-footer.dashboard {
     animation-name: slidein;
-    animation-duration: 1.5s;
+    animation-delay: 4s;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    opacity: 0;
     
     .dash_link {
         height:200px;
         display: flex;
         align-items:center;
         justify-content: center;
-        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-        background-size: 400% 400%;
+        flex-direction: column;
+        background: linear-gradient(-45deg, $ourbnb-green, $ourbnb-red, $ourbnb-blue, $ourbnb-orange);
+        background-size: 600% 600%;
         animation: gradient 10s ease infinite;
+    }
+
+    a {
+        display: none;
+        transition: all 300ms;
+    }
+
+    .dash_link:hover a {
+        display: block;
+    }
+
+    i {
+        font-size: 4rem;
+        transition: all 300ms;
+    }
+
+    .dash_link:hover i {
+        font-size: 2rem;
     }
 }
 
@@ -55,12 +81,23 @@ h1 + p {
 
 @keyframes slidein {
     from {
-        transform: translateY(-50px);
+        transform: translateX(100%);
         opacity:0;
     }
 
     to {
-        transform: translateY(0);
+        transform: translateX(0);
         opacity:1;
     }
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+
+    to {
+        opacity:1;
+    }
+
 }

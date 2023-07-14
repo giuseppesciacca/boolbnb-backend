@@ -13,19 +13,23 @@
                     </div>
                     @endif
                 </div>
-                <div class="card-footer d-flex justify-content-center my-5">
-                    <ul class="list-unstyled w-100 h-100 row justify-content-between gap-4 align-items-center text-center mb-0">
-                        <li class="dash_link col w-25 p-3 rounded-3 {{ Route::currentRouteName() === 'admin.apartments' ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
-                            <a class="text-light fw-bold text-decoration-none" href="{{ route('admin.apartments.create') }}">Aggiungi appartamento</a>
+                <div class="card-footer dashboard d-flex justify-content-center my-5">
+                    <ul class="list-unstyled w-100 h-100 row  justify-content-between gap-4 align-items-center text-center mb-0">
+                        <li class="dash_link col w-25 p-5 rounded-3 {{ Route::currentRouteName() === 'admin.apartments' ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
+                            <a class="text-light fw-bold text-decoration-none mb-4" href="{{ route('admin.apartments.create') }}">Aggiungi appartamento</a>
+                            <i class="fa-solid fa-house-chimney text-white fa-bounce"></i>
                         </li>
-                        <li class="dash_link col w-25 p-3 rounded-3 {{ str_starts_with(Route::currentRouteName(), 'admin.apartments') ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
-                            <a class="text-light fw-bold text-decoration-none" href="{{ route('admin.apartments.index') }}">Tutti gli appartamenti</a>
+                        <li class="dash_link col w-25 p-5 rounded-3 {{ str_starts_with(Route::currentRouteName(), 'admin.apartments') ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
+                            <a class="text-light fw-bold text-decoration-none mb-4" href="{{ route('admin.apartments.index') }}">Tutti gli appartamenti</a>
+                            <i class="fa-solid fa-city fa-bounce text-white mt-2"></i>
                         </li>
-                        <li class="dash_link col w-25 p-3 rounded-3 {{ str_starts_with(Route::currentRouteName(), 'admin.messages') ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
-                            <a class="text-light fw-bold text-decoration-none" href="{{ route('admin.messages.index') }}">Messaggi singoli appartamenti</a>
+                        <li class="dash_link col w-25 p-5 rounded-3 {{ str_starts_with(Route::currentRouteName(), 'admin.messages') ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
+                            <a class="text-light fw-bold text-decoration-none mb-4" href="{{ route('admin.messages.index') }}">Messaggi</a>
+                            <i class="fa-solid fa-envelope text-white fa-bounce mt-2"></i>
                         </li>
-                        <li class="dash_link col w-25 p-3 rounded-3 {{ str_starts_with(Route::currentRouteName(), 'admin.sponsors') ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
-                            <a class="text-light fw-bold text-decoration-none" href="{{ route('admin.sponsors.index') }}">Lista sponsor</a>
+                        <li class="dash_link col w-25 p-5 rounded-3 {{ str_starts_with(Route::currentRouteName(), 'admin.sponsors') ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
+                            <a class="text-light fw-bold text-decoration-none mb-4" href="{{ route('admin.sponsors.index') }}">Lista sponsor</a>
+                            <i class="fa-brands fa-bitcoin text-white fa-bounce mt-2"></i>
                         </li>
                         <!--                     <li class="p-3 rounded-3 mb-3 {{ str_starts_with(Route::currentRouteName(), 'admin.views') ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
                                 <a class="text-light fw-bold text-decoration-none" href="{{ route('admin.views.index') }}">Lista statistiche singolo appartamento</a>
