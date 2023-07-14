@@ -45,44 +45,88 @@ body {
     -moz-appearance: none;
     display: inline-block;
   }
-  
-  .submit-button--small {
-    padding: 10px 20px;
-    font-size: 0.875rem;
-  }
-  
-  .submit-button--red {
-    outline: none;
-    background-color: $ourbnb-dark-red;
-    border-color: $ourbnb-dark-red;
-    color: $ourbnb-white;
-    transition: all 200ms ease;
-  }
-  
-  .submit-button--red:hover {
-    background-color: $ourbnb-red;
-    color: white;
-  }
-
-
-
-.button--small {
-  padding: 10px 20px;
-  font-size: 0.875rem;
-}
-
-.submit-button--red {
-  outline: none;
-  background-color: $ourbnb-dark-red;
-  border-color: $ourbnb-dark-red;
-  color: $ourbnb-white;
-  transition: all 200ms ease;
-}
-
-.submit-button--red:hover {
-  background-color: $ourbnb-red;
-  color: $ourbnb-white;
-}
 
 /* #endregion BRAINTREE */
 
+.btn-1:active,
+.btn-4:active {
+    scale: 0.7;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-1 {
+    color: $ourbnb-white;
+    text-align: center;
+    display: inline-block;
+    padding: 10px 25px;
+    border: 1px solid $ourbnb-white;
+    cursor: pointer;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    // margin: 0 20px;
+    border-radius: 5px;
+    background-color: $ourbnb-red;
+    font-weight: 600;
+}
+
+.btn-1-blue {
+    background-color: $ourbnb-blue !important;
+}
+
+.btn-1:before {
+    content: "";
+    position: absolute;
+    height: 150px;
+    width: 50px;
+    background: $ourbnb-white;
+    left: -55px;
+    top: -40px;
+    transform: rotate(37deg);
+    transition: all .3s;
+    opacity: 0.3;
+}
+
+.btn-1:hover:before {
+    left: 95%;
+}
+
+.btn-2 {
+    color: $ourbnb-white;
+    text-align: center;
+    display: inline-block;
+    padding: 10px 25px;
+    border: 1px solid $ourbnb-white;
+    cursor: pointer;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    // margin: 0 20px;
+    border-radius: 5px;
+    background-color: $ourbnb-light-grey;
+    font-weight: 600;
+}
+
+.btn-2:before {
+    content: "";
+    position: absolute;
+    height: 150px;
+    width: 50px;
+    background: $ourbnb-white;
+    right: -40px;
+    top: -40px;
+    transform: rotate(37deg);
+    transition: all .3s;
+    opacity: 0.3;
+}
+
+.btn-2:hover:before {
+    right: 105%;
+}
+
+.alert {
+    color: $ourbnb-white !important;
+    background-color: $ourbnb-red !important;
+    border: $ourbnb-dark-red !important;
+    border-radius: 5px !important;
+}
