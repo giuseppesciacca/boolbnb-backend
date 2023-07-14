@@ -1,12 +1,55 @@
 @use '../root.scss' as *;
 
+
+h1 {
+    color:$ourbnb-red !important;
+}
+
+h1 + p {
+    animation-name:slide_from_left;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    opacity:0;
+}
+@keyframes slide_from_left {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    };
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
 .card-footer {
     animation-name: slidein;
     animation-duration: 1.5s;
-/*     
-    li:first-child {
-        transform: translateY(20px);
-    } */
+    
+    .dash_link {
+        height:200px;
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        background-size: 400% 400%;
+        animation: gradient 10s ease infinite;
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 @keyframes slidein {
