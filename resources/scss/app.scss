@@ -1,6 +1,7 @@
 @use './partials/appHeader.scss';
 @use './partials/appFooter.scss';
 @use './partials/main-login-signup.scss';
+@use './partials/dashboard.scss';
 @use './root.scss' as *;
 
 @import '~bootstrap/scss/bootstrap';
@@ -18,6 +19,12 @@ body {
   /*     .container{
         background-color: $ourbnb-white;
     } */
+}
+
+/* main admin */
+#main-admin {
+  height: calc(100vh - 149px);
+  overflow-y: scroll;
 }
 
 /* #region BRAINTREE */

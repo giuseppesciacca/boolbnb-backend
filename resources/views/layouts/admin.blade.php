@@ -17,8 +17,8 @@
     <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/plugins/SearchBox/3.1.3-public-preview.0/SearchBox-web.js"></script>
     <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.1.2-public-preview.15/services/services-web.min.js"></script>
     <!-- BRAINTREE -->
-    <script src="https://js.braintreegateway.com/web/dropin/1.38.1/js/dropin.min.js"></script>
-    
+    <!-- <script src="https://js.braintreegateway.com/web/dropin/1.38.1/js/dropin.min.js"></script> -->
+    @vite(['resources/js/braintree.js'])
     @vite(['resources/js/app.js'])
 </head>
 
@@ -66,9 +66,9 @@
                 </div>
             </div>
         </nav>
-        <main>
+        <main id="main-admin" class="py-5">
             <div class="container">
-                <div class="row mt-5">
+                <div class="row">
                     <div class="col-2">
                         <ul class="list-unstyled">
                             <li class="p-3 rounded-3 mb-3 {{ Route::currentRouteName() === 'admin.dashboard' ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
@@ -89,7 +89,6 @@
                         @yield('content')
                     </div>
                 </div>
-                <hr>
             </div>
         </main>
         @include('admin.partials.app_footer')

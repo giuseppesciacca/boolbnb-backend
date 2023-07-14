@@ -15,7 +15,7 @@
                 <th scope="col">Preview image</th>
                 <th scope="col">n_stanze</th>
                 <th scope="col">n_bagni</th>
-                <th scope="col">n_letti</th>
+                <th scope="col">Sponsorizzato</th>
                 <th scope="col">mq</th>
                 <th scope="col">indirizzo</th>
                 <th scope="col">servizi</th>
@@ -38,6 +38,12 @@
                 </td>
                 <td>{{$apartment->rooms}}</td>
                 <td>{{$apartment->bathrooms}}</td>
+                <td> @foreach($is_sponsored as $sponsored)
+                    @if($apartment->title == $sponsored->title)
+                    si
+                    @endif
+                    @endforeach
+                </td>
                 <td>{{$apartment->beds}}</td>
                 <td>{{$apartment->square_meters}}</td>
                 <td>{{$apartment->address}}</td>

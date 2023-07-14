@@ -2,9 +2,6 @@
 
 @section('content')
 <div class="container">
-    <h2 class="fs-4 text-secondary my-4">
-        {{ __('Dashboard') }}
-    </h2>
     <div class="row justify-content-center">
         <div class="col">
             <div class="card">
@@ -19,24 +16,25 @@
 
                     {{ __('You are logged in!') }}
                 </div>
-                <div class="card-footer">
-                    <ul class="list-unstyled w-50">
-                            <li class="p-3 rounded-3 mb-3 {{ Route::currentRouteName() === 'admin.apartments' ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
-                                <a class="text-light fw-bold text-decoration-none" href="{{ route('admin.apartments.create') }}">aggiungi appartamento</a>
-                            </li>
-                            <li class="p-3 rounded-3 mb-3 {{ str_starts_with(Route::currentRouteName(), 'admin.apartments') ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
-                                <a class="text-light fw-bold text-decoration-none" href="{{ route('admin.apartments.index') }}">tutti gli appartamenti</a>
-                            </li>
-                            <li class="p-3 rounded-3 mb-3 {{ str_starts_with(Route::currentRouteName(), 'admin.messages') ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
-                                <a class="text-light fw-bold text-decoration-none" href="{{ route('admin.messages.index') }}">messaggi singoli appartamenti</a>
-                            </li>
-                            <li class="p-3 rounded-3 mb-3 {{ str_starts_with(Route::currentRouteName(), 'admin.sponsors') ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
-                                <a class="text-light fw-bold text-decoration-none" href="{{ route('admin.sponsors.index') }}">lista sponsor</a>
-                            </li>
-                            <li class="p-3 rounded-3 mb-3 {{ str_starts_with(Route::currentRouteName(), 'admin.views') ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
-                                <a class="text-light fw-bold text-decoration-none" href="{{ route('admin.views.index') }}">lista statistiche singolo appartamento</a>
-                            </li>
-                        </ul>
+            </div>
+                <div class="card-footer d-flex justify-content-center my-5">
+                    <ul class="list-unstyled w-100 h-100 d-flex justify-content-evenly align-items-center gap-5 text-center mb-0">
+                        <li class="p-3 rounded-3 {{ Route::currentRouteName() === 'admin.apartments' ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
+                            <a class="text-light fw-bold text-decoration-none" href="{{ route('admin.apartments.create') }}">Aggiungi appartamento</a>
+                        </li>
+                        <li class="p-3 rounded-3 {{ str_starts_with(Route::currentRouteName(), 'admin.apartments') ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
+                            <a class="text-light fw-bold text-decoration-none" href="{{ route('admin.apartments.index') }}">Tutti gli appartamenti</a>
+                        </li>
+                        <li class="p-3 rounded-3 {{ str_starts_with(Route::currentRouteName(), 'admin.messages') ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
+                            <a class="text-light fw-bold text-decoration-none" href="{{ route('admin.messages.index') }}">Messaggi singoli appartamenti</a>
+                        </li>
+                        <li class="p-3 rounded-3 {{ str_starts_with(Route::currentRouteName(), 'admin.sponsors') ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
+                            <a class="text-light fw-bold text-decoration-none" href="{{ route('admin.sponsors.index') }}">Lista sponsor</a>
+                        </li>
+                        <!--                     <li class="p-3 rounded-3 mb-3 {{ str_starts_with(Route::currentRouteName(), 'admin.views') ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
+                                <a class="text-light fw-bold text-decoration-none" href="{{ route('admin.views.index') }}">Lista statistiche singolo appartamento</a>
+                            </li> -->
+                    </ul>
                 </div>
             </div>
         </div>

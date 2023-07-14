@@ -9,6 +9,7 @@ use App\Http\Requests\UpdateApartmentRequest;
 use App\Models\Service;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Carbon;
 use Symfony\Component\Console\Input\Input;
 
 class ApartmentController extends Controller
@@ -20,8 +21,10 @@ class ApartmentController extends Controller
      */
     public function index()
     {
+        $is_sponsored = Apartment::join('apartment_sponsor', 'id', '=', 'apartment_id')->where('expire_date', '>', Carbon::now()->timezone('Europe/Rome'))->where('start_date', '<', Carbon::now()->timezone('Europe/Rome'))->get();   
+        //dd($is_sponsored);
         $apartments = Apartment::where('user_id', Auth::user()->id)->orderByDesc('id')->paginate(100);
-        return view('admin.apartments.index', compact('apartments'));
+        return view('admin.apartments.index', compact('apartments', 'is_sponsored'));
     }
 
     /**
