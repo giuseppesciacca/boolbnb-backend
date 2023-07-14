@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StoreApartmentSponsorRequest;
 use App\Http\Requests\UpdateApartmentSponsorRequest;
 use Illuminate\Support\Facades\Auth;
+use DateTime;
 
 class ApartmentSponsorController extends Controller
 {
@@ -53,21 +54,42 @@ class ApartmentSponsorController extends Controller
         $val_data['apartment_id'] = $request->apartment;
         $val_data['sponsor_id'] = $request->sponsor;
 
-        $val_data['start_date'] = Carbon::now()->timezone('Europe/Rome');
+        $now = Carbon::now()->timezone('Europe/Rome');
 
-        /* $apartment_has_already_sponsor = ApartmentSponsor::join('apartments', 'apartment_id', '=', 'id')->where('apartments.id', '=', $request->apartment)->get();
+        $apartment_has_already_sponsor = ApartmentSponsor::join('apartments', 'apartment_id', '=', 'id')->where('apartments.id', '=', $request->apartment)->where('expire_date', '>', $now)->orderByDesc('expire_date')->first();
+        /* 
+        SELECT *
+        FROM `apartment_sponsor`
+        JOIN `apartments` ON apartment_id = id
+        WHERE `apartments`.id = numeroAppartamentoCorrente
+          AND expire_date > CURDATE()
+        ORDER BY expire_date DESC;
 
-        dd($apartment_has_already_sponsor);
- */
-        if ('ciao') {
+        di questi prendi il primo della lista
+        */
+
+        if ($apartment_has_already_sponsor) {
+            $expire_date_in_string = $apartment_has_already_sponsor->expire_date;
+
+            $expireDateForStartDate = DateTime::createFromFormat('Y-m-d H:i:s', $expire_date_in_string);
+
+            $val_data['start_date'] = $expireDateForStartDate;
+
+            $expireDate = DateTime::createFromFormat('Y-m-d H:i:s', $expire_date_in_string);
+
             if ($request->sponsor == 1) {
-                $expireDate = Carbon::now()->timezone('Europe/Rome')->addHours(24);
+                $expire_date = $expireDate->modify('+24 hours');
             } elseif ($request->sponsor == 2) {
-                $expireDate = Carbon::now()->timezone('Europe/Rome')->addHours(72);
+                $expire_date = $expireDate->modify('+72 hours');
             } else {
-                $expireDate = Carbon::now()->timezone('Europe/Rome')->addHours(144);
+                $expire_date = $expireDate->modify('+144 hours');
             }
+
+            $val_data['expire_date'] =  $expire_date;
         } else {
+
+            $val_data['start_date'] = Carbon::now()->timezone('Europe/Rome');
+
             if ($request->sponsor == 1) {
                 $expireDate = Carbon::now()->timezone('Europe/Rome')->addHours(24);
             } elseif ($request->sponsor == 2) {
@@ -75,10 +97,9 @@ class ApartmentSponsorController extends Controller
             } else {
                 $expireDate = Carbon::now()->timezone('Europe/Rome')->addHours(144);
             }
+
+            $val_data['expire_date'] =  $expireDate;
         }
-
-
-        $val_data['expire_date'] = $expireDate;
 
         ApartmentSponsor::create($val_data);
 

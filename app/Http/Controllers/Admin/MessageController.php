@@ -68,12 +68,14 @@ class MessageController extends Controller
         //prendi l'utente che ha ricevuto questo messaggio per l'appartamento (17)?
         //dobbiamo rispondere a questa domanda: l'utente autenticato è lo stesso di quello che ha ricevuto il messaggio?
         //in altre parole, chi è l'utente per l'appartamento (17) che ha ricevuto il messaggio?
-        /* SELECT * 
-        FROM users 
-        JOIN apartments ON users.id = apartments.user_id 
-        JOIN messages ON messages.apartment_id = apartments.id
-        WHERE apartment_id= 17; */
-
+        /** 
+         * query sql di recipient
+         *  SELECT *
+         *  FROM `users`
+         *  JOIN `apartments` ON `users`.id = `apartments`.user_id 
+         *  JOIN `messages` ON `messages`.apartment_id = `apartments`.id
+         *  WHERE apartment_id= 17;
+         */
         $recipient = User::join('apartments', 'users.id', '=', 'apartments.user_id')->join('messages', 'apartment_id', '=', 'apartments.id')->where('apartment_id', '=', $message->apartment_id)->select('users.id as user_id')->first();
 
         //dd($recipient->user_id); //5
