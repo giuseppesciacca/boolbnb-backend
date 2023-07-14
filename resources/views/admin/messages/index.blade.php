@@ -2,21 +2,20 @@
 
 @section('content')
 
-<h1 class="text-center my-3">I MIEI MESSAGGI - INDEX</h1>
 @include('admin.partials.session_message')
 
-<div class="container-fluid bg-light py-3">
+<div class="container-fluid py-3">
 
-    <table class="table table-striped m-0 py-5">
+    <table class="table table-hover m-0 py-5">
         <thead>
-            <tr>
+            <tr class="message">
                 <th scope="col">Appartamento</th>
                 <th scope="col">Nome</th>
                 <th scope="col">Cognome</th>
                 <th scope="col">Email</th>
                 <th scope="col">Corpo messaggio</th>
                 <th scope="col">Ricevuto</th>
-                <th scope="col">Actions</th>
+                <th scope="col">Azioni</th>
             </tr>
         </thead>
 
@@ -24,19 +23,19 @@
         <tbody>
 
             @forelse ($messages as $index => $message)
-            <tr>
-                <td> {{ $message->title }} </td>
-                <td scope="row">{{ $message->name }}</td>
-                <td>{{ $message->surname }}</td>
-                <td>{{ $message->email }}</td>
-                <td>{{ $message->message }}</td>
-                <td>{{ $message->created_at }}</td>
+            <tr class="message">
+                <td data-cell="Appartamento:"> {{ $message->title }} </td>
+                <td scope="row" data-cell="Nome:">{{ $message->name }}</td>
+                <td data-cell="Cognome:">{{ $message->surname }}</td>
+                <td data-cell="Email:">{{ $message->email }}</td>
+                <td data-cell="Corpo messaggio:">{{ $message->message }}</td>
+                <td data-cell="Ricevuto:">{{ $message->created_at }}</td>
 
-                <td>
-                    <a href="{{ route('admin.messages.show', $message->alias_message_id, $message->user_id) }}"><i class="fa-solid fa-eye"></i></a>
+                <td data-cell="Azioni:">
+                    <a href="{{ route('admin.messages.show', $message->alias_message_id, $message->user_id) }}" class="btn-1 btn-1-blue w-75"><i class="fa-solid fa-eye"></i></a>
 
-                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modalId-{{ $message->alias_message_id }}">
-                        <i class="fa-solid fa-trash-can" style="color: #dc3545"></i>
+                    <button type="button" class="btn-1 w-75" data-bs-toggle="modal" data-bs-target="#modalId-{{ $message->alias_message_id }}">
+                        <i class="fa-solid fa-trash-can text-white" style="color: #dc3545"></i>
                     </button>
 
                     <!-- Modal -->

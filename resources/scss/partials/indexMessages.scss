@@ -1,0 +1,26 @@
+@use '../root.scss' as *;
+
+@media screen and (max-width: 992px) {
+    tr.message th {
+        display: none;
+    }
+
+    tr.message td {
+        display: flex;
+        align-items: center;
+    }
+
+    tr.message td::before {
+        content: attr(data-cell);
+        padding: 10px;
+    }
+
+    td.img {
+        justify-content: center;
+    }
+
+    td > img {
+        width: 100%;
+    }
+
+}
