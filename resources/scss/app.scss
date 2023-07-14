@@ -1,5 +1,6 @@
 @use './partials/appHeader.scss';
 @use './partials/appFooter.scss';
+@use './partials/main-login-signup.scss';
 @use './root.scss' as *;
 
 @import '~bootstrap/scss/bootstrap';
@@ -22,19 +23,41 @@ body {
 /* #region BRAINTREE */
 
 .submit-button {
-  cursor: pointer;
-  font-weight: 500;
-  left: 3px;
-  line-height: inherit;
-  position: relative;
-  text-decoration: none;
-  text-align: center;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 3px;
-  appearance: none;
-  display: inline-block;
-}
+    cursor: pointer;
+    font-weight: 500;
+    left: 3px;
+    line-height: inherit;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    display: inline-block;
+  }
+  
+  .submit-button--small {
+    padding: 10px 20px;
+    font-size: 0.875rem;
+  }
+  
+  .submit-button--red {
+    outline: none;
+    background-color: $ourbnb-dark-red;
+    border-color: $ourbnb-dark-red;
+    color: $ourbnb-white;
+    transition: all 200ms ease;
+  }
+  
+  .submit-button--red:hover {
+    background-color: $ourbnb-red;
+    color: white;
+  }
+
+
 
 .button--small {
   padding: 10px 20px;
@@ -55,3 +78,4 @@ body {
 }
 
 /* #endregion BRAINTREE */
+

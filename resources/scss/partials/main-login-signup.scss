@@ -1,0 +1,82 @@
+@use '../root.scss' as *;
+.main_login,
+.main_signup  {
+  height: calc(100vh - 149px);
+  overflow-y: scroll;
+}
+
+.main_login {
+
+    .card {
+      box-shadow: 0px 4px 8px  $ourbnb-red;
+      transition: all 300ms;
+
+      #password:active, #email:active,
+      #password:focus, #email:focus {
+        border-color: $ourbnb-light-red;
+        box-shadow: 0 0 4px $ourbnb-red;
+      }
+
+      #remember {
+        box-shadow: 0 0 3px $ourbnb-red;
+        border:1px solid $ourbnb-light-red;
+      }
+      #remember:checked {
+        background-color: $ourbnb-red;
+        border:1px solid $ourbnb-red;
+        box-shadow: 0 0 3px $ourbnb-red;;
+      }
+
+      a {
+        text-decoration:none;
+        color:$ourbnb-light-red;
+        transition: color 300ms;
+      }
+
+      a:hover {
+        color:$ourbnb-dark-red;
+      }
+
+    }
+
+    .card:hover {
+      box-shadow: 0px 8px 16px $ourbnb-red;
+    }
+  }
+
+
+.main_signup {
+
+  .card {
+    box-shadow: 0px 4px 8px  $ourbnb-red;
+    transition: all 300ms;
+    
+    input:active, input:focus {
+      border-color: $ourbnb-light-red;
+      box-shadow: 0 0 4px $ourbnb-red;
+    }
+
+    #date-of-birth::-webkit-calendar-picker-indicator {
+      color: $ourbnb-red;
+    }
+  }
+
+  .card:hover {
+    box-shadow: 0px 8px 16px $ourbnb-red;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+    .main_signup {
+      height:auto;
+    }
+}
+
+@media screen and (max-height: 681px) {
+    .main_signup {
+        height:auto;
+    }
+}
+
+
