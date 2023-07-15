@@ -19,6 +19,7 @@ class ServiceSeeder extends Seeder
         foreach ($services as $service) {
             $newService = new Service();
             $newService->name = $service["name"];
+            $newService->image = $service["image"];
             $newService->save();
         }
     }
