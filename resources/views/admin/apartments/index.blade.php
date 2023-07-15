@@ -15,8 +15,9 @@
             <tr class="apartment">
                 <th scope="col">Nome</th>
                 <th scope="col">Immagine</th>
-                <th scope="col">Sponsor</th>
                 <th scope="col">Indirizzo</th>
+                <th scope="col">Sponsor</th>
+                <th scope="col">Visibile</th>
                 <th class="text-center" scope="col">Azioni</th>
             </tr>
         </thead>
@@ -33,14 +34,14 @@
                     <img class="img-fluid" src=" {{ asset('storage/' . 'uploads/placeholder.png') }}">
                     @endif
                 </td>
+                <td class="action-td align-middle" data-cell="Indirizzo:">{{$apartment->address}}</td>
                 <td class="action-td text-center align-middle" data-cell="Sponsor:"> @foreach($is_sponsored as $sponsored)
                     @if($apartment->title == $sponsored->title)
                     si
                     @endif
                     @endforeach
                 </td>
-                <td class="action-td align-middle" data-cell="Indirizzo:">{{$apartment->address}}</td>
-                {{-- roba da levare l'ho messa giusto per vedere che funziona --}}
+                <td class="action-td align-middle" data-cell="Visibile:">{{$apartment->visibility ? 'si' : 'no'}}</td>
                 <td class="action-td text-center align-middle" data-cell="Azioni:">
                     <a class="btn-1 btn-1-blue" href="{{route('admin.apartments.show', $apartment->slug)}}"><i class="fa-solid fa-eye"></i></a>
 
