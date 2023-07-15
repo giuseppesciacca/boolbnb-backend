@@ -8,7 +8,7 @@
 
     <a href="{{route('admin.apartments.create')}}" class="text-decoration-none text-dark d-flex align-items-center gap-2 py-3">
         <i class="fa-solid fa-plus fa-2x"></i>
-        <span class="add_apartment">Aggiungi un appartamento</span>
+        <span class="add_apartment ms-3">Aggiungi</span>
     </a>
     <table class="table table-hover m-0 py-5">
         <thead>

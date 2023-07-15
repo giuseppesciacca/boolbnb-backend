@@ -27,19 +27,19 @@
                 <div class="w-100 h-100 row  justify-content-between gap-4 align-items-center text-center mb-0">
                     <a href="{{ route('admin.apartments.create') }}" class="dash_link col w-25 p-5 rounded-3">
                         <span class="text-light fw-bold text-decoration-none mb-4">Aggiungi</span>
-                        <i class="fa-solid fa-house-chimney text-white fa-bounce"></i>
+                        <i class="fa-duotone fa-house-chimney text-white fa-bounce"></i>
                     </a>
                     <a href="{{ route('admin.apartments.index') }}" class="dash_link col w-25 p-5 rounded-3">
                         <span class="text-light fw-bold text-decoration-none mb-4">Appartamenti</span>
-                        <i class="fa-solid fa-city fa-bounce text-white mt-2"></i>
+                        <i class="fa-duotone fa-house-building fa-bounce text-white mt-2"></i>
                     </a>
                     <a href="{{ route('admin.messages.index') }}" class="dash_link col w-25 p-5 rounded-3">
                         <span class="text-light fw-bold text-decoration-none mb-4">Messaggi</span>
-                        <i class="fa-solid fa-envelope text-white fa-bounce mt-2"></i>
+                        <i class="fa-duotone fa-envelope text-white fa-bounce mt-2"></i>
                     </a>
                     <a href="{{ route('admin.sponsors.index') }}" class="dash_link col w-25 p-5 rounded-3">
                         <span class="text-light fw-bold text-decoration-none mb-4">Sponsor</span>
-                        <i class="fa-brands fa-bitcoin text-white fa-bounce mt-2"></i>
+                        <i class="fa-duotone fa-dollar-sign text-white fa-bounce mt-2"></i>
                     </a>
                     <!--                     <li class="p-3 rounded-3 mb-3 {{ str_starts_with(Route::currentRouteName(), 'admin.views') ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
                                 <a class="text-light fw-bold text-decoration-none" href="{{ route('admin.views.index') }}">Lista statistiche singolo appartamento</a>
