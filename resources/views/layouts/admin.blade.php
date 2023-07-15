@@ -39,10 +39,10 @@
                     </ul>
                     <ul class="navbar-nav gap-md-5">
                         <li class="nav-item d-flex justify-content-center">
-                            <a class="animated-span" href="http://localhost:5174/apartments" class="nav-link">{{ __('Appartamenti') }}</a>
+                            <a class="animated-span text-decoration-none" href="http://localhost:5174/apartments" class="nav-link">{{ __('Appartamenti') }}</a>
                         </li>
                         <li class="nav-item d-flex justify-content-center">
-                            <a class="animated-span" href="http://localhost:5174/about" class="nav-link">{{ __('Chi siamo') }}</a>
+                            <a class="animated-span text-decoration-none" href="http://localhost:5174/about" class="nav-link">{{ __('Chi siamo') }}</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav">
@@ -79,10 +79,10 @@
                                 <a class="text-light fw-bold text-decoration-none" href="{{ route('admin.apartments.index') }}">Appartamenti</a>
                             </li>
                             <li class="p-3 w-100 btn-1 rounded-3 mb-3 btn-1 btn-1-blue {{ str_starts_with(Route::currentRouteName(), 'admin.messages') ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
-                                <a class="text-light fw-bold text-decoration-none" href="{{ route('admin.messages.index') }}">Inbox</a>
+                                <a class="text-light fw-bold text-decoration-none" href="{{ route('admin.messages.index') }}">Messaggi</a>
                             </li>
                             <li class="p-3 w-100 btn-1 rounded-3 mb-3 btn-1 btn-1-orange {{ str_starts_with(Route::currentRouteName(), 'admin.sponsors') ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
-                                <a class=" text-light fw-bold text-decoration-none" href="{{ route('admin.sponsors.index') }}">Sponsorship</a>
+                                <a class=" text-light fw-bold text-decoration-none" href="{{ route('admin.sponsors.index') }}">Sponsor</a>
                             </li>
                         </ul>
                     </div>

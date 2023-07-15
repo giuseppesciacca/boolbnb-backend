@@ -51,10 +51,10 @@
                     </ul>
                     <ul class="navbar-nav gap-5">
                         <li class="nav-item">
-                            <a class="animated-span" href="http://localhost:5174/apartments" class="nav-link">{{ __('Appartamenti') }}</a>
+                            <a class="animated-span text-decoration-none" href="http://localhost:5174/apartments" class="nav-link">{{ __('Appartamenti') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="animated-span" href="http://localhost:5174/about" class="nav-link">{{ __('Chi siamo') }}</a>
+                            <a class="animated-span text-decoration-none" href="http://localhost:5174/about" class="nav-link">{{ __('Chi siamo') }}</a>
                         </li>
                     </ul>
                     <!-- Right Side Of Navbar -->
