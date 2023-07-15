@@ -35,7 +35,7 @@
                 </td>
                 <td class="action-td text-center align-middle" data-cell="Sponsor:"> @foreach($is_sponsored as $sponsored)
                     @if($apartment->title == $sponsored->title)
-                    si
+                    <i class="fa-solid fa-circle-check" style="color: #00ff00;"></i>
                     @endif
                     @endforeach
                 </td>
