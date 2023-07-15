@@ -38,7 +38,7 @@
                         <i class="fa-solid fa-envelope text-white fa-bounce mt-2"></i>
                     </a>
                     <a href="{{ route('admin.sponsors.index') }}" class="dash_link col w-25 p-5 rounded-3">
-                        <span class="text-light fw-bold text-decoration-none mb-4">Sponsorship</span>
+                        <span class="text-light fw-bold text-decoration-none mb-4">Sponsor</span>
                         <i class="fa-brands fa-bitcoin text-white fa-bounce mt-2"></i>
                     </a>
                     <!--                     <li class="p-3 rounded-3 mb-3 {{ str_starts_with(Route::currentRouteName(), 'admin.views') ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">

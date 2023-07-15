@@ -13,13 +13,13 @@
 }
 
 .cursor_none {
-    cursor:auto !important;
+    cursor: auto !important;
 }
 
 .sponsorship .card:before {
     content: "";
     position: absolute;
-    height: 46px;
+    height: 35px;
     width: 100%;
     background: $ourbnb-white;
     left: 0px;
@@ -30,5 +30,39 @@
 }
 
 .sponsorship .card:hover:before {
-    top: 165px;
+    top: 170px;
+}
+
+.sponsorship .card {
+    animation-name: slidedown;
+    animation-duration: 2s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+
+@keyframes slidedown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.delay-1 {
+    animation-delay: 1s !important;
+}
+
+.delay-2 {
+    animation-delay: 1.5s !important;
+}
+
+.card-title,
+.card-p {
+    text-shadow: -1.2px 0px 0px $ourbnb-black, 1.2px 0px 0px $ourbnb-black, 0px -1.2px 0px $ourbnb-black, 0px 1.2px 0px $ourbnb-black;
 }

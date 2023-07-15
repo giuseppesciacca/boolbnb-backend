@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <h1 class="text-center">Sponsorizza il tuo appartamento per metterlo in risalto</h1>
+    <h1 class="text-center mb-3">Sponsorizza il tuo appartamento per metterlo in risalto</h1>
 
     <h4 class="text-center">A cosa serve la sponsorizzazione?</h4>
 
@@ -21,7 +21,14 @@
     <div class="row sponsorship justify-content-center row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
         @forelse ($sponsors as $sponsor)
         <div class="col">
-            <div class="card">
+            <div class="card mb-3
+                @if ($sponsor->name == 'Advanced')
+                delay-1 
+                @endif
+                @if ($sponsor->name == 'Premium')
+                delay-2 
+                @endif
+            ">
                 <div class="card-header             
                 @if ($sponsor->name == 'Basic')
                 bg_bronze
@@ -52,11 +59,10 @@
                 bg_gold 
                 @endif
                 ">
-                    <p class="card-text text-light">Prezzo: <strong>{{$sponsor->price}}</strong> €</p>
+                    <p class="card-text card-p text-light">Prezzo: <strong>€{{$sponsor->price}}</strong></p>
                 </div>
 
             </div>
-
         </div>
 
         @empty
@@ -64,7 +70,7 @@
         @endforelse
     </div>
 
-    <p class="sponsor pt-3">
+    <p class="sponsor py-3">
         Per sponsorizzare un appartamento, vai su -> <strong>Appartamenti</strong> -> clicca sull'icona a forma di occhio per visualizzare l'appartamento che desideri sponsorizzare "<i class="fa-solid fa-eye"></i>" e clicca su -> <strong>Sponsorizzami</strong>. Da lì potrai scegliere uno dei tre tipi di sponsorizzazione sopra esposti.
     </p>
 
