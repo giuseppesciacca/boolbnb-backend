@@ -18,10 +18,6 @@ body {
   /* IE 10 and IE 11 */
   user-select: none;
   /* Standard syntax */
-  //background-image: url(/src/assets/logo.png);
-  /*     .container{
-        background-color: $ourbnb-white;
-    } */
 }
 
 /* main admin */
@@ -139,9 +135,10 @@ body {
     right: 105%;
 }
 
-/* .action-td{
-  .btn-1,
-  .btn-2{
-    width: 30px;
-  }
-} */
+.our-user{
+  font-size: 3rem;
+}
+
+.text-bool{
+  color: $ourbnb-red;
+}
