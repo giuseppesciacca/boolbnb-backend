@@ -1,6 +1,6 @@
 # Progetto Full Stack - BoolBnb
 
-Benvenuti in questo repository dedicato alla replica di un sito ispirato ad Airbnb chiamato BoolBnb! Si tratta di un'impresa di gruppo che corona un intenso percorso di sei mesi di full immersion nel mondo dello sviluppo web Full-Stack. In questo repository troverete il codice sorgente relativo alla parte BACK-END di questo emozionante lavoro di gruppo.
+Benvenuti in questo repository dedicato alla replica di un sito ispirato ad Airbnb chiamato **BoolBnb!** Si tratta di un'impresa di gruppo che corona un intenso percorso di sei mesi di full immersion nel mondo dello sviluppo web Full-Stack. In questo repository troverete il codice sorgente relativo alla parte **BACK-END** di questo emozionante lavoro di gruppo.
 
 ## Il team 5 ha realizzato questo progetto 📚
 
