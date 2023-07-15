@@ -211,16 +211,17 @@
             <input class="form-check-input" type="radio" name="visibility" id="visibility" value="1" checked>
             <label class="form-check-label" for="visibility">Si, rendilo visibile</label>
 
-            <input class="form-check-input" type="radio" name="visibility" id="visibility" value="0">
+            <input class="form-check-input ms-3" type="radio" name="visibility" id="visibility" value="0">
             <label class="form-check-label" for="visibility">No, non renderlo visibile</label>
 
             <br>
-            <small>Di default è settato su "visibile"</small>
         </div>
+        <small class="my-3">Di default è settato su "visibile"</small>
         <!-- /visibile -->
-
-        <button type="submit" class="btn btn-primary w-100 my-4">Aggiungi</button>
-        <a class="btn btn-primary my-3" href="{{ route('admin.apartments.index') }}" role="button">Return</a>
+        <div class="d-flex my-3 gap-3">
+            <button type="submit" class="btn-1 btn-1-green">Aggiungi</button>
+            <a class="btn-2" href="{{ route('admin.apartments.index') }}" role="button">Return</a>
+        </div>
 
         <p>Dove presente "(*)" indica che il campo è obbligatorio.</p>
     </form>
