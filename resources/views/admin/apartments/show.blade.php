@@ -16,7 +16,7 @@
                 @endif
             </div>
         </div>
-        
+
     </div>
     <div class="row justify-content-center row-cols-1 row-cols-lg-2">
         <div class="col">

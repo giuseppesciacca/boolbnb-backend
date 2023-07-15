@@ -3,6 +3,7 @@
 @use './partials/main-login-signup.scss';
 @use './partials/dashboard.scss';
 @use './partials/indexMessages.scss';
+@use './partials//showSponsor.scss';
 @use './partials/indexSponsor.scss';
 @use './partials/indexApartments.scss';
 @use './partials/showApartment.scss';
@@ -94,6 +95,10 @@ body {
   background-color: $ourbnb-dark-red !important;
 }
 
+.btn-1-black {
+  background-color: $ourbnb-black !important;
+}
+
 .btn-1:before {
     content: "";
     position: absolute;
@@ -154,4 +159,16 @@ body {
 
 a{
   text-decoration: none;
+}
+
+.bg_bronze {
+  background-color: $ourbnb-bronze !important;
+}
+
+.bg_silver {
+  background-color: $ourbnb-silver !important;
+}
+
+.bg_gold {
+  background-color: $ourbnb-gold !important;
 }
