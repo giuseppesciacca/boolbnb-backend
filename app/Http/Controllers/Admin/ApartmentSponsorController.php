@@ -33,12 +33,15 @@ class ApartmentSponsorController extends Controller
     public function create(Request $request)
     {
         $apartmentId = $request->query('apartment'); //prendo i valori dall'url
-        $sponsorId = $request->query('sponsor');
+        $apartment = Apartment::where('id', '=', $apartmentId)->first(); //prendo l'elemento con l'id corrispondente
 
-        $apartment = Apartment::where('id', '=', $apartmentId)->first(); //prendo l'elemento che l'id corrispondente
-        $sponsor = Sponsor::where('id', '=', $sponsorId)->first();
+        if (Auth::id() === $apartment->user_id) {
+            $sponsorId = $request->query('sponsor');
+            $sponsor = Sponsor::where('id', '=', $sponsorId)->first();
 
-        return view('admin.payments.create', compact('apartment', 'sponsor'));
+            return view('admin.payments.create', compact('apartment', 'sponsor'));
+        }
+        abort(403);
     }
 
     /**
