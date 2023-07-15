@@ -7,9 +7,6 @@
                 </a>
             </li>
             <li class="animated-li">
-                <span>Copyright&copy; 2023 tutti i diritti riservati</span>
-            </li>
-            <li class="animated-li">
                 <a href="http://localhost:5174/about" target="_blank">Team Five</a>
             </li>
             <li class="animated-li">
@@ -17,5 +14,8 @@
                 <a href="https://boolean.careers" target="_blank">Academy</a>
             </li>
         </ul>
+    </div>
+    <div class="copy text-white text-start">
+        <span class="ms-2">Copyright&copy; 2023</span>
     </div>
 </footer>
