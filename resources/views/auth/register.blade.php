@@ -17,7 +17,7 @@
                             @csrf
     
                             <div class="mb-4 row">
-                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome') }}</label>
+                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome') }}:</label>
     
                                 <div class="col-md-6">
                                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -33,7 +33,7 @@
                                 </div>
                             </div>
                             <div class="mb-4 row">
-                                <label for="surname" class="col-md-4 col-form-label text-md-right">{{ __('Cognome') }}</label>
+                                <label for="surname" class="col-md-4 col-form-label text-md-right">{{ __('Cognome') }}:</label>
     
                                 <div class="col-md-6">
                                     <input id="surname" type="text" class="form-control @error('surname') is-invalid @enderror" name="surname" value="{{ old('surname') }}" required autocomplete="surname" autofocus>
@@ -49,7 +49,7 @@
                                 </div>
                             </div>
                             <div class="mb-4 row">
-                                <label for="date-of-birth" class="col-md-4 col-form-label text-md-right">{{ __('Data di nascita') }}</label>
+                                <label for="date-of-birth" class="col-md-4 col-form-label text-md-right">{{ __('Data di nascita') }}:</label>
     
                                 <div class="col-md-6">
                                     <input id="date-of-birth" type="date" class="form-control @error('date_of_birth') is-invalid @enderror" name="date_of_birth" value="{{ old('date_of_birth') }}" required autocomplete="name" autofocus>
@@ -66,7 +66,7 @@
                             </div>
     
                             <div class="mb-4 row">
-                                <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
+                                <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}:</label>
     
                                 <div class="col-md-6">
                                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
@@ -83,7 +83,7 @@
                             </div>
     
                             <div class="mb-4 row">
-                                <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                                <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}:</label>
     
                                 <div class="col-md-6">
                                     <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
@@ -100,7 +100,7 @@
                             </div>
     
                             <div class="mb-4 row">
-                                <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Conferma Password') }}</label>
+                                <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Conferma Password') }}:</label>
     
                                 <div class="col-md-6">
                                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
@@ -112,11 +112,11 @@
     
                             <div class="mb-4 row mb-0 justify-content-center">
                                 <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ __('Vai!') }}
-                                    </button>
-                                    <button type="reset" class="btn btn-secondary">
+                                    <button type="reset" class="btn-2 me-2">
                                         {{ __('Reset') }}
+                                    </button>
+                                    <button type="submit" class="btn-1 btn-1-blue">
+                                        {{ __('Vai!') }}
                                     </button>
                                 </div>
                             </div>
