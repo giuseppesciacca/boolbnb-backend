@@ -5,6 +5,7 @@
 @use './partials/indexMessages.scss';
 @use './partials/indexSponsor.scss';
 @use './partials/indexApartments.scss';
+@use './partials/showApartment.scss';
 @use './root.scss' as *;
 
 @import '~bootstrap/scss/bootstrap';
@@ -81,8 +82,16 @@ body {
   background-color: $ourbnb-green !important;
 }
 
+.btn-1-gold {
+  background-color: $ourbnb-gold !important;
+}
+
 .btn-1-red {
   background-color: $ourbnb-red !important;
+}
+
+.btn-1-darkred {
+  background-color: $ourbnb-dark-red !important;
 }
 
 .btn-1:before {
@@ -141,4 +150,8 @@ body {
 
 .text-bool{
   color: $ourbnb-red;
+}
+
+a{
+  text-decoration: none;
 }
