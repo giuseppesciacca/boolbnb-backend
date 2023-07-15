@@ -19,6 +19,7 @@ class Apartment extends Model
         'slug',
         'image',
         'description',
+        'price',
         'rooms',
         'bathrooms',
         'beds',

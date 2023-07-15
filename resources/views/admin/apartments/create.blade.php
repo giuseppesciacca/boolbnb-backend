@@ -64,6 +64,21 @@
         <!-- /description -->
 
         <div class="mb-3">
+            <label for="price" class="form-label">€/notte</label>
+            <input type="number" name="price" id="price" class="form-control @error('price') is-invalid @enderror" placeholder="Inserire numero stanze" aria-describedby="imageHelper" min="1" max="50" step="1">
+            <span id="span-price" class="d-none bg-danger text-dark" role="alert">
+                <strong>Il prezzo non è valido</strong>
+            </span>
+
+            @error('price')
+            <div class="alert alert-danger" role="alert">
+                <strong>Errore: </strong>{{ $message }}
+            </div>
+            @enderror
+        </div>
+        <!-- /price -->
+
+        <div class="mb-3">
             <label for="rooms" class="form-label">Numero stanze (*)</label>
             <input type="number" name="rooms" id="rooms" class="form-control @error('rooms') is-invalid @enderror" placeholder="Inserire numero stanze" aria-describedby="imageHelper" min="1" max="50" step="1">
             <span id="span-rooms" class="d-none bg-danger text-dark" role="alert">

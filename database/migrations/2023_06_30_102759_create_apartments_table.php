@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('slug');
             $table->text('image')->nullable();
             $table->text('description')->nullable();
+            $table->decimal('price', 4, 0, true);
             $table->tinyInteger('rooms')->index();
             $table->tinyInteger('bathrooms')->index();
             $table->tinyInteger('beds')->index();
