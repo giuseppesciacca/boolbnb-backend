@@ -3,7 +3,7 @@
         <ul class="mb-0 py-3 px-0 d-flex flex-column justify-content-center align-items-center gap-2 flex-md-row justify-content-lg-around list-unstyled">
             <li>
                 <a class="nav-link d-flex justify-content-center" href="http://localhost:5174/">
-                    <img class="animated-img" src="{{asset('logo.png')}}" alt="boolbnb" height="35px">
+                    <img class="animated-img" src="{{asset('logo-footer.png')}}" alt="boolbnb" height="35px">
                 </a>
             </li>
             <li class="animated-li">
