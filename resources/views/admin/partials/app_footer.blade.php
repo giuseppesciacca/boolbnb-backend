@@ -10,11 +10,11 @@
                 <span>Copyright&copy; 2023 tutti i diritti riservati</span>
             </li>
             <li class="animated-li">
-                <a href="http://localhost:5174/about" target="_blank">Team Five</a>
+                <a href="http://localhost:5174/about" target="_blank">Team <i class="fa-duotone fa-dice-d10 fa-lg"></i> Five</a>
             </li>
             <li class="animated-li">
                 <span>la nostra </span>
-                <a href="https://boolean.careers" target="_blank">Academy</a>
+                <a href="https://boolean.careers" target="_blank">Academy <i class="fa-duotone fa-code fa-lg"></i></a>
             </li>
         </ul>
     </div>
