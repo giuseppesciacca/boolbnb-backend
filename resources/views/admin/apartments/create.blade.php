@@ -202,7 +202,7 @@
         <!-- /servizi -->
 
         <div class="mb-3">
-            <label for="visibility" class="form-label">Rendi visibile l'appartmento?</label>
+            <label for="visibility" class="form-label py-2">Rendi visibile l'appartmento?</label>
             <br>
 
             <input class="form-check-input" type="radio" name="visibility" id="visibility" value="1" checked>
@@ -214,13 +214,13 @@
             <br>
         </div>
         <small class="my-3">Di default è settato su "visibile"</small>
+        <p class="py-2">Dove presente "(*)" indica che il campo è obbligatorio.</p>
         <!-- /visibile -->
-        <div class="d-flex my-3 gap-3">
-            <button type="submit" class="btn-1 btn-1-green">Aggiungi</button>
+        <div class="d-flex my-3 gap-3 justify-content-center justify-content-md-end">
             <a class="btn-2" href="{{ route('admin.apartments.index') }}" role="button">Return</a>
+            <button type="submit" class="btn-1 btn-1-green">Aggiungi</button>
         </div>
 
-        <p>Dove presente "(*)" indica che il campo è obbligatorio.</p>
     </form>
 </div>
 @endsection

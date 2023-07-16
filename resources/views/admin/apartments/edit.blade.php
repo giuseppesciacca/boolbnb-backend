@@ -228,19 +228,19 @@
 
         <div class="mb-3">
             <label for="services" class="form-label">Cambia i servizi</label>
-            <div class="form-check row row-cols-4 d-flex">
-                @foreach ($services as $service)
-                <div class="form-check @error('services') is-invalid @enderror">
-                    <label class='form-check-label'>
+            <div class="form-check">
+                <div class="form-check @error('services') is-invalid @enderror row-cols-2 row-cols-md-3 row-cols-lg-4 d-flex flex-wrap">
+                    @foreach ($services as $service)
+                    <label class='form-check-label d-flex align-items-center g-2 gap-2'>
                         @if($errors->any())
-                        <input name="services[]" type="checkbox" value="{{ $service->id }}" class="multi-check-box form-check-input" {{ in_array($service->id, old('services', [])) ? 'checked' : '' }}>
+                        <input name="services[]" style="width:30px; height:30px;" type="checkbox" value="{{ $service->id }}" class="multi-check-box form-check-input {{$service->image}} check-create d-flex align-items-center justify-content-center" {{ in_array($service->id, old('services', [])) ? 'checked' : '' }}>
                         @else
-                        <input name='services[]' type='checkbox' value='{{ $service->id }}' class='multi-check-box form-check-input' {{ $apartment->services->contains($service) ? 'checked' : '' }}>
+                        <input name='services[]' style="width:30px; height:30px;" type='checkbox' value='{{ $service->id }}' class='multi-check-box form-check-input {{$service->image}} check-create d-flex align-items-center justify-content-center mb-2' {{ $apartment->services->contains($service) ? 'checked' : '' }}>
                         @endif
-                        {{ $service->name }}
+                        <span>{{ $service->name }}</span>
                     </label>
+                    @endforeach
                 </div>
-                @endforeach
                 <span id="span-multi-check-box" class="d-none bg-danger text-dark" role="alert">
                     <strong>Selezionare almeno un servizio da includere</strong>
                 </span>
@@ -258,14 +258,14 @@
             <input type="radio" name="visibility" id="visibility" value="1" {{ old('visibility', $apartment->visibility) === 1 ? 'checked' : '' }}>
             <label class="form-check-label" for="visibility">Si, rendilo visibile</label>
 
-            <input type="radio" name="visibility" id="no-visibility" value="0" {{ old('visibility', $apartment->visibility) === 0 ? 'checked' : '' }}>
+            <input type="radio" name="visibility" id="no-visibility" class="ms-2" value="0" {{ old('visibility', $apartment->visibility) === 0 ? 'checked' : '' }}>
             <label class="form-check-label" for="no-visibility">No, non renderlo visibile</label>
 
             <br>
             <small>Di default è settato su "visibile"</small>
         </div>
         <!-- /visibile -->
-        <div class="d-flex justify-content-end align-items-center gap-3 flex-wrap">
+        <div class="d-flex justify-content-center justify-content-md-end align-items-center gap-3 flex-wrap">
             <button class="btn-2 text-decoration-none" href="{{ route('admin.apartments.index') }}" role="button">Indietro</button>
             <button type="submit" class="btn-1 btn-1-green text-decoration-none">Salva Modifiche</button>
         </div>
