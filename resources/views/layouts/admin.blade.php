@@ -30,9 +30,10 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+                <img class="animated-img d-lg-none d-md-none d-sm-flex" src="{{asset('logo.png')}}" alt="Boolbnb" height="50px">
+                <div class="collapse navbar-collapse justify-content-between align-content-center" id="navbarSupportedContent">
                     <ul class="navbar-nav">
-                        <li class="nav-item">
+                        <li class="nav-item d-lg-flex d-md-flex d-none">
                             <a class="nav-link d-flex justify-content-center" href="http://localhost:5174/">
                                 <img class="animated-img" src="{{asset('logo.png')}}" alt="Boolbnb" height="50px">
                             </a>
@@ -72,17 +73,17 @@
                 <div class="row">
                     <div class="col-6 col-lg-2">
                         <ul class="list-unstyled mt-2">
-                            <li class="p-3 w-100 rounded-3 mb-3 btn-1 btn-1-green {{ Route::currentRouteName() === 'admin.dashboard' ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
-                                <a class="text-light fw-bold text-decoration-none" href="{{ route('admin.dashboard') }}">Dashboard</a>
+                            <li>
+                                <a class="text-light fw-bold text-decoration-none p-3 w-100 rounded-3 mb-3 btn-1 btn-1-green" href="{{ route('admin.dashboard') }}">Dashboard</a>
                             </li>
-                            <li class="p-3 w-100 rounded-3 mb-3 btn-1 btn-1-red {{ str_starts_with(Route::currentRouteName(), 'admin.apartments') ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
-                                <a class="text-light fw-bold text-decoration-none" href="{{ route('admin.apartments.index') }}">Appartamenti</a>
+                            <li>
+                                <a class="text-light fw-bold text-decoration-none p-3 w-100 rounded-3 mb-3 btn-1 btn-1-red" href="{{ route('admin.apartments.index') }}">Appartamenti</a>
                             </li>
-                            <li class="p-3 w-100 rounded-3 mb-3 btn-1 btn-1-blue {{ str_starts_with(Route::currentRouteName(), 'admin.messages') ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
-                                <a class="text-light fw-bold text-decoration-none" href="{{ route('admin.messages.index') }}">Messaggi</a>
+                            <li>
+                                <a class="text-light fw-bold text-decoration-none p-3 w-100 rounded-3 mb-3 btn-1 btn-1-blue" href="{{ route('admin.messages.index') }}">Messaggi</a>
                             </li>
-                            <li class="p-3 w-100 rounded-3 mb-3 btn-1 btn-1-orange {{ str_starts_with(Route::currentRouteName(), 'admin.sponsors') ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
-                                <a class=" text-light fw-bold text-decoration-none" href="{{ route('admin.sponsors.index') }}">Sponsor</a>
+                            <li>
+                                <a class="text-light fw-bold text-decoration-none p-3 w-100 rounded-3 mb-3 btn-1 btn-1-orange" href="{{ route('admin.sponsors.index') }}">Sponsor</a>
                             </li>
                         </ul>
                     </div>
