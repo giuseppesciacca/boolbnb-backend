@@ -31,48 +31,48 @@ body {
 /* #region BRAINTREE */
 
 .submit-button {
-    cursor: pointer;
-    font-weight: 500;
-    left: 3px;
-    line-height: inherit;
-    position: relative;
-    text-decoration: none;
-    text-align: center;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 3px;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    display: inline-block;
-  }
+  cursor: pointer;
+  font-weight: 500;
+  left: 3px;
+  line-height: inherit;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 3px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: inline-block;
+}
 
 /* #endregion BRAINTREE */
 
 .btn-1:active,
 .btn-4:active {
-    scale: 0.7;
-    transition: all 0.3s ease-in-out;
+  scale: 0.7;
+  transition: all 0.3s ease-in-out;
 }
 
 .btn-1 {
-    color: $ourbnb-white;
-    text-align: center;
-    display: inline-block;
-    padding: 10px 25px;
-    border: 1px solid $ourbnb-white;
-    cursor: pointer;
-    letter-spacing: 1px;
-    position: relative;
-    overflow: hidden;
-    // margin: 0 20px;
-    border-radius: 5px;
-    background-color: $ourbnb-red;
-    font-weight: 600;
+  color: $ourbnb-white;
+  text-align: center;
+  display: inline-block;
+  padding: 10px 25px;
+  border: 1px solid $ourbnb-white;
+  cursor: pointer;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  // margin: 0 20px;
+  border-radius: 5px;
+  background-color: $ourbnb-red;
+  font-weight: 600;
 }
 
 .btn-1-blue {
-    background-color: $ourbnb-blue !important;
+  background-color: $ourbnb-blue !important;
 }
 
 .btn-1-orange {
@@ -100,64 +100,64 @@ body {
 }
 
 .btn-1:before {
-    content: "";
-    position: absolute;
-    height: 150px;
-    width: 50px;
-    background: $ourbnb-white;
-    left: -55px;
-    top: -40px;
-    transform: rotate(37deg);
-    transition: all .3s;
-    opacity: 0.3;
+  content: "";
+  position: absolute;
+  height: 150px;
+  width: 50px;
+  background: $ourbnb-white;
+  left: -55px;
+  top: -40px;
+  transform: rotate(37deg);
+  transition: all .3s;
+  opacity: 0.3;
 }
 
 .btn-1:hover:before {
-    left: 95%;
+  left: 95%;
 }
 
 .btn-2 {
-    color: $ourbnb-white;
-    text-align: center;
-    display: inline-block;
-    padding: 10px 25px;
-    border: 1px solid $ourbnb-white;
-    cursor: pointer;
-    letter-spacing: 1px;
-    position: relative;
-    overflow: hidden;
-    // margin: 0 20px;
-    border-radius: 5px;
-    background-color: $ourbnb-light-grey;
-    font-weight: 600;
+  color: $ourbnb-white;
+  text-align: center;
+  display: inline-block;
+  padding: 10px 25px;
+  border: 1px solid $ourbnb-white;
+  cursor: pointer;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  // margin: 0 20px;
+  border-radius: 5px;
+  background-color: $ourbnb-light-grey;
+  font-weight: 600;
 }
 
 .btn-2:before {
-    content: "";
-    position: absolute;
-    height: 150px;
-    width: 50px;
-    background: $ourbnb-white;
-    right: -40px;
-    top: -40px;
-    transform: rotate(37deg);
-    transition: all .3s;
-    opacity: 0.3;
+  content: "";
+  position: absolute;
+  height: 150px;
+  width: 50px;
+  background: $ourbnb-white;
+  right: -40px;
+  top: -40px;
+  transform: rotate(37deg);
+  transition: all .3s;
+  opacity: 0.3;
 }
 
 .btn-2:hover:before {
-    right: 105%;
+  right: 105%;
 }
 
-.our-user{
+.our-user {
   font-size: 3rem;
 }
 
-.text-bool{
+.text-bool {
   color: $ourbnb-red;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
@@ -185,30 +185,28 @@ a{
   font-weight: 500 !important;
 }
 
-.our-address{
+.our-address {
   font-size: 1.1rem;
   font-weight: 600;
   text-transform: uppercase;
 }
 
+
 .check-create{
 background-image: none;
+cursor: pointer;
 }
 
-.checks-field{
-  .fa-solid{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 28px;
-  }
-  .fa-duotone{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 28px;
-  }
-  span{
-    align-self: self-end;
-  }
+.check-create:checked {
+  background-color: transparent;
+  border-color: $ourbnb-soft-black;
+  color:$ourbnb-blue;
+}
+.check-create {
+  background-image: none;
+}
+
+.disclaimer {
+  font-size: 0.75rem;
+
 }
