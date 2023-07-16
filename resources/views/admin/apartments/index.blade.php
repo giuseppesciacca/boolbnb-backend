@@ -34,7 +34,7 @@
                     <img class="img-fluid" src=" {{ asset('storage/' . 'uploads/placeholder.png') }}">
                     @endif
                 </td>
-                <td class="action-td align-middle" data-cell="Indirizzo:">{{$apartment->address}}</td>
+                <td class="action-td align-middle address" data-cell="Indirizzo:">{{$apartment->address}}</td>
                 <td class="action-td text-center align-middle" data-cell="Sponsor:"> @foreach($is_sponsored as $sponsored)
                     @if($apartment->title == $sponsored->title)
                     <i class="fa-solid fa-circle-check text-green"></i>

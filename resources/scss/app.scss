@@ -242,6 +242,15 @@ a {
   }
 }
 
+.action-td.address {
+  width:calc(100% / 7);
+} 
+ @media screen and (max-width: 992px) {
+  .action-td.address {
+    width:auto;
+  } 
+ }
+
 .small-text{
   font-size: 13px !important;
 }
