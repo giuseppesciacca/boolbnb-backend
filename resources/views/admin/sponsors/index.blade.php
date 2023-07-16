@@ -21,7 +21,7 @@
     <div class="row sponsorship justify-content-center row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
         @forelse ($sponsors as $sponsor)
         <div class="col">
-            <div class="card mb-3 rounded-0
+            <div class="card mb-3 rounded-2
                 @if ($sponsor->name == 'Advanced')
                 delay-1 
                 @endif
@@ -29,7 +29,7 @@
                 delay-2 
                 @endif
             ">
-                <div class="card-header rounded-0            
+                <div class="card-header rounded-2            
                 @if ($sponsor->name == 'Basic')
                 bg_bronze
                 @endif
@@ -40,7 +40,7 @@
                 bg_gold 
                 @endif
                 ">
-                    <h4 class="card-title rounded-0 text-center fw-bold">{{$sponsor->name}}</h4>
+                    <h4 class="card-title text-center text-light text-uppercase fw-bold">{{$sponsor->name}}</h4>
                 </div>
                 <div class="card-body">
                     <p class="card-text">
@@ -48,7 +48,7 @@
                     </p>
                 </div>
 
-                <div class="card-footer rounded-0
+                <div class="card-footer rounded-2
                 @if ($sponsor->name == 'Basic')
                 bg_bronze 
                 @endif
@@ -59,7 +59,7 @@
                 bg_gold 
                 @endif
                 ">
-                    <p class="card-text card-p">Prezzo: <strong>€{{$sponsor->price}}</strong></p>
+                    <p class="card-text text-light card-p">Prezzo: <strong>€{{$sponsor->price}}</strong></p>
                 </div>
 
             </div>

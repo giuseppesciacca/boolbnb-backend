@@ -28,13 +28,23 @@
     animation-duration: 2s;
     animation-delay: 0.5s;
     animation-fill-mode: forwards;
-    box-shadow: 0 1px 11px $ourbnb-black;
+    box-shadow: 0 1px 8px $ourbnb-black;
     opacity: 0;
     transition:box-shadow 0.4s ease;
 }
 
 .sponsorship .card:hover {
     box-shadow: none;
+}
+
+.sponsorship .card-header {
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
+
+.sponsorship .card-footer {
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
 }
 
 

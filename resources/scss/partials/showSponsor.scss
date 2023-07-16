@@ -21,6 +21,16 @@
 
 #sponsorship .card:hover {
     box-shadow: 0 1px 11px $ourbnb-black;;
+} 
+
+#sponsorship .card-header {
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
+
+#sponsorship .card-footer {
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
 }
 
 /* #sponsorship .card::after {

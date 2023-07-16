@@ -55,7 +55,7 @@
             @forelse ($sponsors as $sponsor)
 
             <div class="col">
-                <div class="card mb-4 rounded-0
+                <div class="card mb-4 rounded-2
                 @if ($sponsor->name == 'Advanced')
                 delay-1 
                 @endif
@@ -63,7 +63,7 @@
                 delay-2 
                 @endif
                 ">
-                    <div class="card-header rounded-0
+                    <div class="card-header rounded-2
                     @if ($sponsor->name == 'Basic')
                 bg_bronze
                 @endif
@@ -74,7 +74,7 @@
                 bg_gold 
                 @endif
                     ">
-                        <h4 class="card-title rounded-0 text-center text-light text-uppercase fw-semibold mb-0">{{$sponsor->name}}</h4>
+                        <h4 class="card-title text-center text-light text-uppercase fw-semibold mb-0">{{$sponsor->name}}</h4>
                     </div>
                     <div class="card-body">
                         <p class="card-text">
@@ -82,7 +82,7 @@
                         </p>
                     </div>
 
-                    <div class="card-footer rounded-0
+                    <div class="card-footer rounded-2
                     @if ($sponsor->name == 'Basic')
                 bg_bronze 
                 @endif
@@ -94,7 +94,7 @@
                 @endif
                     d-flex justify-content-between align-content-center">
                         <p class="card-p d-flex text-light align-items-center justify-content-center mb-0 gap-2">Prezzo: <strong>€{{$sponsor->price}}</strong></p>
-                        <a class="btn-1 btn-1-black text-decoration-none" href="{{route('admin.payments.create', ['apartment' => $apartment, 'sponsor' => $sponsor])}}" role=" button">Scegli</a>
+                        <a class="btn-1 btn-1-green text-decoration-none" href="{{route('admin.payments.create', ['apartment' => $apartment, 'sponsor' => $sponsor])}}" role=" button">Scegli</a>
                     </div>
 
                 </div>
