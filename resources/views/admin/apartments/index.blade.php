@@ -41,7 +41,13 @@
                     @endif
                     @endforeach
                 </td>
-                <td class="action-td align-middle" data-cell="Visibile:">{{$apartment->visibility ? 'si' : 'no'}}</td>
+                <td class="action-td align-middle" data-cell="Visibile:">
+                    @if ($apartment->visibility)
+                    <i class="fa-solid fa-circle-check text-green"></i>
+                    @else
+                    <i class="fa-solid fa-circle-xmark" style="color: #ff0000;"></i>
+                    @endif
+                </td>
                 <td class="action-td text-center align-middle" data-cell="Azioni:">
                     <a class="btn-1 btn-1-blue" href="{{route('admin.apartments.show', $apartment->slug)}}"><i class="fa-solid fa-eye"></i></a>
 
