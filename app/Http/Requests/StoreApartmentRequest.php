@@ -28,7 +28,7 @@ class StoreApartmentRequest extends FormRequest
 
             'user_id' => 'exists:users,id',
             'title' => 'required',
-            'image.*' => 'nullable|max:2048|mimes:jpg,jpeg,png,bmp',
+            'image.*' => 'nullable|mimes:jpg,jpeg,png,bmp',
             'price' => 'required|numeric|min:1|max:9999',
             'description' => 'nullable',
             'rooms' => 'required|numeric|min:1|max:50',

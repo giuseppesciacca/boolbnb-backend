@@ -162,8 +162,8 @@ a {
 }
 
 .bg_bronze {
-/*   background: linear-gradient(45deg, $ourbnb-red, $ourbnb-bronze)  !important; */
-    background-color: $ourbnb-blue;
+  /*   background: linear-gradient(45deg, $ourbnb-red, $ourbnb-bronze)  !important; */
+  background-color: $ourbnb-blue;
 }
 
 .bg_silver {
@@ -236,29 +236,31 @@ a {
 
 }
 
-.action-td{
-  .btn-1{
+.action-td {
+  .btn-1 {
     min-width: 71px !important;
   }
 }
 
 .action-td.address {
-  width:calc(100% / 7);
-} 
- @media screen and (max-width: 992px) {
-  .action-td.address {
-    width:auto;
-  } 
- }
+  width: calc(100% / 7);
+}
 
-.small-text{
+@media screen and (max-width: 992px) {
+  .action-td.address {
+    width: auto;
+  }
+}
+
+.small-text {
   font-size: 13px !important;
 }
 
-.control-icon-list{
-  li{
+.control-icon-list {
+  li {
+
     .fa-duotone,
-    .fa-solid{
+    .fa-solid {
       width: 27px;
       display: flex;
       justify-content: center;
@@ -275,14 +277,20 @@ a {
 
 @keyframes gradient {
   0% {
-      background-position: 0% 50%;
+    background-position: 0% 50%;
   }
 
   50% {
-      background-position: 100% 50%;
+    background-position: 100% 50%;
   }
 
   100% {
-      background-position: 0% 50%;
+    background-position: 0% 50%;
   }
+}
+
+.custom-img {
+  height: 100px;
+  width: 160px;
+  object-fit: cover;
 }

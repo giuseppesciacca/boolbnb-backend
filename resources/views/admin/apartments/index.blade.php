@@ -29,9 +29,9 @@
                 <td class="action-td align-middle" scope="row" data-cell="Title:">{{$apartment->title}}</td>
                 <td class="action-td align-middle" class="img">
                     @if ($apartment->image)
-                    <img class="img-fluid" style="height: 100px; width:160px; object-fit:cover;" src=" {{ asset('storage/' . $apartment->image[0]) }}" alt="{{$apartment->slug}}">
+                    <img class="img-fluid custom-img" src=" {{ asset('storage/' . $apartment->image[0]) }}" alt="{{$apartment->slug}}">
                     @else
-                    <img class="img-fluid" src=" {{ asset('storage/' . 'uploads/placeholder.png') }}">
+                    <img class="img-fluid custom-img" src=" {{ asset('storage/' . 'uploads/placeholder.png') }}">
                     @endif
                 </td>
                 <td class="action-td align-middle address" data-cell="Indirizzo:">{{$apartment->address}}</td>
@@ -67,7 +67,7 @@
                                 </div>
                                 <div class="card-img-top mt-3">
                                     @if ($apartment->image)
-                                    <img class="img-fluid" style="height: 300px; width:360px; object-fit:cover;" src=" {{ asset('storage/' . $apartment->image[0]) }}" alt="{{$apartment->slug}}">
+                                    <img class="img-fluid" src=" {{ asset('storage/' . $apartment->image[0]) }}" alt="{{$apartment->slug}}">
                                     @else
                                     <img class="img-fluid" src=" {{ asset('storage/' . 'uploads/placeholder.png') }}">
                                     @endif
