@@ -30,9 +30,10 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+                <img class="animated-img d-lg-none d-md-none d-sm-flex" src="{{asset('logo.png')}}" alt="Boolbnb" height="50px">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav">
-                        <li class="nav-item">
+                        <li class="nav-item d-lg-flex d-md-flex d-none">
                             <a class="nav-link d-flex justify-content-center" href="http://localhost:5174/">
                                 <img class="animated-img" src="{{asset('logo.png')}}" alt="Boolbnb" height="50px">
                             </a>
