@@ -42,4 +42,4 @@ Il progetto è stato sviluppato utilizzando diverse tecnologie e framework per s
 
 Siamo entusiasti di condividere con voi il nostro progetto Boolbnb!
 
-Con Amore, Team Five. 🌱
+with Love, Team Five. 🌱
