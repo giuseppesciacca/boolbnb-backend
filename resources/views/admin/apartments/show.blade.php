@@ -59,7 +59,7 @@
                 </div>
                 <div class="card-footer px-0">
                     <div class="d-flex gap-1 flex-wrap align-items-center">
-                        @foreach($services as $service)
+                        @foreach($apartment->services as $service)
                         <div class="badge p-2 btn-1 btn-1-blue d-flex justify-content-center align-items-center gap-2">
                             <i class="{{$service->image}} fa-lg"></i>
                             <span class="fw-light">{{ $service->name }}</span>
