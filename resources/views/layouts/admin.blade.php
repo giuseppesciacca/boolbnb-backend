@@ -68,29 +68,49 @@
                 </div>
             </div>
         </nav>
+        <!-- /.nav -->
+
         <main id="main-admin" class="py-2">
             <div class="container">
                 <div class="row">
-                    <div class="col-6 col-lg-2">
-                        <ul class="list-unstyled mt-2">
-                            <li>
-                                <a class="text-light fw-bold text-decoration-none p-3 w-100 rounded-3 mb-3 btn-1 btn-1-green" href="{{ route('admin.dashboard') }}">Dashboard</a>
-                            </li>
-                            <li>
-                                <a class="text-light fw-bold text-decoration-none p-3 w-100 rounded-3 mb-3 btn-1 btn-1-red" href="{{ route('admin.apartments.index') }}">Appartamenti</a>
-                            </li>
-                            <li>
-                                <a class="text-light fw-bold text-decoration-none p-3 w-100 rounded-3 mb-3 btn-1 btn-1-blue" href="{{ route('admin.messages.index') }}">Messaggi</a>
-                            </li>
-                            <li>
-                                <a class="text-light fw-bold text-decoration-none p-3 w-100 rounded-3 mb-3 btn-1 btn-1-orange" href="{{ route('admin.sponsors.index') }}">Sponsor</a>
-                            </li>
-                        </ul>
+                    <div class="col-12 col-lg-2">
+                        <div class="row">
+                            <div class="col px-1">
+                                <ul class="list-unstyled mt-2 mb-0">
+                                    <li>
+                                        <a class="text-light fw-bold text-decoration-none p-3 w-100 rounded-3 mb-3 btn-1 btn-1-green" href="{{ route('admin.dashboard') }}">Dashboard</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-light fw-bold text-decoration-none p-3 w-100 rounded-3 mb-3 mb-lg-0 btn-1 btn-1-red" href="{{ route('admin.apartments.index') }}">Appartamenti</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- ./col-left ./col-lg-top -->
+
+                            <div class="col px-1">
+                                <ul class="list-unstyled mt-2">
+                                    <li>
+                                        <a class="text-light fw-bold text-decoration-none p-3 w-100 rounded-3 mb-3 btn-1 btn-1-blue" href="{{ route('admin.messages.index') }}">Messaggi</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-light fw-bold text-decoration-none p-3 w-100 rounded-3 mb-3 btn-1 btn-1-orange" href="{{ route('admin.sponsors.index') }}">Sponsor</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- ./col-right ./col-lg-bottom -->
+                        </div>
+                        <!-- ./row -->
+
                     </div>
+                    <!-- .sidebar -->
+
                     <div class="col-12 col-lg-10">
                         @yield('content')
                     </div>
+                    <!-- yield-content -->
+
                 </div>
+                <!-- ./row -->
             </div>
         </main>
         @include('admin.partials.app_footer')
