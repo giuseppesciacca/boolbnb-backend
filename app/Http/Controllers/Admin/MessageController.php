@@ -22,10 +22,11 @@ class MessageController extends Controller
     {
         //JOINO la tabella messages CON apartaments sull'id dell'appartamento (apartment_id), DOVE user_id di apartments è uguale all'utente loggato
 
-        $messages = Message::join('apartments', 'apartment_id', '=', 'apartments.id')->where('apartments.user_id', '=', Auth::user('id')->id)->select('*', 'messages.id AS alias_message_id')->orderByDesc('alias_message_id')->get();
+        $messages = Message::join('apartments', 'apartment_id', '=', 'apartments.id')->where('apartments.user_id', '=', Auth::user('id')->id)->select('*', 'messages.id AS alias_message_id', 'messages.created_at AS date_message_sent')->orderByDesc('alias_message_id')->get();
 
         /* SELECT *,
-         messages.id AS message_id
+        messages.id AS message_id,
+        messages.created_at AS date_message_sent
         FROM `messages`
         JOIN apartments ON apartment_id = apartments.id
         WHERE apartments.user_id = 5; */

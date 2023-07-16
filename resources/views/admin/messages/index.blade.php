@@ -29,7 +29,7 @@
                 <td data-cell="Cognome:">{{ $message->surname }}</td>
                 <td data-cell="Email:">{{ $message->email }}</td>
                 <td data-cell="Corpo messaggio:">{{ $message->message }}</td>
-                <td data-cell="Ricevuto:">{{ $message->created_at }}</td>
+                <td data-cell="Ricevuto:">{{ $message->date_message_sent }}</td>
 
                 <td data-cell="Azioni:">
                     <a href="{{ route('admin.messages.show', $message->alias_message_id, $message->user_id) }}" class="btn-1 btn-1-blue w-75"><i class="fa-solid fa-eye"></i></a>
