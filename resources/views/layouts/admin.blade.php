@@ -31,7 +31,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <img class="animated-img d-lg-none d-md-none d-sm-flex" src="{{asset('logo.png')}}" alt="Boolbnb" height="50px">
-                <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse justify-content-between align-content-center" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                         <li class="nav-item d-lg-flex d-md-flex d-none">
                             <a class="nav-link d-flex justify-content-center" href="http://localhost:5174/">
