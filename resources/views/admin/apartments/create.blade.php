@@ -211,8 +211,8 @@
             <input class="form-check-input" type="radio" name="visibility" id="visibility" value="1" checked>
             <label class="form-check-label" for="visibility">Si, rendilo visibile</label>
 
-            <input class="form-check-input ms-3" type="radio" name="visibility" id="visibility" value="0">
-            <label class="form-check-label" for="visibility">No, non renderlo visibile</label>
+            <input class="form-check-input ms-3" type="radio" name="visibility" id="no-visibility" value="0">
+            <label class="form-check-label" for="no-visibility">No, non renderlo visibile</label>
 
             <br>
         </div>

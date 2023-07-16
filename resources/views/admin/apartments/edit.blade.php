@@ -258,8 +258,8 @@
             <input type="radio" name="visibility" id="visibility" value="1" {{ old('visibility', $apartment->visibility) === 1 ? 'checked' : '' }}>
             <label class="form-check-label" for="visibility">Si, rendilo visibile</label>
 
-            <input type="radio" name="visibility" id="visibility" value="0" {{ old('visibility', $apartment->visibility) === 0 ? 'checked' : '' }}>
-            <label class="form-check-label" for="visibility">No, non renderlo visibile</label>
+            <input type="radio" name="visibility" id="no-visibility" value="0" {{ old('visibility', $apartment->visibility) === 0 ? 'checked' : '' }}>
+            <label class="form-check-label" for="no-visibility">No, non renderlo visibile</label>
 
             <br>
             <small>Di default è settato su "visibile"</small>
