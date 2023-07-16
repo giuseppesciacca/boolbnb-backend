@@ -62,7 +62,7 @@
 
         <div class="mb-3">
             <label for="price" class="form-label">€/notte</label>
-            <input type="number" name="price" id="price" class="form-control @error('price') is-invalid @enderror" placeholder="Inserire numero stanze" aria-describedby="imageHelper" min="1" max="9999" step="1">
+            <input type="number" name="price" id="price" class="form-control @error('price') is-invalid @enderror" placeholder="Inserire prezzo per notte" aria-describedby="imageHelper" min="1" max="9999" step="1">
             <span id="span-price" class="d-none bg-danger text-dark" role="alert">
                 <strong>Il prezzo non è valido</strong>
             </span>
