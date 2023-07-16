@@ -232,3 +232,25 @@ a {
   }
 
 }
+
+.action-td{
+  .btn-1{
+    min-width: 71px !important;
+  }
+}
+
+.small-text{
+  font-size: 13px !important;
+}
+
+.control-icon-list{
+  li{
+    .fa-duotone,
+    .fa-solid{
+      width: 27px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
