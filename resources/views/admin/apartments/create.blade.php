@@ -8,10 +8,7 @@
 
 <div class="container">
     @include('admin.partials.validation_errors')
-
-    <h5 class="text-uppercase text-muted pb-3">Aggiungi un nuovo appartamento</h5>
-
-    <form id="custom-form" action="{{ route('admin.apartments.store') }}" method="post" enctype="multipart/form-data">
+    <form id="custom-form" action="{{ route('admin.apartments.store') }}" method="post" enctype="multipart/form-data" class="mt-3">
         @csrf
 
         <div class="mb-3">
@@ -191,13 +188,13 @@
         </div>
         <!-- /indirizzo -->
 
-        <div class="mb-3">
+        <div class="ms-2 mb-3">
             <label for="services" class="form-label">Servizi</label>
-            <div class="form-check row row-cols-4 d-flex">
+            <div class="form-check row  row-cols-2 row-cols-md-3 row-cols-lg-4 d-flex">
                 @foreach($services as $service)
-                <label class="form-check-label" for="{{ $service->name }}">
-                    <input name="services[]" class="form-check-input multi-check-box" type="checkbox" value="{{ $service->id }}" id="{{ $service->name }}" {{ in_array($service->id, old('services', [])) ? 'checked' : '' }}>
-                    {{ $service->name }}
+                <label class="form-check-label d-flex align-items-baseline g-2 gap-2" for="{{ $service->name }}">
+                    <input name="services[]" class="form-check-input multi-check-box check-create {{$service->image}} d-flex align-items-center justify-content-center" style="width:30px; height:30px;" type="checkbox" value="{{ $service->id }}" id="{{ $service->name }}" {{ in_array($service->id, old('services', [])) ? 'checked' : '' }}>
+                     <span>{{ $service->name }}</span>
                 </label>
                 @endforeach
             </div>
