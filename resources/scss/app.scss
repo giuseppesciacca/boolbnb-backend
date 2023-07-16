@@ -192,21 +192,43 @@ a {
 }
 
 
-.check-create{
-background-image: none;
-cursor: pointer;
+.check-create {
+  background-image: none;
+  cursor: pointer;
 }
 
 .check-create:checked {
   background-color: transparent;
   border-color: $ourbnb-soft-black;
-  color:$ourbnb-blue;
+  color: $ourbnb-blue;
 }
+
 .check-create {
   background-image: none;
 }
 
 .disclaimer {
   font-size: 0.75rem;
+
+}
+
+.checks-field {
+  .fa-solid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+  }
+
+  .fa-duotone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+  }
+
+  span {
+    align-self: self-end;
+  }
 
 }
