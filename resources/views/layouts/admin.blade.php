@@ -73,17 +73,17 @@
                 <div class="row">
                     <div class="col-6 col-lg-2">
                         <ul class="list-unstyled mt-2">
-                            <li class="p-3 w-100 rounded-3 mb-3 btn-1 btn-1-green {{ Route::currentRouteName() === 'admin.dashboard' ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
-                                <a class="text-light fw-bold text-decoration-none" href="{{ route('admin.dashboard') }}">Dashboard</a>
+                            <li>
+                                <a class="text-light fw-bold text-decoration-none p-3 w-100 rounded-3 mb-3 btn-1 btn-1-green" href="{{ route('admin.dashboard') }}">Dashboard</a>
                             </li>
-                            <li class="p-3 w-100 rounded-3 mb-3 btn-1 btn-1-red {{ str_starts_with(Route::currentRouteName(), 'admin.apartments') ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
-                                <a class="text-light fw-bold text-decoration-none" href="{{ route('admin.apartments.index') }}">Appartamenti</a>
+                            <li>
+                                <a class="text-light fw-bold text-decoration-none p-3 w-100 rounded-3 mb-3 btn-1 btn-1-red" href="{{ route('admin.apartments.index') }}">Appartamenti</a>
                             </li>
-                            <li class="p-3 w-100 rounded-3 mb-3 btn-1 btn-1-blue {{ str_starts_with(Route::currentRouteName(), 'admin.messages') ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
-                                <a class="text-light fw-bold text-decoration-none" href="{{ route('admin.messages.index') }}">Messaggi</a>
+                            <li>
+                                <a class="text-light fw-bold text-decoration-none p-3 w-100 rounded-3 mb-3 btn-1 btn-1-blue" href="{{ route('admin.messages.index') }}">Messaggi</a>
                             </li>
-                            <li class="p-3 w-100 rounded-3 mb-3 btn-1 btn-1-orange {{ str_starts_with(Route::currentRouteName(), 'admin.sponsors') ? 'bg-danger fst-italic fw-bolder' : 'bg-dark' }}">
-                                <a class=" text-light fw-bold text-decoration-none" href="{{ route('admin.sponsors.index') }}">Sponsor</a>
+                            <li>
+                                <a class="text-light fw-bold text-decoration-none p-3 w-100 rounded-3 mb-3 btn-1 btn-1-orange" href="{{ route('admin.sponsors.index') }}">Sponsor</a>
                             </li>
                         </ul>
                     </div>
