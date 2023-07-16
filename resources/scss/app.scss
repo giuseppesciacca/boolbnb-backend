@@ -193,4 +193,11 @@ a{
 
 .check-create{
 background-image: none;
+cursor: pointer;
+}
+
+.check-create:checked {
+  background-color: transparent;
+  border-color: $ourbnb-soft-black;
+  color:$ourbnb-blue;
 }
