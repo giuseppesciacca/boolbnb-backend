@@ -8,6 +8,7 @@
 
 <div class="container">
     @include('admin.partials.validation_errors')
+    <h5 class="text-uppercase text-muted py-3">crea un nuovo appartamento</h5>
     <form id="custom-form" action="{{ route('admin.apartments.store') }}" method="post" enctype="multipart/form-data" class="mt-3">
         @csrf
 

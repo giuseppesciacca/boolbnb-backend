@@ -6,9 +6,9 @@
 
 <div class="container-fluid py-3">
 
-    <a href="{{route('admin.apartments.create')}}" class="text-decoration-none text-dark d-flex align-items-center gap-2 py-3">
+    <a href="{{route('admin.apartments.create')}}" class="text-decoration-none text-dark d-flex align-items-center gap-1 py-3">
         <i class="fa-solid fa-plus fa-2x"></i>
-        <span class="add_apartment ms-3">Aggiungi</span>
+        <span class="add_apartment ms-3">Aggiungi un nuovo <span class="text-bool">boolbnb</span></span>
     </a>
     <table class="table table-hover table-striped m-0 py-5">
         <thead>
@@ -41,7 +41,7 @@
                     @endif
                     @endforeach
                 </td>
-                <td class="action-td align-middle" data-cell="Visibile:">
+                <td class="action-td text-center align-middle" data-cell="Visibile:">
                     @if ($apartment->visibility)
                     <i class="fa-solid fa-circle-check text-green"></i>
                     @else
