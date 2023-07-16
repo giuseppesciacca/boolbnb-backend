@@ -162,15 +162,15 @@ a {
 }
 
 .bg_bronze {
-  background-color: $ourbnb-bronze !important;
+  background: linear-gradient(45deg, $ourbnb-red, $ourbnb-bronze)  !important;
 }
 
 .bg_silver {
-  background-color: $ourbnb-silver !important;
+  background: linear-gradient(45deg, $ourbnb-light-grey, $ourbnb-grey)  !important;
 }
 
 .bg_gold {
-  background-color: $ourbnb-gold !important;
+  background: linear-gradient(45deg, $ourbnb-gold, $ourbnb-dark-gold)  !important;
 }
 
 .text-green {
