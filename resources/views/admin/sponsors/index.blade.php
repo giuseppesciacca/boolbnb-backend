@@ -40,7 +40,7 @@
                 bg_gold 
                 @endif
                 ">
-                    <h4 class="card-title rounded-0 text-center text-light fw-bold">{{$sponsor->name}}</h4>
+                    <h4 class="card-title rounded-0 text-center fw-bold">{{$sponsor->name}}</h4>
                 </div>
                 <div class="card-body">
                     <p class="card-text">
@@ -59,7 +59,7 @@
                 bg_gold 
                 @endif
                 ">
-                    <p class="card-text card-p text-light">Prezzo: <strong>€{{$sponsor->price}}</strong></p>
+                    <p class="card-text card-p">Prezzo: <strong>€{{$sponsor->price}}</strong></p>
                 </div>
 
             </div>

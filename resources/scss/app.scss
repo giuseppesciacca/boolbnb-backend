@@ -162,15 +162,18 @@ a {
 }
 
 .bg_bronze {
-  background: linear-gradient(45deg, $ourbnb-red, $ourbnb-bronze)  !important;
+/*   background: linear-gradient(45deg, $ourbnb-red, $ourbnb-bronze)  !important; */
+    background-color: $ourbnb-fuchsia;
 }
 
 .bg_silver {
-  background: linear-gradient(45deg, $ourbnb-light-grey, $ourbnb-grey)  !important;
+  //background: linear-gradient(45deg, $ourbnb-light-grey, $ourbnb-grey)  !important;
+  background-color: $ourbnb-tea;
 }
 
 .bg_gold {
-  background: linear-gradient(45deg, $ourbnb-gold, $ourbnb-dark-gold)  !important;
+  //background: linear-gradient(45deg, $ourbnb-gold, $ourbnb-dark-gold)  !important;
+  background-color: $ourbnb-blue-sponsor;
 }
 
 .text-green {
@@ -252,5 +255,25 @@ a {
       justify-content: center;
       align-items: center;
     }
+  }
+}
+
+.button-sidebar {
+  background: linear-gradient(45deg, $ourbnb-red, $ourbnb-blue);
+  background-size: 600% 600%;
+  animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+
+  50% {
+      background-position: 100% 50%;
+  }
+
+  100% {
+      background-position: 0% 50%;
   }
 }

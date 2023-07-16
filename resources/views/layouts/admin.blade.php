@@ -78,10 +78,10 @@
                             <div class="col px-1">
                                 <ul class="list-unstyled mt-2 mb-0">
                                     <li>
-                                        <a class="text-light fw-bold text-decoration-none p-3 w-100 rounded-3 mb-3 btn-1 btn-1-green" href="{{ route('admin.dashboard') }}">Dashboard</a>
+                                        <a class="button-sidebar text-light fw-bold text-decoration-none p-3 w-100 rounded-3 mb-3 btn-1 btn-1-green" href="{{ route('admin.dashboard') }}">Dashboard</a>
                                     </li>
                                     <li>
-                                        <a class="text-light fw-bold text-decoration-none p-3 w-100 rounded-3 mb-3 mb-lg-0 btn-1 btn-1-red" href="{{ route('admin.apartments.index') }}">Appartamenti</a>
+                                        <a class="button-sidebar text-light fw-bold text-decoration-none p-3 w-100 rounded-3 mb-3 mb-lg-0 btn-1 btn-1-red" href="{{ route('admin.apartments.index') }}">Appartamenti</a>
                                     </li>
                                 </ul>
                             </div>
@@ -90,10 +90,10 @@
                             <div class="col px-1">
                                 <ul class="list-unstyled mt-2">
                                     <li>
-                                        <a class="text-light fw-bold text-decoration-none p-3 w-100 rounded-3 mb-3 btn-1 btn-1-blue" href="{{ route('admin.messages.index') }}">Messaggi</a>
+                                        <a class="button-sidebar text-light fw-bold text-decoration-none p-3 w-100 rounded-3 mb-3 btn-1 btn-1-blue" href="{{ route('admin.messages.index') }}">Messaggi</a>
                                     </li>
                                     <li>
-                                        <a class="text-light fw-bold text-decoration-none p-3 w-100 rounded-3 mb-3 btn-1 btn-1-orange" href="{{ route('admin.sponsors.index') }}">Sponsor</a>
+                                        <a class="button-sidebar text-light fw-bold text-decoration-none p-3 w-100 rounded-3 mb-3 btn-1 btn-1-orange" href="{{ route('admin.sponsors.index') }}">Sponsor</a>
                                     </li>
                                 </ul>
                             </div>
