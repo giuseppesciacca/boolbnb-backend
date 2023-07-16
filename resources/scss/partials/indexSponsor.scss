@@ -57,3 +57,21 @@
     color: $ourbnb-white !important;
     text-shadow: -1.3px 0px 0px $ourbnb-black, 1.3px 0px 0px $ourbnb-black, 0px -1.3px 0px $ourbnb-black, 0px 1.3px 0px $ourbnb-black;
 } */
+
+.checks-field{
+    .fa-solid{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 28px;
+    }
+    .fa-duotone{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 28px;
+    }
+    span{
+      align-self: self-end;
+    }
+}
