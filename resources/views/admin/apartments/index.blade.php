@@ -37,7 +37,7 @@
                 <td class="action-td align-middle" data-cell="Indirizzo:">{{$apartment->address}}</td>
                 <td class="action-td text-center align-middle" data-cell="Sponsor:"> @foreach($is_sponsored as $sponsored)
                     @if($apartment->title == $sponsored->title)
-                    <i class="fa-solid fa-circle-check" style="color: #00ff00;"></i>
+                    <i class="fa-solid fa-circle-check text-green"></i>
                     @endif
                     @endforeach
                 </td>
@@ -55,9 +55,9 @@
                     <div class="modal fade" id="modalId-{{$apartment->id}}" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
                         <div class="modal-dialog" role="dialog">
                             <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="modalTitleId">Cancella appartamento "{{$apartment->title}}"?</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <div class="modal-header justify-content-center">
+                                    <h1 class="modal-title fs-5 flex-grow-1" id="modalTitleId">{{$apartment->title}}</h1>
+                                    <button type="button" class="btn-close m-0" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="card-img-top mt-3">
                                     @if ($apartment->image)

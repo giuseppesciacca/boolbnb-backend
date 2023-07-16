@@ -96,7 +96,7 @@ body {
 }
 
 .btn-1-black {
-  background-color: $ourbnb-black !important;
+  background-color: $ourbnb-light-black !important;
 }
 
 .btn-1:before {
@@ -171,4 +171,22 @@ a{
 
 .bg_gold {
   background-color: $ourbnb-gold !important;
+}
+
+.text-green {
+  color: $ourbnb-green;
+}
+
+.our-quote {
+  font-family: 'Grape Nuts', cursive;
+  color: $ourbnb-soft-black !important;
+  transition: all 0.30s;
+  text-shadow: none !important;
+  font-weight: 500 !important;
+}
+
+.our-address{
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
 }

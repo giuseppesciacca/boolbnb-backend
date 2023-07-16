@@ -7,6 +7,7 @@ use App\Http\Requests\StoreSponsorRequest;
 use App\Http\Requests\UpdateSponsorRequest;
 use App\Http\Controllers\Controller;
 use App\Models\Apartment;
+use App\Models\Service;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -54,12 +55,12 @@ class SponsorController extends Controller
     {
         //passo l'appartamento singolo attraverso lo show di apartments, e da lì lo mando qui, allo show di sponsors
         $sponsors = Sponsor::orderBy('id')->get();
-
+        $services = Service::all();
         $apartment = Apartment::where('slug', '=', $apartment)->first();
 
         if (Auth::id() === $apartment->user_id) {
 
-            return view('admin.sponsors.show', compact('apartment', 'sponsors'));
+            return view('admin.sponsors.show', compact('apartment', 'sponsors', 'services'));
         }
         abort(403);
     }

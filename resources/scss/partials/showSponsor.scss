@@ -53,3 +53,19 @@
 .delay-2 {
     animation-delay: 1.5s !important;
 }
+
+.icon-list{
+    .fa-duotone{
+        width: 28px;
+        aspect-ratio: 1/1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    li{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3px;
+    }
+}
