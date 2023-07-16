@@ -1,20 +1,20 @@
-# Progetto Full Stack - BoolBnb
+# Progetto Full-Stack / Boolbnb
 
-Benvenuti in questo repository dedicato alla replica di un sito ispirato ad Airbnb chiamato **BoolBnb!** Si tratta di un'impresa di gruppo che corona un intenso percorso di sei mesi di full immersion nel mondo dello sviluppo web Full-Stack. In questo repository troverete il codice sorgente relativo alla parte **BACK-END** di questo emozionante lavoro di gruppo.
+Benvenuti in questo repository dedicato alla replica di un sito ispirato ad Airbnb chiamato **Boolbnb!** Si tratta di un'impresa di gruppo che corona un intenso percorso di sei mesi di full immersion nel mondo dello sviluppo web Full-Stack. In questo repository troverete il codice sorgente relativo alla parte **FRONT-END** di questo emozionante lavoro di gruppo.
 
-## Il team 5 ha realizzato questo progetto 📚
-
-[Luca Cirigliano](https://github.com/L-cir94)
-Full-Stack Web Developer
+## Il Team Five ha realizzato questo progetto 📚
 
 [Luca Piacentini](https://github.com/LookasWasTaken)
 Full-Stack Web Developer | Chinesiologo
 
-[Carmelo Leone](https://github.com/LeoneCarmelo) 
-Full-Stack Web Developer | Chitarrista dei 7 black Sides
+[Luca Cirigliano](https://github.com/L-cir94)
+Full-Stack Web Developer
 
 [Domiziano De Santis](https://github.com/DeSantisDomiziano)
 Full-Stack Web Developer
+
+[Carmelo Leone](https://github.com/LeoneCarmelo) 
+Full-Stack Web Developer | Chitarrista dei 7 Black Sides
 
 [Giuseppe Sciacca](https://github.com/giuseppesciacca)
 Full-Stack Web Developer | Agronomo
@@ -34,13 +34,12 @@ Il progetto include alcune delle funzionalità chiave:
 
 ## Tecnologie utilizzate 💻
 
-Il progetto è stato sviluppato utilizzando diverse tecnologie e framework per supportare lo sviluppo Full Stack:
+Il progetto è stato sviluppato utilizzando diverse tecnologie e framework per supportare lo sviluppo Full-Stack:
 
-- **Frontend**: Abbiamo utilizzato Vue.js per creare un'interfaccia utente responsive e interattiva. Inoltre, abbiamo utilizzato HTML, SCSS e JavaScript per lo sviluppo del frontend.
+- **Frontend**: Abbiamo utilizzato Vue.js per creare un'interfaccia utente responsive e interattiva. Inoltre, abbiamo utilizzato HTML, SCSS e JavaScript per lo sviluppo.
 - **Backend**: Abbiamo utilizzato Laravel per creare il server backend, gestire le richieste API, l'archiviazione dei dati e l'interazione con il database.
 - **Mappe**: Abbiamo utilizzato TomTom Developer per ottenere le coordinate geografiche a partire da un indirizzo e visualizzare il punto sulla mappa.
 
-Siamo entusiasti di condividere con voi il nostro progetto Full Stack - BoolBnb!
+Siamo entusiasti di condividere con voi il nostro progetto Boolbnb!
 
-Con Amore, Team 5. 🌱
-
+Con Amore, Team Five. 🌱
