@@ -12,7 +12,11 @@
         @csrf
 
         <div class="mb-3">
-            <label for="title" class="form-label">Titolo (*)</label>
+            <label for="title" class="form-label">
+                <div class="d-flex justify-content-start align-items-center gap-2 checks-field">
+                    <i class="fa-solid fa-thumbtack fa-rotate-270 fa-lg"></i><span class="fw-semibold fs-5">Titolo (*)</span>
+                </div>
+            </label>
             <input type="text" name="title" id="title" class="form-control @error('title') is-invalid @enderror" placeholder="Titolo dell'appartamento" aria-describedby="nameHelper" required>
             <small>Massimo 255 caratteri</small>
             <span id="span-title" class="d-none bg-danger text-dark" role="alert">
@@ -29,7 +33,11 @@
         <!-- /title -->
 
         <div class="mb-3">
-            <label for="image" class="form-label">Immagine</label>
+            <label for="image" class="form-label">
+                <div class="d-flex justify-content-start align-items-center gap-2 checks-field">
+                    <i class="fa-solid fa-panorama fa-lg"></i><span class="fw-semibold fs-5">Immagine</span>
+                </div>
+            </label>
             <input type="file" name="image[]" id="image" class="form-control @error('image') is-invalid @enderror" placeholder="Inserisci la foto dell'appartamento" aria-describedby="imageHelper" accept="image/*" multiple>
             <small>Puoi inserire più immagini dei seguenti formati: JPG, JPEG, PNG, BMP.</small>
             <span id="span-image" class="d-none bg-danger text-dark" role="alert">
@@ -45,7 +53,11 @@
         <!-- /image -->
 
         <div class="mb-3">
-            <label for="description" class="form-label">Descrizione</label>
+            <label for="description" class="form-label">
+                <div class="d-flex justify-content-start align-items-center gap-2 checks-field">
+                    <i class="fa-duotone fa-quote-right fa-lg"></i><span class="fw-semibold fs-5">Descrizione</span>
+                </div>
+            </label>
 
             <textarea cols="30" rows="5" name="description" id="description" class="form-control @error('description') is-invalid @enderror" placeholder="Descrizione dell'appartamento" aria-describedby="nameHelper"></textarea>
             <span id="span-description" class="d-none bg-danger text-dark" role="alert">
@@ -61,7 +73,11 @@
         <!-- /description -->
 
         <div class="mb-3">
-            <label for="price" class="form-label">€/notte</label>
+            <label for="price" class="form-label">
+                <div class="d-flex justify-content-start align-items-center gap-2 checks-field">
+                    <i class="fa-duotone fa-money-bill-wave fa-lg"></i><span class="fw-semibold fs-5">€ a notte (*)</span>
+                </div>
+            </label>
             <input type="number" name="price" id="price" class="form-control @error('price') is-invalid @enderror" placeholder="Inserire prezzo per notte" aria-describedby="imageHelper" min="1" max="9999" step="1">
             <span id="span-price" class="d-none bg-danger text-dark" role="alert">
                 <strong>Il prezzo non è valido</strong>
@@ -76,7 +92,11 @@
         <!-- /price -->
 
         <div class="mb-3">
-            <label for="rooms" class="form-label">Numero stanze (*)</label>
+            <label for="rooms" class="form-label">
+                <div class="d-flex justify-content-start align-items-center gap-2 checks-field">
+                    <i class="fa-solid fa-house fa-lg"></i><span class="fw-semibold fs-5">Stanze (*)</span>
+                </div>
+            </label>
             <input type="number" name="rooms" id="rooms" class="form-control @error('rooms') is-invalid @enderror" placeholder="Inserire numero stanze" aria-describedby="imageHelper" min="1" max="50" step="1">
             <span id="span-rooms" class="d-none bg-danger text-dark" role="alert">
                 <strong>Il numero delle camere non è valido</strong>
@@ -91,7 +111,11 @@
         <!-- /n_stanze -->
 
         <div class="mb-3">
-            <label for="bathrooms" class="form-label">Numero bagni (*)</label>
+            <label for="bathrooms" class="form-label">
+                <div class="d-flex justify-content-start align-items-center gap-2 checks-field">
+                    <i class="fa-solid fa-toilet fa-lg"></i><span class="fw-semibold fs-5">Bagni (*)</span>
+                </div>
+            </label>
             <input type="number" name="bathrooms" id="bathrooms" class="form-control @error('bathrooms') is-invalid @enderror" placeholder="Inserire numero bagni" aria-describedby="imageHelper" min="1" max="25" step="1">
             <span id="span-bathrooms" class="d-none bg-danger text-dark" role="alert">
                 <strong>Il numero dei bagni non è valido</strong>
@@ -106,7 +130,11 @@
         <!-- /n_bagni -->
 
         <div class="mb-3">
-            <label for="beds" class="form-label">Numero posti letto (*)</label>
+            <label for="beds" class="form-label">
+                <div class="d-flex justify-content-start align-items-center gap-2 checks-field">
+                    <i class="fa-solid fa-bed fa-lg"></i><span class="fw-semibold fs-5">Letti (*)</span>
+                </div>
+            </label>
             <input type="number" name="beds" id="beds" class="form-control @error('beds') is-invalid @enderror" placeholder="Numero posti letto" aria-describedby="imageHelper" min="1" max="25" step="1">
             <span id="span-beds" class="d-none bg-danger text-dark" role="alert">
                 <strong>Il numero dei letti non è valido</strong>
@@ -121,7 +149,11 @@
         <!-- n_letti -->
 
         <div class="mb-3">
-            <label for="square_meters" class="form-label">Metri quadri dell'appartamento (*)</label>
+            <label for="square_meters" class="form-label">
+                <div class="d-flex justify-content-start align-items-center gap-2 checks-field">
+                    <i class="fa-solid fa-ruler fa-lg"></i><span class="fw-semibold fs-5">m² (*)</span>
+                </div>
+            </label>
             <input type="number" name="square_meters" id="square_meters" class="form-control @error('square_meters') is-invalid @enderror" placeholder="Metri quadri dell'appartamento" aria-describedby="imageHelper" min="1" max="9999" step="1">
             <small>Minimo 30 mq</small>
             <span id="span-square_meters" class="d-none bg-danger text-dark" role="alert">
@@ -137,12 +169,16 @@
         <!-- /mq -->
 
         <div class="mb-3">
-            <label for="address" class="form-label m-0">Indirizzo completo (*)</label>
+            <label for="address" class="form-label m-0">
+                <div class="d-flex justify-content-start align-items-center gap-2 checks-field">
+                    <i class="fa-solid fa-map-location-dot fa-lg"></i><span class="fw-semibold fs-5">Indirizzo (*)</span>
+                </div>
+            </label>
 
             <div id="search_container">
                 <!-- qui si appende la searchBoxHTML di TomTom -->
             </div>
-            <small>Inserire Via e numero civico, CAP, Comune</small>
+            <small class="fw-light">inserire <span class="fw-semibold">via</span> e <span class="fw-semibold">numero civico</span>, <span class="fw-semibold">CAP</span>, comune</small>
 
             <span id="span-address" class="d-none bg-danger text-dark" role="alert">
                 <strong>L'indirizzo inserito non è valido</strong>
@@ -188,21 +224,25 @@
         </div>
         <!-- /indirizzo -->
 
-        <div class="ms-2 mb-3">
-            <label for="services" class="form-label">Servizi</label>
-            <div class="form-check row  row-cols-2 row-cols-md-3 row-cols-lg-4 d-flex">
+        <div class="my-3">
+            <label for="services" class="form-label d-flex justify-content-center align-items-center">
+                <div class="d-flex justify-content-center align-items-center gap-2 checks-field">
+                    <i class="fa-solid fa-hand-holding-heart fa-lg"></i><span class="fw-light fs-6">Scegli tra i nostri servizi</span>
+                </div>
+            </label>
+            <div class="form-check row row-cols-2 row-cols-md-3 row-cols-lg-4 d-flex align-items-center justify-content-between">
                 @foreach($services as $service)
                 <label class="form-check-label d-flex align-items-baseline g-2 gap-2" for="{{ $service->name }}">
                     <input name="services[]" class="form-check-input multi-check-box check-create {{$service->image}} d-flex align-items-center justify-content-center" style="width:30px; height:30px;" type="checkbox" value="{{ $service->id }}" id="{{ $service->name }}" {{ in_array($service->id, old('services', [])) ? 'checked' : '' }}>
-                     <span>{{ $service->name }}</span>
+                    <span>{{ $service->name }}</span>
                 </label>
                 @endforeach
             </div>
         </div>
         <!-- /servizi -->
 
-        <div class="mb-3">
-            <label for="visibility" class="form-label py-2">Rendi visibile l'appartmento?</label>
+        <div class="my-4">
+            <label for="visibility" class="form-label py-2">Vuoi rendere visibile l'appartmento?</label>
             <br>
 
             <input class="form-check-input" type="radio" name="visibility" id="visibility" value="1" checked>
@@ -213,11 +253,12 @@
 
             <br>
         </div>
-        <small class="my-3">Di default è settato su "visibile"</small>
-        <p class="py-2">Dove presente "(*)" indica che il campo è obbligatorio.</p>
+        <small class="mb-3 mt-1 fw-light">di default è impostato su <span class="fw-semibold">"visibile"</span></small>
         <!-- /visibile -->
+        <p class="my-3">Dove presente "(*)" indica che il campo è obbligatorio.</p>
+
         <div class="d-flex my-3 gap-3 justify-content-center justify-content-md-end">
-            <a class="btn-2" href="{{ route('admin.apartments.index') }}" role="button">Return</a>
+            <a class="btn-2" href="{{ route('admin.apartments.index') }}" role="button">Indietro</a>
             <button type="submit" class="btn-1 btn-1-green">Aggiungi</button>
         </div>
 

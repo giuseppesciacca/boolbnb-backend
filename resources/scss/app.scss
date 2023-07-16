@@ -194,3 +194,21 @@ a{
 .check-create{
 background-image: none;
 }
+
+.checks-field{
+  .fa-solid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+  }
+  .fa-duotone{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+  }
+  span{
+    align-self: self-end;
+  }
+}
