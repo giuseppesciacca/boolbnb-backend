@@ -8,12 +8,12 @@
     <h4 class="text-center">A cosa serve la sponsorizzazione?</h4>
 
     <p class="pt-4"> La sponsorizzazione permetterà al tuo appartamento di:</p>
-    <ul class="pb-5">
+    <ul class="pb-5 list-unstyled">
         <li>
-            Farlo apparire in Homepage nella sezione “Appartamenti in Evidenza”;
+            <i class="fa-solid fa-hand-point-right fa-lg me-2 fa-shake" style="color: #ff5a5f;"></i> Farlo apparire in Homepage nella sezione “Appartamenti in Evidenza”;
         </li>
         <li>
-            Nella pagina di ricerca, verrà posizionato sempre prima di un appartamento non
+            <i class="fa-solid fa-hand-point-right fa-lg me-2 fa-shake" style="color: #ff5a5f;"></i> Nella pagina di ricerca, verrà posizionato sempre prima di un appartamento non
             sponsorizzato che soddisfa le stesse caratteristiche di ricerca.
         </li>
     </ul>
@@ -71,12 +71,16 @@
     </div>
 
     <p class="sponsor py-3">
-        Per sponsorizzare un appartamento, vai su -> <strong>Appartamenti</strong> -> clicca sull'icona a forma di occhio per visualizzare l'appartamento che desideri sponsorizzare "<i class="fa-solid fa-eye"></i>" e clicca su -> <strong>Sponsorizzami</strong>. Da lì potrai scegliere uno dei tre tipi di sponsorizzazione sopra esposti.
+        Per sponsorizzare un appartamento, vai su <i class="fa-regular fa-arrow-right fa-fade fa-fw"></i> <strong>Appartamenti</strong> <i class="fa-regular fa-arrow-right fa-fade fa-fw"></i> clicca sull'icona a forma di occhio per visualizzare l'appartamento che desideri sponsorizzare " <i class="fa-duotone fa-lg fa-eye fa-beat" style="color: #0d6efd;"></i> " e clicca su <i class="fa-regular fa-arrow-right fa-fade fa-fw"></i> <strong>Sponsorizza</strong>. Da lì potrai scegliere uno dei tre tipi di sponsorizzazione sopra esposti e procedere al pagamento.
     </p>
 
-    <p class="sponsor py-3">
-        Terminato il periodo di sponsorizzazione, l’appartamento tornerà ad essere
-        visualizzato normalmente. Potrai acquistare nuovamente il pacchetto promozionale quando vorrai.
+    <p>Puoi acquistare più sponsorizzazioni per lo stesso appartamento e, una volta scaduta la sponsorizzazione precedentemente acquistata, la successiva si attiverà automaticamente. Le sponsorizzazioni successive verranno messe in coda.</p>
+
+    <p class="sponsor py-3 text-secondary disclaimer text-center">
+        <em>
+            Terminato il periodo di sponsorizzazione, l’appartamento tornerà ad essere
+            visualizzato normalmente. Potrai acquistare nuovamente il pacchetto promozionale quando vorrai.
+        </em>
     </p>
 </div>
 @endsection
