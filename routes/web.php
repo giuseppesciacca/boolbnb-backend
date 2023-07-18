@@ -1,7 +1,17 @@
 <?php
 
+use App\Http\Controllers\Admin\ApartmentController;
+use App\Http\Controllers\Admin\ApartmentSponsorController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\MessageController;
+use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\SponsorController;
+use App\Http\Controllers\Admin\ViewController;
 use App\Http\Controllers\ProfileController;
+use App\Mail\NewMessage;
+use App\Models\Message;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,17 +25,27 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login'); //prima pagina backend è il login, non welcome
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::resource('/apartments', ApartmentController::class)->parameters(['apartments' => 'apartment:slug']);
+    Route::resource('/views', ViewController::class);
+    Route::resource('/messages', MessageController::class);
+    Route::resource('/sponsors', SponsorController::class)->parameters(['sponsor' => 'sponsor:id']);
+    Route::resource('/services', ServiceController::class);
+
+    //Route::get('/payments/create/{apartment}/{sponsor}', [ApartmentSponsorController::class, 'create'])->name('admin.payments.create');
+
+    Route::resource('/payments', ApartmentSponsorController::class)->parameters(['apartment' => 'apartment', 'sponsor' => 'sponsor']);
+});
+
+/* Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+}); */
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

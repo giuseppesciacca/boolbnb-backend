@@ -1,5 +1,12 @@
 <?php
 
+use App\Http\Controllers\Api\ApartmentController;
+
+use App\Http\Controllers\Api\MessageController;
+
+use App\Http\Controllers\Api\ServiceController;
+
+use App\Http\Controllers\Api\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +24,16 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//rotta api per tutti gli appartamenti, inclusi di sponsor e servizi
+Route::get('/apartments', [ApartmentController::class, 'index']);
+
+//rotta api per singolo appartamento, incluso di sponsor e servizi
+Route::get('/apartments/{apartment:slug}', [ApartmentController::class, 'show']);
+//rotta per mandare dati al db
+Route::post('/contacts', [MessageController::class, 'store']);
+
+
+//rotta per tutti i servizi
+Route::get('/services', [ServiceController::class, 'index']);
+

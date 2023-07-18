@@ -1,0 +1,88 @@
+@use '../root.scss' as *;
+
+#sponsorship a {
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+#sponsorship .card:hover a {
+    opacity: 1;
+}
+
+#sponsorship .card {
+    animation-name: fadeup;
+    animation-duration: 1.5s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    box-shadow: none;
+    transition: box-shadow 0.5s ease;
+    opacity: 0;
+}
+
+#sponsorship .card:hover {
+    box-shadow: 0 1px 11px $ourbnb-black;;
+} 
+
+#sponsorship .card-header {
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
+
+#sponsorship .card-footer {
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+}
+
+/* #sponsorship .card::after {
+    content: "";
+    position: absolute;
+    height: 35px;
+    width: 73%;
+    background: $ourbnb-white;
+    right: -38%;
+    top: 83px;
+    transform: rotate(90deg);
+    transition: all .3s;
+    opacity: 0.3;
+}
+
+#sponsorship .card:hover::after {
+    right: 62%;
+}
+ */
+@keyframes fadeup {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.delay-1 {
+    animation-delay: 1s !important;
+}
+
+.delay-2 {
+    animation-delay: 1.5s !important;
+}
+
+.icon-list {
+    .fa-duotone {
+        width: 28px;
+        aspect-ratio: 1/1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3px;
+    }
+}

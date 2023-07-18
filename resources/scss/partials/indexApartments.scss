@@ -1,0 +1,54 @@
+@use '../root.scss' as *;
+
+
+.add_apartment {
+    animation-name:slide-in;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    opacity:0;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    };
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.fa-plus {
+    transform: rotate(0);
+    transition: all 0.3s;
+}
+
+.fa-plus:hover {
+    transform: rotate(360deg);
+}
+
+@media screen and (max-width: 992px) {
+    tr.apartment th {
+        display: none;
+    }
+
+    tr.apartment td {
+        display: flex;
+        align-items: center;
+    }
+
+    tr.apartment td::before {
+        content: attr(data-cell);
+        padding: 10px;
+    }
+
+    td.img {
+        justify-content: center;
+    }
+
+    td>img {
+        width: 100%;
+    }
+
+}
