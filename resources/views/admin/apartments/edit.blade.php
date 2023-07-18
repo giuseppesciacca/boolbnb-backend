@@ -16,7 +16,7 @@
 
         <div class="mb-3">
             <label for="title" class="form-label">
-            <div class="d-flex justify-content-start align-items-center gap-2 checks-field">
+                <div class="d-flex justify-content-start align-items-center gap-2 checks-field">
                     <i class="fa-solid fa-thumbtack fa-rotate-270 fa-lg"></i><span class="fw-semibold fs-5">Titolo (*)</span>
                 </div>
             </label>
@@ -38,7 +38,7 @@
 
         <div class="mb-3">
             <label for="image" class="form-label">
-            <div class="d-flex justify-content-start align-items-center gap-2 checks-field">
+                <div class="d-flex justify-content-start align-items-center gap-2 checks-field">
                     <i class="fa-solid fa-panorama fa-lg"></i><span class="fw-semibold fs-5">Immagine</span>
                 </div>
             </label>
@@ -70,7 +70,7 @@
 
         <div class="mb-3">
             <label for="description" class="form-label">
-            <div class="d-flex justify-content-start align-items-center gap-2 checks-field">
+                <div class="d-flex justify-content-start align-items-center gap-2 checks-field">
                     <i class="fa-duotone fa-quote-right fa-lg"></i><span class="fw-semibold fs-5">Descrizione</span>
                 </div>
             </label>
@@ -90,12 +90,12 @@
 
         <div class="mb-3">
             <label for="price" class="form-label">
-            <div class="d-flex justify-content-start align-items-center gap-2 checks-field">
+                <div class="d-flex justify-content-start align-items-center gap-2 checks-field">
                     <i class="fa-duotone fa-money-bill-wave fa-lg"></i><span class="fw-semibold fs-5">€ a notte (*)</span>
                 </div>
             </label>
 
-            <input type="number" name="price" id="price" class="form-control @error('price') is-invalid @enderror" placeholder="Inserire prezzo per notte" aria-describedby="imageHelper" value="{{ old('price', $apartment->price) }}" min="1" max="9999" step="1">
+            <input type="number" name="price" id="price" class="form-control @error('price') is-invalid @enderror" placeholder="Inserire prezzo per notte" aria-describedby="imageHelper" value="{{ old('price', $apartment->price) }}" min="1" max="9999" step="1" required>
             <span id="span-price" class="d-none bg-danger text-dark" role="alert">
                 <strong>Il prezzo non è valido</strong>
             </span>
@@ -110,12 +110,12 @@
 
         <div class="mb-3">
             <label for="rooms" class="form-label">
-            <div class="d-flex justify-content-start align-items-center gap-2 checks-field">
+                <div class="d-flex justify-content-start align-items-center gap-2 checks-field">
                     <i class="fa-solid fa-house fa-lg"></i><span class="fw-semibold fs-5">Stanze (*)</span>
                 </div>
             </label>
 
-            <input type="number" name="rooms" id="rooms" class="form-control @error('rooms') is-invalid @enderror" placeholder="Inserire numero stanze" aria-describedby="imageHelper" value="{{ old('rooms', $apartment->rooms) }}" min="1" max="50" step="1">
+            <input type="number" name="rooms" id="rooms" class="form-control @error('rooms') is-invalid @enderror" placeholder="Inserire numero stanze" aria-describedby="imageHelper" value="{{ old('rooms', $apartment->rooms) }}" min="1" max="50" step="1" required>
             <span id="span-rooms" class="d-none bg-danger text-dark" role="alert">
                 <strong>Il numero delle camere non è valido</strong>
             </span>
@@ -130,12 +130,12 @@
 
         <div class="mb-3">
             <label for="bathrooms" class="form-label">
-            <div class="d-flex justify-content-start align-items-center gap-2 checks-field">
+                <div class="d-flex justify-content-start align-items-center gap-2 checks-field">
                     <i class="fa-solid fa-toilet fa-lg"></i><span class="fw-semibold fs-5">Bagni (*)</span>
                 </div>
             </label>
 
-            <input type="number" name="bathrooms" id="bathrooms" class="form-control @error('bathrooms') is-invalid @enderror" placeholder="Inserire numero bagni" aria-describedby="imageHelper" value="{{ old('bathrooms', $apartment->bathrooms) }}" min="1" max="25" step="1">
+            <input type="number" name="bathrooms" id="bathrooms" class="form-control @error('bathrooms') is-invalid @enderror" placeholder="Inserire numero bagni" aria-describedby="imageHelper" value="{{ old('bathrooms', $apartment->bathrooms) }}" min="1" max="25" step="1" required>
             <span id="span-bathrooms" class="d-none bg-danger text-dark" role="alert">
                 <strong>Il numero dei bagni non è valido</strong>
             </span>
@@ -150,12 +150,12 @@
 
         <div class="mb-3">
             <label for="beds" class="form-label">
-            <div class="d-flex justify-content-start align-items-center gap-2 checks-field">
+                <div class="d-flex justify-content-start align-items-center gap-2 checks-field">
                     <i class="fa-solid fa-bed fa-lg"></i><span class="fw-semibold fs-5">Letti (*)</span>
                 </div>
             </label>
 
-            <input type="number" name="beds" id="beds" class="form-control @error('beds') is-invalid @enderror" placeholder="Numero posti letto" aria-describedby="imageHelper" value="{{ old('beds', $apartment->beds) }}" min="1" max="25" step="1">
+            <input type="number" name="beds" id="beds" class="form-control @error('beds') is-invalid @enderror" placeholder="Numero posti letto" aria-describedby="imageHelper" value="{{ old('beds', $apartment->beds) }}" min="1" max="25" step="1" required>
             <span id="span-beds" class="d-none bg-danger text-dark" role="alert">
                 <strong>Il numero dei letti non è valido</strong>
             </span>
@@ -170,12 +170,12 @@
 
         <div class="mb-3">
             <label for="square_meters" class="form-label">
-            <div class="d-flex justify-content-start align-items-center gap-2 checks-field">
+                <div class="d-flex justify-content-start align-items-center gap-2 checks-field">
                     <i class="fa-solid fa-ruler fa-lg"></i><span class="fw-semibold fs-5">m² (*)</span>
                 </div>
             </label>
 
-            <input type="number" name="square_meters" id="square_meters" class="form-control @error('square_meters') is-invalid @enderror" placeholder="Metri quadri dell'appartamento" aria-describedby="imageHelper" value="{{ old('square_meters', $apartment->square_meters)}}" min="1" max="9999" step="1">
+            <input type="number" name="square_meters" id="square_meters" class="form-control @error('square_meters') is-invalid @enderror" placeholder="Metri quadri dell'appartamento" aria-describedby="imageHelper" value="{{ old('square_meters', $apartment->square_meters)}}" min="1" max="9999" step="1" required>
             <span id="span-square_meters" class="d-none bg-danger text-dark" role="alert">
                 <strong>Il numero dei metri quadrati non è valido</strong>
             </span>
@@ -190,7 +190,7 @@
         <!-- /mq -->
         <div class="mb-3">
             <label for="address" class="form-label m-0">
-            <div class="d-flex justify-content-start align-items-center gap-2 checks-field">
+                <div class="d-flex justify-content-start align-items-center gap-2 checks-field">
                     <i class="fa-solid fa-map-location-dot fa-lg"></i><span class="fw-semibold fs-5">Indirizzo (*)</span>
                 </div>
             </label>
@@ -247,7 +247,7 @@
 
         <div class="mb-3">
             <label for="services" class="form-label">
-            <div class="d-flex justify-content-center align-items-center gap-2 checks-field">
+                <div class="d-flex justify-content-center align-items-center gap-2 checks-field">
                     <i class="fa-solid fa-hand-holding-heart fa-lg"></i><span class="fw-light fs-6">Scegli tra i nostri servizi</span>
                 </div>
             </label>
@@ -275,7 +275,7 @@
         <!-- /servizi -->
 
         <div class="my-4">
-        <label for="visibility" class="form-label py-2">Vuoi rendere visibile l'appartmento?</label>
+            <label for="visibility" class="form-label py-2">Vuoi rendere visibile l'appartmento?</label>
             <br>
 
             <input type="radio" class="form-check-input" name="visibility" id="visibility" value="1" {{ old('visibility', $apartment->visibility) === 1 ? 'checked' : '' }}>
