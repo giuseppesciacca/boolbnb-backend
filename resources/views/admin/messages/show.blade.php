@@ -17,22 +17,22 @@
                         <span>{{$message->name}} {{$message->surname}}</span>
                     </li>
                     <li class="d-flex align-items-center gap-2">
-                    <i class="fa-duotone fa-house-building fa-lg"></i>
+                        <i class="fa-duotone fa-house-building fa-lg"></i>
                         <span class="text-uppercase fw-light">Per:</span>
                         <span>{{$apartment->title}}</span>
                     </li>
                     <li class="d-flex align-items-center gap-2">
-                    <i class="fa-solid fa-at fa-lg"></i>
+                        <i class="fa-solid fa-at fa-lg"></i>
                         <span class="text-uppercase fw-light">E-Mail:</span>
                         <span><a href="mailto: {{ $message->email }}">{{ $message->email }}</a></span>
                     </li>
                     <li class="d-flex align-items-center gap-2">
-                    <i class="fa-solid fa-clock-two fa-lg"></i>
+                        <i class="fa-solid fa-clock-two fa-lg"></i>
                         <span class="text-uppercase fw-light">Ricevuto il:</span>
                         <span>{{$message->created_at}}</span>
                     </li>
                     <li class="d-flex align-items-center gap-2">
-                    <i class="fa-solid fa-paperclip fa-lg"></i>
+                        <i class="fa-solid fa-paperclip fa-lg"></i>
                         <span class="text-uppercase fw-light">Testo:</span>
                     </li>
                     <li class="card rounded shadow p-3 fw-light">{{ $message->message }}</li>
@@ -56,7 +56,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn-2" data-bs-dismiss="modal">Chiudi</button>
-                            <form action="{{route('admin.apartments.destroy', $apartment)}}" method="post">
+                            <form action="{{route('admin.messages.destroy', $message)}}" method="post">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn-1" type="submit">Conferma</button>
