@@ -268,7 +268,7 @@ return [
             "address" => "Via Roma, 90133, 90139 Palermo",
             "latitude" => 38.11844000000,
             "longitude" => 13.362670000000,
-            "image" => ["uploads\/villaprimavera.jpg", "uploads\/placeholder.png"],
+            "image" => ["uploads\/villaprimavera.jpeg", "uploads\/placeholder.png"],
             "visibility" => true,
         ],
         [
