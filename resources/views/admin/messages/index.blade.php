@@ -18,7 +18,6 @@
             </tr>
         </thead>
 
-
         <tbody>
 
             @forelse ($messages as $index => $message)
@@ -27,7 +26,7 @@
                 <td class="action-td align-middle" scope="row" data-cell="Nome:">{{ $message->name }}</td>
                 <td class="action-td align-middle" data-cell="Cognome:">{{ $message->surname }}</td>
                 <td class="action-td align-middle" data-cell="Email:"><a href="mailto: {{ $message->email }}">{{ $message->email }}</a></td>
-                <td class="action-td align-middle" data-cell="Ricevuto:">{{ $message->date_message_sent }}</td>
+                <td class="action-td align-middle" data-cell="Ricevuto:">{{ convert_london_dateTime_to_rome($message->date_message_sent) }}</td>
 
                 <td class="action-td text-center align-middle" data-cell="Azioni:">
                     <a class="btn-1 btn-1-blue" href="{{ route('admin.messages.show', $message->alias_message_id, $message->user_id) }}"><i class="fa-solid fa-eye"></i></a>

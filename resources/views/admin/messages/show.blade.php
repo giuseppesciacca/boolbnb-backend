@@ -29,7 +29,7 @@
                     <li class="d-flex align-items-center gap-2">
                         <i class="fa-solid fa-clock-two fa-lg"></i>
                         <span class="text-uppercase fw-light">Ricevuto il:</span>
-                        <span>{{$message->created_at}}</span>
+                        <span>{{convert_london_dateTime_to_rome($message->created_at)}}</span>
                     </li>
                     <li class="d-flex align-items-center gap-2">
                         <i class="fa-solid fa-paperclip fa-lg"></i>
