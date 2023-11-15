@@ -1,6 +1,8 @@
 @extends('layouts.admin')
 
 @section('content')
+@include('admin.partials.session_message')
+
 <section id="apartment">
     <div class="container">
         <h2 class="py-3">Sponsorizza il tuo appartamento</h2>
@@ -23,9 +25,9 @@
                     <h1 class="text-center our-quote">{{ $apartment->title }}</h1>
                     <ul class="icon-list list-unstyled d-flex flex-column justify-content-center align-items-start gap-1 my-4">
                         <li><i class="fa-duotone fa-house fa-lg"></i> : {{$apartment->rooms}}</li>
-                        <li><i class="fa-duotone fa-bed fa-lg"></i> :  {{$apartment->beds}}</li>
+                        <li><i class="fa-duotone fa-bed fa-lg"></i> : {{$apartment->beds}}</li>
                         <li><i class="fa-duotone fa-toilet fa-lg"></i> : {{$apartment->bathrooms}}</li>
-                        <li><i class="fa-duotone fa-ruler fa-lg"></i> :  {{$apartment->square_meters}} <span class="fw-light"> m²</span></li>
+                        <li><i class="fa-duotone fa-ruler fa-lg"></i> : {{$apartment->square_meters}} <span class="fw-light"> m²</span></li>
                         <li><i class="fa-duotone fa-map-location-dot fa-lg"></i> : {{$apartment->address}}</li>
                         <li><i class="fa-duotone fa-tags"></i> : €{{$apartment->price}} <span class="fw-light"> a notte</span></li>
                     </ul>
@@ -38,7 +40,7 @@
                         @endforeach
                     </div>
                     <div class="d-flex gap-3 mt-4">
-                    <a class=" btn-2 text-decoration-none w-50" href="{{ route('admin.apartments.index') }}" role="button">Indietro</a>
+                        <a class=" btn-2 text-decoration-none w-50" href="{{ route('admin.apartments.index') }}" role="button">Indietro</a>
                         <a class=" btn-1 btn-1-orange text-decoration-none w-50" href="{{route('admin.apartments.edit', $apartment->slug)}}" role="button">Modifica</a>
                     </div>
                 </div>
