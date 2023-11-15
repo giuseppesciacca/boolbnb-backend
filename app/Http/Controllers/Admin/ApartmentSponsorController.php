@@ -52,6 +52,8 @@ class ApartmentSponsorController extends Controller
      */
     public function store(StoreApartmentSponsorRequest $request)
     {
+        $apartment_slug = Apartment::where('id', '=', $request->apartment)->value('slug');
+
         $val_data = $request->validated();
 
         $val_data['apartment_id'] = $request->apartment;
@@ -106,7 +108,7 @@ class ApartmentSponsorController extends Controller
 
         ApartmentSponsor::create($val_data);
 
-        return back()->with('message', 'Sponsorizzazione aggiunta con successo');
+        return to_route('admin.sponsors.show', ['sponsor' => $apartment_slug])->with('message', 'Sponsorizzazione aggiunta con successo');
     }
 
     /**
