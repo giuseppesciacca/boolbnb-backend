@@ -12,19 +12,10 @@ use App\Http\Requests\StoreApartmentSponsorRequest;
 use App\Http\Requests\UpdateApartmentSponsorRequest;
 use Illuminate\Support\Facades\Auth;
 use DateTime;
+use Braintree\Gateway;
 
 class ApartmentSponsorController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -39,7 +30,16 @@ class ApartmentSponsorController extends Controller
             $sponsorId = $request->query('sponsor');
             $sponsor = Sponsor::where('id', '=', $sponsorId)->first();
 
-            return view('admin.payments.create', compact('apartment', 'sponsor'));
+            $gateway = new Gateway([
+                "environment" => env("BRAINTREE_ENVIRONMENT"),
+                "merchantId" => env("BRAINTREE_MERCHANT_ID"),
+                "publicKey" => env("BRAINTREE_PUBLIC_KEY"),
+                "privateKey" => env("BRAINTREE_PRIVATE_KEY")
+            ]);
+
+            $clientToken = $gateway->clientToken()->generate();
+
+            return view('admin.payments.create', compact('apartment', 'sponsor', 'clientToken'));
         }
         abort(403);
     }
@@ -59,100 +59,79 @@ class ApartmentSponsorController extends Controller
         $val_data['apartment_id'] = $request->apartment;
         $val_data['sponsor_id'] = $request->sponsor;
 
-        $now = Carbon::now()->timezone('Europe/Rome');
+        $amount = Sponsor::where('id', '=', $request->sponsor)->value('price');
+        $nonceFromTheClient = $_POST["payment_method_nonce"];
+        $deviceDataFromTheClient = $_POST["device_data"];
 
-        $apartment_has_already_sponsor = ApartmentSponsor::join('apartments', 'apartment_id', '=', 'id')->where('apartments.id', '=', $request->apartment)->where('expire_date', '>', $now)->orderByDesc('expire_date')->first();
-        /* 
-        SELECT *
-        FROM `apartment_sponsor`
-        JOIN `apartments` ON apartment_id = id
-        WHERE `apartments`.id = numeroAppartamentoCorrente
-          AND expire_date > CURDATE()
-        ORDER BY expire_date DESC;
+        $gateway = new Gateway([
+            "environment" => env("BRAINTREE_ENVIRONMENT"),
+            "merchantId" => env("BRAINTREE_MERCHANT_ID"),
+            "publicKey" => env("BRAINTREE_PUBLIC_KEY"),
+            "privateKey" => env("BRAINTREE_PRIVATE_KEY")
+        ]);
 
-        di questi prendi il primo della lista
-        */
+        $result = $gateway->transaction()->sale([
+            'amount' => $amount,
+            'paymentMethodNonce' => $nonceFromTheClient,
+            'deviceData' => $deviceDataFromTheClient,
+            'options' => [
+                'submitForSettlement' => True
+            ]
+        ]);
 
-        if ($apartment_has_already_sponsor) {
-            $expire_date_in_string = $apartment_has_already_sponsor->expire_date;
+        if ($result->success) {
+            $now = Carbon::now()->timezone('Europe/Rome');
 
-            $expireDateForStartDate = DateTime::createFromFormat('Y-m-d H:i:s', $expire_date_in_string);
+            $apartment_has_already_sponsor = ApartmentSponsor::join('apartments', 'apartment_id', '=', 'id')->where('apartments.id', '=', $request->apartment)->where('expire_date', '>', $now)->orderByDesc('expire_date')->first();
+            /* 
+            SELECT *
+            FROM `apartment_sponsor`
+            JOIN `apartments` ON apartment_id = id
+            WHERE `apartments`.id = numeroAppartamentoCorrente
+              AND expire_date > CURDATE()
+            ORDER BY expire_date DESC;
+    
+            di questi prendi il primo della lista
+            */
 
-            $val_data['start_date'] = $expireDateForStartDate;
+            if ($apartment_has_already_sponsor) {
+                $expire_date_in_string = $apartment_has_already_sponsor->expire_date;
 
-            $expireDate = DateTime::createFromFormat('Y-m-d H:i:s', $expire_date_in_string);
+                $expireDateForStartDate = DateTime::createFromFormat('Y-m-d H:i:s', $expire_date_in_string);
 
-            if ($request->sponsor == 1) {
-                $expire_date = $expireDate->modify('+24 hours');
-            } elseif ($request->sponsor == 2) {
-                $expire_date = $expireDate->modify('+72 hours');
+                $val_data['start_date'] = $expireDateForStartDate;
+
+                $expireDate = DateTime::createFromFormat('Y-m-d H:i:s', $expire_date_in_string);
+
+                if ($request->sponsor == 1) {
+                    $expire_date = $expireDate->modify('+24 hours');
+                } elseif ($request->sponsor == 2) {
+                    $expire_date = $expireDate->modify('+72 hours');
+                } else {
+                    $expire_date = $expireDate->modify('+144 hours');
+                }
+
+                $val_data['expire_date'] =  $expire_date;
             } else {
-                $expire_date = $expireDate->modify('+144 hours');
+
+                $val_data['start_date'] = Carbon::now()->timezone('Europe/Rome');
+
+                if ($request->sponsor == 1) {
+                    $expireDate = Carbon::now()->timezone('Europe/Rome')->addHours(24);
+                } elseif ($request->sponsor == 2) {
+                    $expireDate = Carbon::now()->timezone('Europe/Rome')->addHours(72);
+                } else {
+                    $expireDate = Carbon::now()->timezone('Europe/Rome')->addHours(144);
+                }
+
+                $val_data['expire_date'] =  $expireDate;
             }
 
-            $val_data['expire_date'] =  $expire_date;
+            ApartmentSponsor::create($val_data);
+
+            return to_route('admin.sponsors.show', ['sponsor' => $apartment_slug])->with('message', 'Sponsorizzazione aggiunta con successo');
         } else {
-
-            $val_data['start_date'] = Carbon::now()->timezone('Europe/Rome');
-
-            if ($request->sponsor == 1) {
-                $expireDate = Carbon::now()->timezone('Europe/Rome')->addHours(24);
-            } elseif ($request->sponsor == 2) {
-                $expireDate = Carbon::now()->timezone('Europe/Rome')->addHours(72);
-            } else {
-                $expireDate = Carbon::now()->timezone('Europe/Rome')->addHours(144);
-            }
-
-            $val_data['expire_date'] =  $expireDate;
+            return redirect()->back()->withErrors('Pagamento fallito, riprovare');
         }
-
-        ApartmentSponsor::create($val_data);
-
-        return to_route('admin.sponsors.show', ['sponsor' => $apartment_slug])->with('message', 'Sponsorizzazione aggiunta con successo');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\ApartmentSponsor  $apartmentSponsor
-     * @return \Illuminate\Http\Response
-     */
-    public function show(ApartmentSponsor $apartmentSponsor)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\ApartmentSponsor  $apartmentSponsor
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(ApartmentSponsor $apartmentSponsor)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateApartmentSponsorRequest  $request
-     * @param  \App\Models\ApartmentSponsor  $apartmentSponsor
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateApartmentSponsorRequest $request, ApartmentSponsor $apartmentSponsor)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\ApartmentSponsor  $apartmentSponsor
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(ApartmentSponsor $apartmentSponsor)
-    {
-        //
     }
 }
