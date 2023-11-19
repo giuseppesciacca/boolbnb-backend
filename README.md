@@ -4,6 +4,9 @@ Benvenuti in questo repository dedicato alla replica di un sito ispirato ad Airb
 
 ## Il Team Five ha realizzato questo progetto 📚
 
+[Giuseppe Sciacca](https://github.com/giuseppesciacca)
+Full-Stack Web Developer | Agronomo
+
 [Luca Piacentini](https://github.com/LookasWasTaken)
 Full-Stack Web Developer | Chinesiologo
 
@@ -16,9 +19,6 @@ Full-Stack Web Developer
 [Carmelo Leone](https://github.com/LeoneCarmelo) 
 Full-Stack Web Developer | Chitarrista dei 7 Black Sides
 
-[Giuseppe Sciacca](https://github.com/giuseppesciacca)
-Full-Stack Web Developer | Agronomo
-
 ## Avviso importante
 
 È fondamentale sottolineare che questo progetto è nato come parte di un percorso di apprendimento. Siamo orgogliosi del nostro lavoro, ma è importante fare attenzione all'uso appropriato di qualsiasi componente o concetto derivato da questo repository.
@@ -30,7 +30,7 @@ Il progetto include alcune delle funzionalità chiave:
 - **Ricerca degli alloggi**: gli utenti possono cercare alloggi disponibili in base alla posizione, servizi di interesse, numero di stanze, letti disponibili e raggio chilometrico.
 - **Visualizzazione degli alloggi**: gli utenti possono visualizzare informazioni dettagliate sugli alloggi, incluse foto, posizione su una mappa interattiva e servizi accessori.
 - **Gestione delle prenotazioni**: gli host con appartamenti registrati possono ricevere messaggi di interesse dagli utenti tramite un form di contatto sulla pagina dell'appartamento.
-- **Sistema di sponsorizzazione**: gli host registrati possono scegliere di sponsorizzare i loro alloggi per 24, 72 o 144 ore. Con la sponsorizzazione, gli appartamenti vengono mostrati in cima alla lista nella visualizzazione degli appartamenti.
+- **Sistema di sponsorizzazione**: gli host registrati possono scegliere di sponsorizzare i loro alloggi per 24, 72 o 144 ore. Con la sponsorizzazione, che avviene attraverso un pagamento con Braintree, gli appartamenti vengono mostrati in cima alla lista nella visualizzazione degli appartamenti.
 
 ## Tecnologie utilizzate 💻
 
