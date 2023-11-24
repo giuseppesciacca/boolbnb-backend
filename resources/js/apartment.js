@@ -44,7 +44,7 @@ const checkboxSpanElement = document.getElementById("span-multi-check-box");
 
 let admitCheckbox = false;
 
-formElement.addEventListener("submit", (e) => {
+formElement.addEventListener("submit", e => {
     titleSpanElement.classList.add("d-none");
     imageSpanElement.classList.add("d-none");
     descriptionSpanElement.classList.add("d-none");
@@ -136,5 +136,3 @@ formElement.addEventListener("submit", (e) => {
         }
     }
 }); */
-
-

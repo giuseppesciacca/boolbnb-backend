@@ -1,4 +1,4 @@
-@use '../root.scss' as *;
+@use "../root.scss" as *;
 
 #sponsorship a {
     opacity: 0;
@@ -20,8 +20,8 @@
 }
 
 #sponsorship .card:hover {
-    box-shadow: 0 1px 11px $ourbnb-black;;
-} 
+    box-shadow: 0 1px 11px $ourbnb-black;
+}
 
 #sponsorship .card-header {
     border-bottom-left-radius: 0px !important;

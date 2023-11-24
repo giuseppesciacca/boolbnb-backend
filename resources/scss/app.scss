@@ -1,296 +1,292 @@
-@use './partials/appHeader.scss';
-@use './partials/appFooter.scss';
-@use './partials/main-login-signup.scss';
-@use './partials/dashboard.scss';
-@use './partials/indexMessages.scss';
-@use './partials//showSponsor.scss';
-@use './partials/indexSponsor.scss';
-@use './partials/indexApartments.scss';
-@use './partials/showApartment.scss';
-@use './root.scss' as *;
+@use "./partials/appHeader.scss";
+@use "./partials/appFooter.scss";
+@use "./partials/main-login-signup.scss";
+@use "./partials/dashboard.scss";
+@use "./partials/indexMessages.scss";
+@use "./partials//showSponsor.scss";
+@use "./partials/indexSponsor.scss";
+@use "./partials/indexApartments.scss";
+@use "./partials/showApartment.scss";
+@use "./root.scss" as *;
 
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
 
 body {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 600;
-  -webkit-user-select: none;
-  /* Safari */
-  -ms-user-select: none;
-  /* IE 10 and IE 11 */
-  user-select: none;
-  /* Standard syntax */
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
 }
 
 /* main admin */
 #main-admin {
-  height: calc(100vh - 149px);
-  overflow-y: scroll;
+    height: calc(100vh - 149px);
+    overflow-y: scroll;
 }
 
 /* #region BRAINTREE */
 
 .submit-button {
-  cursor: pointer;
-  font-weight: 500;
-  left: 3px;
-  line-height: inherit;
-  position: relative;
-  text-decoration: none;
-  text-align: center;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 3px;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  display: inline-block;
+    cursor: pointer;
+    font-weight: 500;
+    left: 3px;
+    line-height: inherit;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    display: inline-block;
 }
 
 /* #endregion BRAINTREE */
 
 .btn-1:active,
 .btn-4:active {
-  scale: 0.7;
-  transition: all 0.3s ease-in-out;
+    scale: 0.7;
+    transition: all 0.3s ease-in-out;
 }
 
 .btn-1 {
-  color: $ourbnb-white;
-  text-align: center;
-  display: inline-block;
-  padding: 10px 25px;
-  border: 1px solid $ourbnb-white;
-  cursor: pointer;
-  letter-spacing: 1px;
-  position: relative;
-  overflow: hidden;
-  // margin: 0 20px;
-  border-radius: 5px;
-  background-color: $ourbnb-red;
-  font-weight: 600;
+    color: $ourbnb-white;
+    text-align: center;
+    display: inline-block;
+    padding: 10px 25px;
+    border: 1px solid $ourbnb-white;
+    cursor: pointer;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    // margin: 0 20px;
+    border-radius: 5px;
+    background-color: $ourbnb-red;
+    font-weight: 600;
 }
 
 .btn-1-blue {
-  background-color: $ourbnb-blue !important;
+    background-color: $ourbnb-blue !important;
 }
 
 .btn-1-orange {
-  background-color: $ourbnb-orange !important;
+    background-color: $ourbnb-orange !important;
 }
 
 .btn-1-green {
-  background-color: $ourbnb-green !important;
+    background-color: $ourbnb-green !important;
 }
 
 .btn-1-gold {
-  background-color: $ourbnb-gold !important;
+    background-color: $ourbnb-gold !important;
 }
 
 .btn-1-red {
-  background-color: $ourbnb-red !important;
+    background-color: $ourbnb-red !important;
 }
 
 .btn-1-darkred {
-  background-color: $ourbnb-dark-red !important;
+    background-color: $ourbnb-dark-red !important;
 }
 
 .btn-1-black {
-  background-color: $ourbnb-light-black !important;
+    background-color: $ourbnb-light-black !important;
 }
 
 .btn-1:before {
-  content: "";
-  position: absolute;
-  height: 150px;
-  width: 50px;
-  background: $ourbnb-white;
-  left: -55px;
-  top: -40px;
-  transform: rotate(37deg);
-  transition: all .3s;
-  opacity: 0.3;
+    content: "";
+    position: absolute;
+    height: 150px;
+    width: 50px;
+    background: $ourbnb-white;
+    left: -55px;
+    top: -40px;
+    transform: rotate(37deg);
+    transition: all 0.3s;
+    opacity: 0.3;
 }
 
 .btn-1:hover:before {
-  left: 95%;
+    left: 95%;
 }
 
 .btn-2 {
-  color: $ourbnb-white;
-  text-align: center;
-  display: inline-block;
-  padding: 10px 25px;
-  border: 1px solid $ourbnb-white;
-  cursor: pointer;
-  letter-spacing: 1px;
-  position: relative;
-  overflow: hidden;
-  // margin: 0 20px;
-  border-radius: 5px;
-  background-color: $ourbnb-light-grey;
-  font-weight: 600;
+    color: $ourbnb-white;
+    text-align: center;
+    display: inline-block;
+    padding: 10px 25px;
+    border: 1px solid $ourbnb-white;
+    cursor: pointer;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    // margin: 0 20px;
+    border-radius: 5px;
+    background-color: $ourbnb-light-grey;
+    font-weight: 600;
 }
 
 .btn-2:before {
-  content: "";
-  position: absolute;
-  height: 150px;
-  width: 50px;
-  background: $ourbnb-white;
-  right: -40px;
-  top: -40px;
-  transform: rotate(37deg);
-  transition: all .3s;
-  opacity: 0.3;
+    content: "";
+    position: absolute;
+    height: 150px;
+    width: 50px;
+    background: $ourbnb-white;
+    right: -40px;
+    top: -40px;
+    transform: rotate(37deg);
+    transition: all 0.3s;
+    opacity: 0.3;
 }
 
 .btn-2:hover:before {
-  right: 105%;
+    right: 105%;
 }
 
 .our-user {
-  font-size: 3rem;
+    font-size: 3rem;
 }
 
 .text-bool {
-  color: $ourbnb-red;
+    color: $ourbnb-red;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .bg_bronze {
-  /*   background: linear-gradient(45deg, $ourbnb-red, $ourbnb-bronze)  !important; */
-  background-color: $ourbnb-blue;
+    /*   background: linear-gradient(45deg, $ourbnb-red, $ourbnb-bronze)  !important; */
+    background-color: $ourbnb-blue;
 }
 
 .bg_silver {
-  //background: linear-gradient(45deg, $ourbnb-light-grey, $ourbnb-grey)  !important;
-  background-color: $ourbnb-orange;
+    //background: linear-gradient(45deg, $ourbnb-light-grey, $ourbnb-grey)  !important;
+    background-color: $ourbnb-orange;
 }
 
 .bg_gold {
-  //background: linear-gradient(45deg, $ourbnb-gold, $ourbnb-dark-gold)  !important;
-  background-color: $ourbnb-red;
+    //background: linear-gradient(45deg, $ourbnb-gold, $ourbnb-dark-gold)  !important;
+    background-color: $ourbnb-red;
 }
 
 .text-green {
-  color: $ourbnb-green;
+    color: $ourbnb-green;
 }
 
 .our-quote {
-  font-family: 'Grape Nuts', cursive;
-  color: $ourbnb-soft-black !important;
-  transition: all 0.30s;
-  text-shadow: none !important;
-  font-weight: 500 !important;
+    font-family: "Grape Nuts", cursive;
+    color: $ourbnb-soft-black !important;
+    transition: all 0.3s;
+    text-shadow: none !important;
+    font-weight: 500 !important;
 }
 
 .our-address {
-  font-size: 1.1rem;
-  font-weight: 600;
-  text-transform: uppercase;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
-
 .check-create {
-  background-image: none;
-  cursor: pointer;
+    background-image: none;
+    cursor: pointer;
 }
 
 .check-create:checked {
-  background-color: transparent;
-  border-color: $ourbnb-soft-black;
-  color: $ourbnb-blue;
+    background-color: transparent;
+    border-color: $ourbnb-soft-black;
+    color: $ourbnb-blue;
 }
 
 .check-create {
-  background-image: none;
+    background-image: none;
 }
 
 .disclaimer {
-  font-size: 0.75rem;
-
+    font-size: 0.75rem;
 }
 
 .checks-field {
-  .fa-solid {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 28px;
-  }
+    .fa-solid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 28px;
+    }
 
-  .fa-duotone {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 28px;
-  }
+    .fa-duotone {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 28px;
+    }
 
-  span {
-    align-self: self-end;
-  }
-
+    span {
+        align-self: self-end;
+    }
 }
 
 .action-td {
-  .btn-1 {
-    min-width: 71px !important;
-  }
+    .btn-1 {
+        min-width: 71px !important;
+    }
 }
 
 .action-td.address {
-  width: calc(100% / 7);
+    width: calc(100% / 7);
 }
 
 @media screen and (max-width: 992px) {
-  .action-td.address {
-    width: auto;
-  }
+    .action-td.address {
+        width: auto;
+    }
 }
 
 .small-text {
-  font-size: 13px !important;
+    font-size: 13px !important;
 }
 
 .control-icon-list {
-  li {
-
-    .fa-duotone,
-    .fa-solid {
-      width: 27px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    li {
+        .fa-duotone,
+        .fa-solid {
+            width: 27px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     }
-  }
 }
 
 .button-sidebar {
-  background: linear-gradient(45deg, $ourbnb-red, $ourbnb-blue);
-  background-size: 600% 600%;
-  animation: gradient 10s ease infinite;
+    background: linear-gradient(45deg, $ourbnb-red, $ourbnb-blue);
+    background-size: 600% 600%;
+    animation: gradient 10s ease infinite;
 }
 
 @keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
+    0% {
+        background-position: 0% 50%;
+    }
 
-  50% {
-    background-position: 100% 50%;
-  }
+    50% {
+        background-position: 100% 50%;
+    }
 
-  100% {
-    background-position: 0% 50%;
-  }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .custom-img {
-  height: 100px;
-  width: 160px;
-  object-fit: cover;
+    height: 100px;
+    width: 160px;
+    object-fit: cover;
 }

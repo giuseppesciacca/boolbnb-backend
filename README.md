@@ -16,7 +16,7 @@ Full-Stack Web Developer
 [Domiziano De Santis](https://github.com/DeSantisDomiziano)
 Full-Stack Web Developer
 
-[Carmelo Leone](https://github.com/LeoneCarmelo) 
+[Carmelo Leone](https://github.com/LeoneCarmelo)
 Full-Stack Web Developer | Chitarrista dei 7 Black Sides
 
 ## Avviso importante
@@ -27,18 +27,18 @@ Full-Stack Web Developer | Chitarrista dei 7 Black Sides
 
 Il progetto include alcune delle funzionalità chiave:
 
-- **Ricerca degli alloggi**: gli utenti possono cercare alloggi disponibili in base alla posizione, servizi di interesse, numero di stanze, letti disponibili e raggio chilometrico.
-- **Visualizzazione degli alloggi**: gli utenti possono visualizzare informazioni dettagliate sugli alloggi, incluse foto, posizione su una mappa interattiva e servizi accessori.
-- **Gestione delle prenotazioni**: gli host con appartamenti registrati possono ricevere messaggi di interesse dagli utenti tramite un form di contatto sulla pagina dell'appartamento.
-- **Sistema di sponsorizzazione**: gli host registrati possono scegliere di sponsorizzare i loro alloggi per 24, 72 o 144 ore. Con la sponsorizzazione, che avviene attraverso un pagamento con Braintree, gli appartamenti vengono mostrati in cima alla lista nella visualizzazione degli appartamenti.
+-   **Ricerca degli alloggi**: gli utenti possono cercare alloggi disponibili in base alla posizione, servizi di interesse, numero di stanze, letti disponibili e raggio chilometrico.
+-   **Visualizzazione degli alloggi**: gli utenti possono visualizzare informazioni dettagliate sugli alloggi, incluse foto, posizione su una mappa interattiva e servizi accessori.
+-   **Gestione delle prenotazioni**: gli host con appartamenti registrati possono ricevere messaggi di interesse dagli utenti tramite un form di contatto sulla pagina dell'appartamento.
+-   **Sistema di sponsorizzazione**: gli host registrati possono scegliere di sponsorizzare i loro alloggi per 24, 72 o 144 ore. Con la sponsorizzazione, che avviene attraverso un pagamento con Braintree, gli appartamenti vengono mostrati in cima alla lista nella visualizzazione degli appartamenti.
 
 ## Tecnologie utilizzate 💻
 
 Il progetto è stato sviluppato utilizzando diverse tecnologie e framework per supportare lo sviluppo Full-Stack:
 
-- **Frontend**: Abbiamo utilizzato Vue.js per creare un'interfaccia utente responsive e interattiva. Inoltre, abbiamo utilizzato HTML, SCSS e JavaScript per lo sviluppo.
-- **Backend**: Abbiamo utilizzato Laravel per creare il server backend, gestire le richieste API, l'archiviazione dei dati e l'interazione con il database.
-- **Mappe**: Abbiamo utilizzato TomTom Developer per ottenere le coordinate geografiche a partire da un indirizzo e visualizzare il punto sulla mappa.
+-   **Frontend**: Abbiamo utilizzato Vue.js per creare un'interfaccia utente responsive e interattiva. Inoltre, abbiamo utilizzato HTML, SCSS e JavaScript per lo sviluppo.
+-   **Backend**: Abbiamo utilizzato Laravel per creare il server backend, gestire le richieste API, l'archiviazione dei dati e l'interazione con il database.
+-   **Mappe**: Abbiamo utilizzato TomTom Developer per ottenere le coordinate geografiche a partire da un indirizzo e visualizzare il punto sulla mappa.
 
 Siamo entusiasti di condividere con voi il nostro progetto Boolbnb!
 
