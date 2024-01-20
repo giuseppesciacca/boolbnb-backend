@@ -1,64 +1,53 @@
 @extends('layouts.admin')
 
 @section('content')
-
-<?php
-
-?>
-
-
 <head>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<body>
-    <div>
-        <div style="width: 800px;">
-            <canvas id="acquisitions"></canvas>
-        </div>
+  <div>
+    <div style="width: 800px;">
+        <canvas id="acquisitions"></canvas>
     </div>
+  </div>
 
-    <script type="module" src="acquisitions.js"></script>
+  <script type="text/javascript">
 
-<script>
-    // example from chartjs
-  const data = [
-    { year: 2010, count: 10 },
-    { year: 2011, count: 20 },
-    { year: 2012, count: 15 },
-    { year: 2013, count: 25 },
-    { year: 2014, count: 22 },
-    { year: 2015, count: 30 },
-    { year: 2016, count: 28 },
-  ];
+    let apartment_views_json = @json($apartment_views);
 
-  new Chart(
-    document.getElementById('acquisitions'),
-    {
-      type: 'line',
-      data: {
-        labels: data.map(row => row.year),
-        datasets: [
-          {
-            label: 'Acquisitions by year',
-            data: data.map(row => row.count)
-          }
-        ]
+    const result = [];
+
+    apartment_views_json.forEach(obj => {
+      // lo trasformo in un oggetto date e successivamente prendo solo gli anni
+      const year = new Date(obj.date_view).getFullYear(); // 2022, 2021
+
+      // se l'anno [year] esiste allora aggiungi +1 come count, altrimenti lo crea con valore 1.
+      result[year] = (result[year] || 0) + 1;
+    });
+
+
+    // aggiungo year e count come chiavi
+    const apartment_views = Object.entries(result).map(([year, count]) => ({
+      year: parseInt(year),
+      count
+    }));
+
+    new Chart(
+      document.getElementById('acquisitions'),
+      {
+        type: 'line',
+        data: {
+          labels: apartment_views.map(row => row.year),
+          datasets: [
+            {
+              label: 'Views by year',
+              data: apartment_views.map(row => row.count)
+            }
+          ]
+        }
       }
-    }
-  );
-</script>
-
- 
-
- 
-
-</body>
-
-
-</html>
-
-
+    );
+  </script>
 
 
 @endsection
