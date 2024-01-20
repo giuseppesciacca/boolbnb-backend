@@ -25,8 +25,6 @@
       result[year] = (result[year] || 0) + 1;
     });
 
-    console.log(apartment_views_json);
-
     // aggiungo year e count come chiavi
     const apartment_views = Object.entries(result).map(([year, count]) => ({
       year: parseInt(year),

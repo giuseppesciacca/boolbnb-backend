@@ -12,7 +12,8 @@ class View extends Model
 
     protected $fillable = [
         'apartment_id',
-        'IP_address'
+        'ip_address',
+        'date_view',
     ];
 
     public function apartment(): BelongsTo {
