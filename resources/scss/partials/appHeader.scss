@@ -1,23 +1,25 @@
-@use '../root.scss' as *;
+@use "../root.scss" as *;
 
 .animated-img {
     transition: all 0.3s ease-in-out;
 }
 
-.animated-img:hover{
+.animated-img:hover {
     transform: scale(1.1);
 }
 
-.animated-img:active{
+.animated-img:active {
     transform: scale(0.8);
 }
 
 .animated-span {
     color: $ourbnb-black !important;
-    background-image: linear-gradient(to right,
-            $ourbnb-red,
-            $ourbnb-dark-red 50%,
-            $ourbnb-black 50%);
+    background-image: linear-gradient(
+        to right,
+        $ourbnb-red,
+        $ourbnb-dark-red 50%,
+        $ourbnb-black 50%
+    );
     background-size: 200% 100%;
     background-position: -100%;
     display: inline-block;
@@ -30,7 +32,7 @@
 }
 
 .animated-span:before {
-    content: '';
+    content: "";
     background: $ourbnb-red;
     display: block;
     position: absolute;
@@ -49,11 +51,11 @@
     width: 100%;
 }
 
-.animated-span:active{
+.animated-span:active {
     transition: all 0.1s ease-in-out;
     transform: scale(0.8);
 }
 
-.letter-span:hover{
+.letter-span:hover {
     letter-spacing: 1px;
 }

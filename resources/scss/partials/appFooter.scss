@@ -1,18 +1,18 @@
 @use "../root.scss" as *;
 
-footer{
-    position:sticky;
-    z-index:1;
+footer {
+    position: sticky;
+    z-index: 1;
     background-color: $ourbnb-black;
-    ul{
+    ul {
         color: $ourbnb-white;
         font-size: 11px;
-        li{
-            span{
+        li {
+            span {
                 color: $ourbnb-white !important;
             }
             color: $ourbnb-white !important;
-            a{
+            a {
                 color: $ourbnb-red;
                 text-decoration: none;
             }
@@ -21,10 +21,12 @@ footer{
 }
 
 .animated-li {
-    background-image: linear-gradient(to right,
-            $ourbnb-red,
-            $ourbnb-dark-red 50%,
-            $ourbnb-black 50%);
+    background-image: linear-gradient(
+        to right,
+        $ourbnb-red,
+        $ourbnb-dark-red 50%,
+        $ourbnb-black 50%
+    );
     background-size: 200% 100%;
     background-position: -100%;
     display: inline-block;
@@ -37,7 +39,7 @@ footer{
 }
 
 .animated-li:before {
-    content: '';
+    content: "";
     background: $ourbnb-red;
     display: block;
     position: absolute;
@@ -57,14 +59,12 @@ footer{
     width: 100%;
 }
 
-.animated-li:active{
+.animated-li:active {
     transition: all 0.1s ease-in-out;
     transform: scale(0.8);
 }
-.copy{
-    
-    span{
-        font-size:10px;
+.copy {
+    span {
+        font-size: 10px;
     }
-
 }

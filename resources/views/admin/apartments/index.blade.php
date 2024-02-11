@@ -18,6 +18,7 @@
                 <th scope="col">Indirizzo</th>
                 <th scope="col">Sponsor</th>
                 <th scope="col">Visibile</th>
+                <th scope="col">Statistiche</th>
                 <th class="text-center" scope="col">Azioni</th>
             </tr>
         </thead>
@@ -47,6 +48,9 @@
                     @else
                     <i class="fa-solid fa-circle-xmark" style="color: #ff0000;"></i>
                     @endif
+                </td>
+                <td class="action-td text-center align-middle" data-cell="Statistiche:">
+                    <a class="btn-1 btn-1-blue" href="{{route('admin.views.show', $apartment->id)}}">Stats</a>
                 </td>
                 <td class="action-td text-center align-middle" data-cell="Azioni:">
                     <a class="btn-1 btn-1-blue" href="{{route('admin.apartments.show', $apartment->slug)}}"><i class="fa-solid fa-eye"></i></a>

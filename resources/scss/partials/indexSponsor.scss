@@ -1,6 +1,4 @@
-@use '../root.scss' as *;
-
-
+@use "../root.scss" as *;
 
 .cursor_none {
     cursor: auto !important;
@@ -15,7 +13,7 @@
     left: 0px;
     top: -30px;
     transform: rotate(0);
-    transition: all .3s;
+    transition: all 0.3s;
     opacity: 0.3;
 }
 
@@ -30,7 +28,7 @@
     animation-fill-mode: forwards;
     box-shadow: 0 1px 8px $ourbnb-black;
     opacity: 0;
-    transition:box-shadow 0.4s ease;
+    transition: box-shadow 0.4s ease;
 }
 
 .sponsorship .card:hover {
@@ -46,7 +44,6 @@
     border-top-left-radius: 0px !important;
     border-top-right-radius: 0px !important;
 }
-
 
 @keyframes slidedown {
     from {

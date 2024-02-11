@@ -1,18 +1,17 @@
-@use '../root.scss' as *;
-
+@use "../root.scss" as *;
 
 .add_apartment {
-    animation-name:slide-in;
+    animation-name: slide-in;
     animation-duration: 1s;
     animation-fill-mode: forwards;
-    opacity:0;
+    opacity: 0;
 }
 
 @keyframes slide-in {
     from {
         transform: translateX(-50px);
         opacity: 0;
-    };
+    }
 
     to {
         transform: translateX(0);
@@ -47,8 +46,7 @@
         justify-content: center;
     }
 
-    td>img {
+    td > img {
         width: 100%;
     }
-
 }
