@@ -15,11 +15,9 @@ class ViewController extends Controller
      */
     public function show(View $view)
     {
-        $apartment_views = View::
-        join('apartments', 'apartment_id','=','apartments.id')
-        ->where('apartment_id','=', $view->apartment_id)
-        ->select('date_view')
-        ->get();
+        $apartment_views = View::where('apartment_id', '=', $view->id)
+            ->select('date_view')
+            ->get();
 
         return view('admin.views.show', compact('apartment_views'));
     }
