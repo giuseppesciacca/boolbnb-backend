@@ -31,6 +31,7 @@ Il progetto include alcune delle funzionalità chiave:
 -   **Visualizzazione degli alloggi**: gli utenti possono visualizzare informazioni dettagliate sugli alloggi, incluse foto, posizione su una mappa interattiva e servizi accessori.
 -   **Gestione delle prenotazioni**: gli host con appartamenti registrati possono ricevere messaggi di interesse dagli utenti tramite un form di contatto sulla pagina dell'appartamento.
 -   **Sistema di sponsorizzazione**: gli host registrati possono scegliere di sponsorizzare i loro alloggi per 24, 72 o 144 ore. Con la sponsorizzazione, che avviene attraverso un pagamento con Braintree, gli appartamenti vengono mostrati in cima alla lista nella visualizzazione degli appartamenti.
+-   **Visualizzazione delle statistiche**: gli host, attraverso il grafico di chart.js, possono vedere il numero di visualizzazioni avuto nel tempo, divise per anno.
 
 ## Tecnologie utilizzate 💻
 
@@ -39,6 +40,8 @@ Il progetto è stato sviluppato utilizzando diverse tecnologie e framework per s
 -   **Frontend**: Abbiamo utilizzato Vue.js per creare un'interfaccia utente responsive e interattiva. Inoltre, abbiamo utilizzato HTML, SCSS e JavaScript per lo sviluppo.
 -   **Backend**: Abbiamo utilizzato Laravel per creare il server backend, gestire le richieste API, l'archiviazione dei dati e l'interazione con il database.
 -   **Mappe**: Abbiamo utilizzato TomTom Developer per ottenere le coordinate geografiche a partire da un indirizzo e visualizzare il punto sulla mappa.
+-   **Pagamenti**: Abbiamo utilizzato Braintree per il sistema di pagamento.
+-   **Grafici**: Abbiamo utilizzato Chart.js per la visualizzazione dei grafici.   
 
 Siamo entusiasti di condividere con voi il nostro progetto Boolbnb!
 
