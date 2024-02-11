@@ -6,8 +6,11 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<div>
-  <div style="width: 800px;">
+<div class="container">
+  <h1 class="text-center mb-3">Visualizzazioni per anno del tuo appartamento</h1>
+  <h4 class="text-center">Sponsorizza l'appartamento per ottenere più visualizzazioni</h4>
+
+  <div class="m-auto p-3" style="width: 800px;">
     <canvas id="acquisitions"></canvas>
   </div>
 </div>
@@ -37,7 +40,7 @@
       data: {
         labels: apartment_views.map(row => row.year),
         datasets: [{
-          label: 'Views by year',
+          label: 'Visualizzazioni per anno',
           data: apartment_views.map(row => row.count)
         }]
       }
